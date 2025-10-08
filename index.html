@@ -1,39 +1,19 @@
----
-layout: home
 title: Midnight Abyss
-permalink: /
----
+description: Site for the Midnight Abyss RPG
+theme: minima
 
-<style>
-/* Load IM Fell English from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&display=swap');
+# Important: do not force a layout on index.html
+# defaults:
+#   - scope: { path: "" }
+#     values: { layout: home }
 
-/* Page background + simple reset */
-:root {
-  --sea-blue: #0e5a7a;
-  --sea-blue-soft: #0e5a7a20;
-  --ink: #0b0b0b;
-  --soft-grey: #f2f3f5;
-}
-body {
-  background: var(--soft-grey);
-}
-
-/* Container */
-.ma-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1rem 5rem 1rem;
-}
-
-/* Logo: centered and clearly larger */
-.ma-logo {
-  display: block;
-  margin: 0 auto 0.75rem auto;
-  width: min(78vw, 720px);   /* big on desktop, responsive on mobile */
-  height: auto;
-  image-rendering: auto;
-}
+# If you still see the theme header on index.html, add this:
+defaults:
+  - scope:
+      path: ""          # repo root
+      type: "pages"
+    values:
+      layout: none
 
 /* Title in IM Fell */
 .ma-title {
