@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Midnight Abyss – Official Site</title>
+  <meta name="description" content="Midnight Abyss is a deep‑sea survival RPG of oxygen, pressure, and discovery. Read the quickstart, join the newsletter, and follow the Kickstarter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #E5E5E5; /* mid grey */
+      --card: #F0F0F0; /* light card */
+      --ink: #1E1F22; /* dark charcoal text */
+      --muted: #3A4046; /* headings */
+      --accent: #3C7AA0; /* sonar blue */
+      --accent-2: #9C6A58; /* rust copper */
+      --grid: rgba(60,122,160,0.06);
+      --ring: rgba(60,122,160,0.2);
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 16px;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8));backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(0,0,0,0.06);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+    .logo{width:36px;height:36px;border-radius:50%;background: radial-gradient(ellipse at 40% 40%, #98c1d9 0%, #3C7AA0 40%, #1E1F22 70%);box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2)}
+    .title{font-family:Gloock, serif;font-weight:400;letter-spacing:.5px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;margin:0 10px}
+    nav a:hover{color:var(--accent)}
+    .hero{position:relative;margin-top:18px;border-radius:var(--radius);overflow:hidden;background:
+      radial-gradient(1000px 400px at 20% 0%, rgba(60,122,160,0.25), transparent 70%),
+      radial-gradient(900px 300px at 100% 110%, rgba(156,106,88,0.18), transparent 70%),
+      var(--card);
+      border:1px solid rgba(0,0,0,0.06);box-shadow:var(--shadow)}
+    .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;padding:42px}
+    .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(60,122,160,0.09);padding:6px 10px;border-radius:999px;border:1px solid rgba(60,122,160,0.25)}
+    h1{font-family:Gloock,serif;font-weight:400;line-height:1.15;margin:.4rem 0 1rem;color:var(--muted)}
+    .lead{font-size:1.1rem;color:#2a2f35}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;font-weight:800;letter-spacing:.02em;background:var(--accent);color:white;box-shadow:0 6px 16px rgba(60,122,160,0.35);cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+    .panel{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .grid{display:grid;gap:22px}
+    .grid.features{grid-template-columns:repeat(3,1fr)}
+    .feature{padding:18px}
+    .feature h3{margin:.2rem 0 .4rem;color:var(--muted)}
+    .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,0.04);padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);font-size:12px}
+    .divider{height:1px;background:linear-gradient(90deg,transparent, rgba(0,0,0,0.1), transparent);margin:26px 0}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .thumb{aspect-ratio: 3 / 2; border-radius:12px;background:linear-gradient(180deg,#cfd8dc,#b0bec5);position:relative;overflow:hidden}
+    .thumb::after{content:"Concept Placeholder";position:absolute;bottom:8px;right:10px;font-size:11px;color:#fff;background:rgba(0,0,0,0.45);padding:4px 8px;border-radius:999px}
+    .newsletter{display:flex;gap:8px}
+    input, textarea{border:1.5px solid rgba(0,0,0,0.15);border-radius:10px;padding:12px 12px;font-size:16px;background:#fff;color:var(--ink)}
+    footer{margin:40px 0 22px;color:#5a6168;font-size:14px}
+    /* subtle grid overlay for ocean vibe */
+    .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(transparent 31px, var(--grid) 32px), linear-gradient(90deg, transparent 31px, var(--grid) 32px);background-size:32px 32px;pointer-events:none}
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid.features{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true"></div>
+        <strong class="title">Midnight Abyss</strong>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#quickstart">Quickstart</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="badge">Deep‑sea Survival RPG</span>
+          <h1>Pressure. Oxygen. Choice.</h1>
+          <p class="lead">A tabletop roleplaying game of claustrophobic dives and hard decisions beneath the hadal line. Run salvage contracts, map forbidden trenches, and bargain with factions that count your breath in credits.</p>
+          <div class="cta">
+            <a class="btn" href="#quickstart">Download Quickstart (PDF)</a>
+            <a class="btn secondary" href="#newsletter">Follow the Kickstarter</a>
+          </div>
+          <p style="margin-top:12px;font-size:14px;color:#5a6168">Accessible layout: mid‑grey background with dark text. Dark‑mode PDF planned at launch.</p>
+        </div>
+        <div class="panel" style="padding:16px 16px 4px">
+          <div class="thumb" style="margin-bottom:10px;background:linear-gradient(180deg,#a7c0cd,#4b6e82)"></div>
+          <div class="thumb" style="margin-bottom:10px;background:linear-gradient(180deg,#c7b1a8,#6f5147)"></div>
+          <div class="thumb" style="background:linear-gradient(180deg,#b0c8d4,#2b3e49)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="two" style="margin-top:26px">
+      <div class="panel" style="padding:22px">
+        <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">What is Midnight Abyss?</h2>
+        <p><em>Midnight Abyss</em> is a rules‑light survival RPG set in the crushing dark of the deep ocean. Crews risk the trenches for freedom, answers, and air. Oxygen is currency. Pressure is the enemy. Every dive is a wager.</p>
+        <div class="tag">• Rules‑light • Faction play • Vehicle dives • Oxygen economy</div>
+      </div>
+      <div class="panel" style="padding:22px">
+        <h3 style="margin-top:0;color:var(--muted)">Accessibility First</h3>
+        <p>Designed for long reading sessions: mid‑tone pages, strong contrast, open letterforms, and dyslexia‑friendly typesetting. A dark‑mode PDF will be available for night reading.</p>
+        <h3 style="color:var(--muted)">Status</h3>
+        <p>Core manuscript ~215 pages (pre‑layout). Kickstarter funds go to custom art, editing, and print run.</p>
+      </div>
+    </section>
+
+    <section id="features" style="margin-top:26px">
+      <h2 style="font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 12px">Features</h2>
+      <div class="grid features">
+        <div class="feature panel">
+          <h3>Oxygen Economy</h3>
+          <p>Track a shared O₂ pool. Every action has cost, every breath has weight.</p>
+        </div>
+        <div class="feature panel">
+          <h3>Vehicle Dives</h3>
+          <p>Collaborative submersible missions with pooled successes against trench hazards.</p>
+        </div>
+        <div class="feature panel">
+          <h3>Factions in Conflict</h3>
+          <p>Oceanic Union, Abyssal Corps, Pelagic League, Trench Confederacy — pick your allies, count your enemies.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <section id="gallery">
+      <h2 style="font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 12px">Concept Gallery</h2>
+      <p style="margin-top:0;color:#5a6168">Concept placeholders shown below; Kickstarter funds full custom illustration.</p>
+      <div class="gallery">
+        <div class="thumb"></div>
+        <div class="thumb"></div>
+        <div class="thumb"></div>
+        <div class="thumb"></div>
+        <div class="thumb"></div>
+        <div class="thumb"></div>
+      </div>
+    </section>
+
+    <section id="quickstart" class="two" style="margin-top:26px">
+      <div class="panel" style="padding:22px">
+        <h2 style="font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 8px">Quickstart PDF</h2>
+        <p>Get the rules, a starter scenario, and pre‑gen crew. Share feedback to help us tune the oxygen economy and vehicle dives.</p>
+        <a class="btn" href="#">Download (PDF)</a>
+      </div>
+      <div class="panel" style="padding:22px">
+        <h2 style="font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 8px">Press Kit</h2>
+        <p>Logos, screenshots, and design notes for previews and actual plays.</p>
+        <a class="btn secondary" href="#">Press Kit (ZIP)</a>
+      </div>
+    </section>
+
+    <section id="newsletter" style="margin-top:26px">
+      <div class="panel" style="padding:22px">
+        <h2 style="font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 8px">Newsletter</h2>
+        <p>Get launch news and early playtest invites.</p>
+        <form class="newsletter" action="https://formspree.io/f/your-id" method="POST">
+          <input required type="email" name="email" placeholder="you@example.com" aria-label="Email address" />
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+        <p style="font-size:12px;color:#5a6168;margin-top:8px">We use Formspree for simple, privacy‑friendly sign‑ups. Replace the action URL with your form endpoint.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="divider" role="separator" aria-hidden="true"></div>
+      <div class="two">
+        <p>© <span id="year"></span> Midnight Abyss. All rights reserved.</p>
+        <p style="text-align:right">Theme: mid‑tone accessibility · <a href="#" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">Dark‑mode PDF planned</a></p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
