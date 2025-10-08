@@ -1,3 +1,5 @@
 title: Midnight Abyss
 description: A roleplaying game of endurance, pressure, and fragile hope in the lightless depths.
 theme: minima
+
+# Make sure Jekyll builds your custom CSS (placed at /assets/css/style.scss)
