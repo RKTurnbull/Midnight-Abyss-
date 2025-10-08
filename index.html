@@ -1,39 +1,33 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Midnight Abyss</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Midnight Abyss — a roleplaying game of endurance, pressure, and fragile hope in the lightless depths." />
+---
+layout: home
+title: Midnight Abyss
+permalink: /
+---
 
-  <!-- Social previews (optional) -->
-  <meta property="og:title" content="Midnight Abyss" />
-  <meta property="og:description" content="A roleplaying game of endurance, pressure, and fragile hope in the lightless depths." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo.png" />
-  <meta name="theme-color" content="#0b1220" />
+<div class="ma-hero">
+  <img
+    src="{{ '/assets/logo.png' | relative_url }}"
+    alt="Midnight Abyss logo"
+    class="ma-logo"
+    loading="eager"
+    decoding="async"
+  />
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:#0e1a30;
-      --text:#e6f2ff;
-      --muted:#9bb7d1;
-      --accent:#4fb3ff;
-      --accent-strong:#2aa8ff;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:14px;
-    }
+  <h1 class="ma-title">Midnight Abyss</h1>
+  <p class="ma-tagline">A roleplaying game of endurance, pressure, and fragile hope in the lightless depths.</p>
 
-    /* Base */
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      background: radial-gradient(1200px 800px at 20% -10%, #0f2340 0%, var(--bg) 55%);
-      color: var(--text);
-      line-height: 1.6;
+  <div class="ma-cta">
+    <a class="ma-button" href="{{ '/docs/quickstart.pdf' | relative_url }}">Quickstart PDF</a>
+    <a class="ma-button ma-button--ghost" href="{{ '/docs/scenario-index.html' | relative_url }}">Scenario Index</a>
+  </div>
+</div>
+
+<section class="ma-section">
+  <h2>About</h2>
+  <p>
+    Set after the drowning of the surface world, <em>Midnight Abyss</em> focuses on crews who live and work at depth—salvage, maintenance, rescue, and difficult choices under pressure.
+  </p>
+</section>
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-strong); }
