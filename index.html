@@ -1,38 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Midnight Abyss</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      background: #011627;
-      color: #e6f2ff;
-      line-height: 1.6;
-    }
+<meta charset="utf-8">
+<title>Midnight Abyss</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#0b1220; --fg:#ffffff; --accent:#4fb3ff; }
+  html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui, sans-serif; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; background:#0e1a30; }
+  h1 { margin:0; font-size:1.8rem; color:#85d4ff; }
+  .logo { height:64px; width:auto; }
+  main { max-width:60ch; margin:48px auto; padding:0 16px; text-align:center; }
+  a.button { display:inline-block; padding:12px 20px; margin-top:16px; background:var(--accent); color:#001527; text-decoration:none; border-radius:8px; font-weight:600; }
+  @media (max-width:600px){ header{flex-direction:column; gap:8px} .logo{height:56px} }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Midnight Abyss</h1>
+    <img class="logo" src="Game%20Logo.png" alt="Midnight Abyss Logo">
+  </header>
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(0,0,0,0.4);
-      flex-wrap: wrap; /* lets elements wrap on small screens */
-    }
-
-    h1 {
-      margin: 0;
-      color: #78c0e0;
-      font-size: 1.8rem;
-      flex: 1 1 auto;
-    }
-
-    .logo {
-      height: 70px;
-      width: auto;
-      flex: 0 0 auto;
-    }
-
-    main {
+  <main>
+    <p>If you can read this, the site is working. 🎉</p>
+    <p><a class="button" href="docs/MidnightAbyss_Quickstart.pdf" target="_blank">⬇ Download the Quickstart (PDF)</a></p>
+  </main>
+</body>
+</html>
