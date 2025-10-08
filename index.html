@@ -12,53 +12,27 @@
       color: #e6f2ff;
       line-height: 1.6;
     }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       background: rgba(0,0,0,0.4);
+      flex-wrap: wrap; /* lets elements wrap on small screens */
     }
+
     h1 {
       margin: 0;
       color: #78c0e0;
       font-size: 1.8rem;
+      flex: 1 1 auto;
     }
+
     .logo {
-      height: 60px;
+      height: 70px;
       width: auto;
+      flex: 0 0 auto;
     }
+
     main {
-      max-width: 60ch;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-    a.button {
-      display: inline-block;
-      padding: 10px 18px;
-      margin-top: 1rem;
-      background: #0b3d91;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    a.button:hover {
-      background: #145fc1;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Midnight Abyss</h1>
-    <img src="Game%20Logo.png" alt="Midnight Abyss Logo" class="logo">
-  </header>
-
-  <main>
-    <p>A roleplaying game of endurance, pressure, and fragile hope in the lightless depths.</p>
-
-    <a href="docs/MidnightAbyss_Quickstart.pdf" target="_blank" class="button">
-      ⬇ Download the Quickstart (PDF)
-    </a>
-  </main>
-</body>
-</html>
