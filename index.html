@@ -1,29 +1,254 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Midnight Abyss</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  :root { --bg:#0b1220; --fg:#ffffff; --accent:#4fb3ff; }
-  html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui, sans-serif; }
-  header { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; background:#0e1a30; }
-  h1 { margin:0; font-size:1.8rem; color:#85d4ff; }
-  .logo { height:64px; width:auto; }
-  main { max-width:60ch; margin:48px auto; padding:0 16px; text-align:center; }
-  a.button { display:inline-block; padding:12px 20px; margin-top:16px; background:var(--accent); color:#001527; text-decoration:none; border-radius:8px; font-weight:600; }
-  @media (max-width:600px){ header{flex-direction:column; gap:8px} .logo{height:56px} }
-</style>
+  <meta charset="utf-8" />
+  <title>Midnight Abyss</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Midnight Abyss — a roleplaying game of endurance, pressure, and fragile hope in the lightless depths." />
+
+  <!-- Social previews (optional) -->
+  <meta property="og:title" content="Midnight Abyss" />
+  <meta property="og:description" content="A roleplaying game of endurance, pressure, and fragile hope in the lightless depths." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0e1a30;
+      --text:#e6f2ff;
+      --muted:#9bb7d1;
+      --accent:#4fb3ff;
+      --accent-strong:#2aa8ff;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:14px;
+    }
+
+    /* Base */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, #0f2340 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-strong); }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: saturate(120%) blur(6px);
+      background: linear-gradient(0deg, rgba(2,12,24,0.0), rgba(2,12,24,0.65)) , rgba(2,12,24,0.35);
+      box-shadow: var(--shadow);
+    }
+    .bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .brand img.logo {
+      display: block;
+      height: 48px;          /* ← logo top-left */
+      width: auto;
+    }
+    .brand .title {
+      font-size: 1.15rem;
+      font-weight: 650;
+      letter-spacing: .02em;
+      color: #cfe9ff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    nav a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 40px auto 28px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.012));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .intro {
+      padding: 28px;
+    }
+    .intro h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
+      line-height: 1.2;
+      color: #9ad7ff;
+      letter-spacing: .01em;
+    }
+    .tagline {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      background: var(--accent);
+      color: #031322;
+      box-shadow: 0 6px 18px rgba(79,179,255,.35);
+      transition: transform .06s ease, background .2s ease;
+    }
+    .button:hover { background: var(--accent-strong); transform: translateY(-1px); }
+
+    .meta {
+      margin-top: 12px;
+      font-size: .95rem;
+      color: var(--muted);
+    }
+
+    .panel {
+      padding: 22px 24px;
+    }
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .list li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+    }
+    .dot {
+      margin-top: 6px;
+      height: 8px; width: 8px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(79,179,255,.7);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 40px;
+      background: rgba(2,12,24,0.35);
+    }
+    .foot {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 20px 30px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      font-size: .95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      nav { display: none; } /* keep it minimal on phones */
+      .brand img.logo { height: 44px; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Header with logo top-left -->
   <header>
-    <h1>Midnight Abyss</h1>
-    <img src="docs/logo.png" alt="Midnight Abyss Logo" class="logo">
+    <div class="bar">
+      <div class="brand">
+        <!-- Ensure logo.png is in the same folder as this file -->
+        <img src="logo.png" alt="Midnight Abyss Logo" class="logo" />
+        <div class="title">Midnight Abyss</div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#features">What’s Inside</a>
+        <a href="#downloads">Downloads</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <p>If you can read this, the site is working. 🎉</p>
-    <a href="docs/MidnightAbyss_Quickstart.pdf" target="_blank" class="button">
+  <!-- Main -->
+  <main class="hero">
+    <!-- Left: intro + CTA -->
+    <section class="card intro" id="about">
+      <h1>A roleplaying game of endurance, pressure, and fragile hope in the lightless depths.</h1>
+      <p class="tagline">
+        Near-future deep-ocean crews balancing oxygen, hull integrity, and hard choices at the bottom of a drowned world.
+      </p>
+
+      <div class="cta-row" id="downloads">
+        <!-- Quickstart in the ROOT -->
+        <a class="button" href="quickstart.pdf" target="_blank" rel="noopener">⬇ Download the Quickstart (PDF)</a>
+        <a class="button" href="#features">Explore Features</a>
+      </div>
+
+      <p class="meta">PDF hosted via GitHub Pages. Best viewed on modern browsers.</p>
+    </section>
+
+    <!-- Right: highlights -->
+    <aside class="card panel" id="features" aria-label="Highlights">
+      <ul class="list">
+        <li><span class="dot"></span><span>Tense, grounded play that emphasizes survival, salvage, and tough calls.</span></li>
+        <li><span class="dot"></span><span>Modular tools for O₂ tracking, stress, hypoxia, and vehicle operations.</span></li>
+        <li><span class="dot"></span><span>Scenario support for rival crews, failing infrastructure, and hostile environments.</span></li>
+        <li><span class="dot"></span><span>Playtest-ready Quickstart to get you from zero to dive in one session.</span></li>
+      </ul>
+    </aside>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot">
+      <span>© <span id="year"></span> Midnight Abyss</span>
+      <span>Built on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
