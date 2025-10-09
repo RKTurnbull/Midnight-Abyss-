@@ -70,15 +70,14 @@ permalink: /
   <header>
     <div class="wrap nav">
       <a class="brand" href="#">
-        <!-- LOGO: file must exist at assets/logo.png (lowercase) -->
-        <img class="logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Midnight Abyss logo" />
+        <!-- LOGO with smart fallback -->
+        <img id="site-logo" class="logo" src="" alt="Midnight Abyss logo" />
         <strong class="title">Midnight Abyss</strong>
       </a>
       <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#features">Features</a>
         <a href="#gallery">Gallery</a>
-        <!-- Nav Quickstart opens the PDF directly -->
         <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener">Quickstart</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -93,7 +92,6 @@ permalink: /
           <h1>Pressure. Oxygen. Choice.</h1>
           <p class="lead">A tabletop roleplaying game of claustrophobic dives and hard decisions. Run salvage contracts, map forbidden trenches, and bargain with factions in an O₂-based economy.</p>
           <div class="cta">
-            <!-- Button uses the same filename/case -->
             <a class="btn" href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Open Quickstart (PDF)</a>
             <a class="btn secondary" href="#about">Learn More</a>
           </div>
@@ -160,6 +158,20 @@ permalink: /
     </footer>
   </main>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <!-- Auto logo fallback -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const logoPaths = [
+      "{{ '/assets/logo.png' | relative_url }}",
+      "{{ '/logo.png' | relative_url }}",
+      "{{ '/docs/logo.png' | relative_url }}"
+    ];
+    (function loadLogo(i=0){
+      if(i >= logoPaths.length) return;
+      const img = document.getElementById('site-logo');
+      img.onerror = () => loadLogo(i+1);
+      img.src = logoPaths[i];
+    })();
+  </script>
 </body>
 </html>
