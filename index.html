@@ -1,3 +1,9 @@
+---
+layout: none
+title: Midnight Abyss – Official Site
+permalink: /
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,36 +16,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #E5E5E5;
-      --card: #F0F0F0;
-      --ink: #1E1F22;
-      --muted: #3A4046;
-      --accent: #3C7AA0;
-      --grid: rgba(60,122,160,0.06);
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --radius: 16px;
+      --bg:#E5E5E5; --card:#F0F0F0; --ink:#1E1F22; --muted:#3A4046;
+      --accent:#3C7AA0; --grid:rgba(60,122,160,0.06);
+      --shadow:0 10px 30px rgba(0,0,0,0.08); --radius:16px;
     }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
     .wrap{max-width:1100px;margin:0 auto;padding:28px}
-    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8));backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(0,0,0,0.06);z-index:10}
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8));
+      backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(0,0,0,0.06);z-index:10}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;text-align:center}
-    .brand{display:flex;align-items:center;justify-content:center;gap:16px;text-decoration:none;color:var(--ink);flex:1 1 100%;flex-direction:column;margin-top:8px}
-    .logo{width:84px;height:84px;object-fit:contain;border-radius:50%;box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2)}
-    .title{font-family:'IM Fell English SC', serif;font-size:4rem;font-weight:400;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin:0}
+    .brand{display:flex;align-items:center;justify-content:center;gap:16px;text-decoration:none;color:var(--ink);
+      flex:1 1 100%;flex-direction:column;margin-top:8px}
+    .logo{width:168px;height:168px;object-fit:contain;border-radius:50%;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2)}
+    .title{font-family:'IM Fell English SC',serif;font-size:4rem;font-weight:400;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin:0}
     nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10px}
     nav a{color:var(--muted);text-decoration:none;font-weight:600;margin:0 10px}
     nav a:hover{color:var(--accent)}
-    .hero{position:relative;margin-top:18px;border-radius:var(--radius);overflow:hidden;background:
-      radial-gradient(1000px 400px at 20% 0%, rgba(60,122,160,0.25), transparent 70%),
-      radial-gradient(900px 300px at 100% 110%, rgba(156,106,88,0.18), transparent 70%),
-      var(--card);
+    .hero{position:relative;margin-top:18px;border-radius:var(--radius);overflow:hidden;
+      background:radial-gradient(1000px 400px at 20% 0%, rgba(60,122,160,0.25), transparent 70%),
+                 radial-gradient(900px 300px at 100% 110%, rgba(156,106,88,0.18), transparent 70%), var(--card);
       border:1px solid rgba(0,0,0,0.06);box-shadow:var(--shadow)}
     .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;padding:42px}
-    .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(60,122,160,0.09);padding:6px 10px;border-radius:999px;border:1px solid rgba(60,122,160,0.25)}
+    .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--accent);background:rgba(60,122,160,0.09);padding:6px 10px;border-radius:999px;border:1px solid rgba(60,122,160,0.25)}
     h1{font-family:Gloock,serif;font-weight:400;line-height:1.15;margin:.4rem 0 1rem;color:var(--muted)}
     .lead{font-size:1.1rem;color:#2a2f35}
     .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;font-weight:800;letter-spacing:.02em;background:var(--accent);color:white;box-shadow:0 6px 16px rgba(60,122,160,0.35);cursor:pointer}
+    .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;font-weight:800;letter-spacing:.02em;
+      background:var(--accent);color:white;box-shadow:0 6px 16px rgba(60,122,160,0.35);cursor:pointer}
     .btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
     .panel{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:var(--radius);box-shadow:var(--shadow)}
     .grid{display:grid;gap:22px}
@@ -54,20 +60,18 @@
     figure.thumb img{width:100%;height:auto;display:block}
     figure.thumb figcaption{position:absolute;bottom:8px;right:10px;font-size:11px;color:#fff;background:rgba(0,0,0,0.45);padding:4px 8px;border-radius:999px}
     footer{margin:40px 0 22px;color:#5a6168;font-size:14px;text-align:center}
-    .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(transparent 31px, var(--grid) 32px), linear-gradient(90deg, transparent 31px, var(--grid) 32px);background-size:32px 32px;pointer-events:none}
-    @media (max-width: 900px){
-      .hero-inner{grid-template-columns:1fr}
-      .grid.features{grid-template-columns:1fr}
-      .two{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
-    }
+    .hero::before{content:"";position:absolute;inset:0;
+      background-image:linear-gradient(transparent 31px, var(--grid) 32px), linear-gradient(90deg, transparent 31px, var(--grid) 32px);
+      background-size:32px 32px;pointer-events:none}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.features{grid-template-columns:1fr}.two{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#">
-        <img class="logo" src="logo.png" alt="Midnight Abyss logo" onerror="this.onerror=null;this.src='docs/logo.png'" />
+        <!-- LOGO: ensure file exists at assets/logo.png -->
+        <img class="logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Midnight Abyss logo" />
         <strong class="title">Midnight Abyss</strong>
       </a>
       <nav aria-label="Primary">
@@ -76,7 +80,6 @@
         <a href="#gallery">Gallery</a>
         <a href="#quickstart">Quickstart</a>
         <a href="#contact">Contact</a>
-        <!-- Contact Board link removed -->
       </nav>
     </div>
   </header>
@@ -87,17 +90,22 @@
         <div>
           <span class="badge">Deep-sea Survival RPG</span>
           <h1>Pressure. Oxygen. Choice.</h1>
-          <p class="lead">A tabletop roleplaying game of claustrophobic dives and hard decisions. Run salvage contracts, map forbidden trenches, and bargain with factions in an O₂ based economy.</p>
+          <p class="lead">A tabletop roleplaying game of claustrophobic dives and hard decisions. Run salvage contracts, map forbidden trenches, and bargain with factions in an O₂-based economy.</p>
           <div class="cta">
-            <a class="btn" href="./docs/Quickstart.pdf" target="_blank" rel="noopener noreferrer">Open Quickstart (PDF)</a>
+            <!-- Change filename/casing here to match your repo exactly -->
+            <a class="btn" href="{{ '/docs/quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Open Quickstart (PDF)</a>
             <a class="btn secondary" href="#about">Learn More</a>
           </div>
-          <p style="margin:.5rem 0 0;font-size:14px;color:#5a6168">If the button doesn’t work on your device, try the <a href="./docs/Quickstart.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">direct Quickstart link</a>.</p>
+          <p style="margin:.5rem 0 0;font-size:14px;color:#5a6168">
+            If the button doesn’t work on your device, try the
+            <a href="{{ '/docs/quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">direct Quickstart link</a>.
+          </p>
           <p style="margin-top:12px;font-size:14px;color:#5a6168">Accessible layout: mid-grey background with dark text.</p>
         </div>
+
         <div class="panel" style="padding:16px">
           <figure class="thumb">
-            <img src="docs/Biolumiescent%20Shoal.png" alt="Bioluminescent shoal concept">
+            <img src="{{ '/docs/Biolumiescent Shoal.png' | relative_url }}" alt="Bioluminescent shoal concept">
             <figcaption>Concept Placeholder</figcaption>
           </figure>
         </div>
@@ -109,19 +117,19 @@
       <p style="margin-top:0;color:#5a6168"><strong>All artwork shown is conceptual only and will be completely replaced with commissioned custom art for the final release.</strong></p>
       <div class="gallery">
         <figure class="thumb">
-          <img src="docs/Trench%20Colony.png" alt="Trench colony concept">
+          <img src="{{ '/docs/Trench Colony.png' | relative_url }}" alt="Trench colony concept">
           <figcaption>Concept Placeholder</figcaption>
         </figure>
         <figure class="thumb">
-          <img src="docs/Market%20Scene.png" alt="Market scene concept">
+          <img src="{{ '/docs/Market Scene.png' | relative_url }}" alt="Market scene concept">
           <figcaption>Concept Placeholder</figcaption>
         </figure>
         <figure class="thumb">
-          <img src="docs/Horizon%20Dawn.png" alt="Horizon Dawn concept">
+          <img src="{{ '/docs/Horizon Dawn.png' | relative_url }}" alt="Horizon Dawn concept">
           <figcaption>Concept Placeholder</figcaption>
         </figure>
         <figure class="thumb">
-          <img src="docs/Biolumiescent%20Shoal.png" alt="Bioluminescent shoal concept">
+          <img src="{{ '/docs/Biolumiescent Shoal.png' | relative_url }}" alt="Bioluminescent shoal concept">
           <figcaption>Concept Placeholder</figcaption>
         </figure>
       </div>
@@ -131,16 +139,19 @@
       <div class="panel" style="padding:22px">
         <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">What is Midnight Abyss?</h2>
         <p><em>Midnight Abyss</em> is a rules-light survival roleplaying game set in the crushing dark of the deep ocean.
-Crews dive for freedom, answers, and the promise of more than just another breath. Down here, O₂ isn’t only what keeps you alive — it’s what buys you time, choices, and debts. Pressure grinds, hulls groan, and every dive is a wager against the deep and those who claim to own it.</div>
+        Crews dive for freedom, answers, and the promise of more than just another breath. Down here, O₂ isn’t only what keeps you alive — it’s what buys you time, choices, and debts. Pressure grinds, hulls groan, and every dive is a wager against the deep and those who claim to own it.</p>
       </div>
+
       <div class="panel" id="contact" style="padding:22px">
         <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">Contact</h2>
-        <p>Questions or press enquiries? Email <a href="mailto:MidnightAbyssTTRPG@gmail.com" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">midnightabyssttrpg@gmail.com</a>.</p>
+        <p>Questions or press enquiries? Email
+          <a href="mailto:contact@midnightabyss.com" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">contact@midnightabyss.com</a>.
+        </p>
       </div>
     </section>
 
     <footer>
-      <div class="divider" role="separator" aria-hidden="true" style="height:1px;background:linear-gradient(90deg,transparent, rgba(0,0,0,0.1), transparent);margin:26px 0"></div>
+      <div class="divider" role="separator" aria-hidden="true"></div>
       <div class="two">
         <p>© <span id="year"></span> Midnight Abyss. All rights reserved.</p>
         <p style="text-align:right">Theme: mid-tone accessibility</p>
@@ -148,8 +159,6 @@ Crews dive for freedom, answers, and the promise of more than just another breat
     </footer>
   </main>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
