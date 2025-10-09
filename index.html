@@ -70,7 +70,7 @@ permalink: /
   <header>
     <div class="wrap nav">
       <a class="brand" href="#">
-        <!-- LOGO: ensure file exists at assets/logo.png -->
+        <!-- LOGO: file must exist at assets/logo.png (lowercase) -->
         <img class="logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Midnight Abyss logo" />
         <strong class="title">Midnight Abyss</strong>
       </a>
@@ -78,6 +78,7 @@ permalink: /
         <a href="#about">About</a>
         <a href="#features">Features</a>
         <a href="#gallery">Gallery</a>
+        <!-- Nav Quickstart opens the PDF directly -->
         <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener">Quickstart</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -92,13 +93,13 @@ permalink: /
           <h1>Pressure. Oxygen. Choice.</h1>
           <p class="lead">A tabletop roleplaying game of claustrophobic dives and hard decisions. Run salvage contracts, map forbidden trenches, and bargain with factions in an O₂-based economy.</p>
           <div class="cta">
-            <!-- Change filename/casing here to match your repo exactly -->
-            <a class="btn" href="{{ '/docs/quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Open Quickstart (PDF)</a>
+            <!-- Button uses the same filename/case -->
+            <a class="btn" href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Open Quickstart (PDF)</a>
             <a class="btn secondary" href="#about">Learn More</a>
           </div>
           <p style="margin:.5rem 0 0;font-size:14px;color:#5a6168">
             If the button doesn’t work on your device, try the
-            <a href="{{ '/docs/quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">direct Quickstart link</a>.
+            <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">direct Quickstart link</a>.
           </p>
           <p style="margin-top:12px;font-size:14px;color:#5a6168">Accessible layout: mid-grey background with dark text.</p>
         </div>
@@ -138,8 +139,8 @@ permalink: /
     <section id="about" class="two" style="margin-top:26px">
       <div class="panel" style="padding:22px">
         <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">What is Midnight Abyss?</h2>
-        <p><em>Midnight Abyss</em> is a rules-light survival roleplaying game set in the crushing dark of the deep ocean.
-        Crews dive for freedom, answers, and the promise of more than just another breath. Down here, O₂ isn’t only what keeps you alive — it’s what buys you time, choices, and debts. Pressure grinds, hulls groan, and every dive is a wager against the deep and those who claim to own it.</p>
+        <p><em>Midnight Abyss</em> is a rules-light survival roleplaying game set in the crushing dark of the deep ocean.</p>
+        <p>Crews dive for freedom, answers, and the promise of more than just another breath. Down here, O₂ isn’t only what keeps you alive — it’s what buys you time, choices, and debts. Pressure grinds, hulls groan, and every dive is a wager against the deep and those who claim to own it.</p>
       </div>
 
       <div class="panel" id="contact" style="padding:22px">
