@@ -3,27 +3,6 @@ layout: none
 title: Contact Board
 permalink: /contact/
 ---
-<script src="https://giscus.app/client.js"
-        data-repo="RKTurnbull/Midnight-Abyss-"
-        data-repo-id="R_kgDOP-jpkw"
-        data-category="General"
-        data-category-id="DIC_kwDOP-jpk84CwcXa"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="catppuccin_latte"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
-</script>
----
-layout: none
-title: Contact Board
-permalink: /contact/
----
 
 <!doctype html>
 <html lang="en">
@@ -37,24 +16,15 @@ permalink: /contact/
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#E5E5E5;--card:#F0F0F0;--ink:#1E1F22;
-      --muted:#3A4046;--accent:#3C7AA0;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:16px;
-    }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;line-height:1.6}
+    :root{--bg:#E5E5E5;--card:#F0F0F0;--ink:#1E1F22;--muted:#3A4046;--accent:#3C7AA0;--shadow:0 10px 30px rgba(0,0,0,.08);--radius:16px}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;line-height:1.6}
     .wrap{max-width:900px;margin:0 auto;padding:28px}
-    .panel{background:var(--card);border:1px solid rgba(0,0,0,.06);
-      border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .panel{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
     h1{font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 12px}
     p.note{color:#5a6168;font-size:.95rem;margin-top:8px}
-    a.back{display:inline-block;margin-bottom:14px;color:var(--accent);
-      text-decoration:none;border-bottom:1px dashed var(--accent)}
+    a.back{display:inline-block;margin-bottom:14px;color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)}
   </style>
 </head>
-
 <body>
   <main class="wrap">
     <a class="back" href="{{ '/' | relative_url }}">← Back to Home</a>
@@ -64,7 +34,7 @@ permalink: /contact/
       <p>Leave a message for the <em>Midnight Abyss</em> team below. This board uses GitHub Discussions, so you’ll sign in with your GitHub account.</p>
       <p class="note"><strong>Note:</strong> Posts are public. For private enquiries, email <a href="mailto:contact@midnightabyss.com">contact@midnightabyss.com</a>.</p>
 
-      <!-- giscus embed -->
+      <!-- giscus embed (single script, correct repo; IDs from giscus.app) -->
       <script src="https://giscus.app/client.js"
               data-repo="RKTurnbull/Midnight-Abyss"
               data-repo-id="R_kgDOP-jpkw"
