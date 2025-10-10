@@ -134,27 +134,40 @@ permalink: /
         </figure>
       </div>
     </section>
-<!-- Fiction: Pressure Line (Abyssal Log Styling) -->
-<section id="pressure-line" style="margin-top:32px;">
+<!-- Fiction: Pressure Line (Glowing Abyssal Entry) -->
+<section id="pressure-line" style="margin-top:36px;">
   <div class="panel" style="
-    padding:36px;
-    background:linear-gradient(180deg, rgba(10,20,30,0.95), rgba(20,40,60,0.85));
-    color:#E5E8EB;
-    border:1px solid rgba(60,122,160,0.25);
-    box-shadow:0 10px 30px rgba(0,0,0,0.3), inset 0 0 60px rgba(60,122,160,0.1);
+    position:relative;
+    padding:40px 36px 32px;
+    background:linear-gradient(180deg, rgba(6,12,20,0.98), rgba(14,28,40,0.9));
+    color:#E6ECF1;
+    border:1px solid rgba(60,122,160,0.35);
+    box-shadow:0 10px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(60,122,160,0.15);
     border-radius:16px;
     font-family:Inter,system-ui,sans-serif;
-    line-height:1.7;
+    line-height:1.75;
+    overflow:hidden;
   ">
-    <h2 style="margin-top:0;
+    <!-- Subtle animated top glow -->
+    <div style="position:absolute;top:0;left:0;right:0;height:6px;
+      background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
+      filter:blur(2px);animation:pulseGlow 5s infinite alternate;"></div>
+
+    <!-- Header -->
+    <div style="
+      text-align:center;
+      margin-bottom:30px;
       font-family:'Gloock',serif;
-      font-weight:400;
+      letter-spacing:0.1em;
       color:#89B4D8;
-      letter-spacing:0.5px;
-      text-shadow:0 0 12px rgba(60,122,160,0.4);
+      text-shadow:0 0 12px rgba(60,122,160,0.8),0 0 24px rgba(60,122,160,0.4);
     ">
-      Pressure Line
-    </h2>
+      <h2 style="margin:0;font-weight:400;font-size:1.6rem;">PRESSURE LOG ENTRY — 08-A</h2>
+      <p style="margin:6px 0 0;font-family:'IM Fell English SC',serif;
+        font-size:2.3rem;color:#C7D6E2;letter-spacing:0.04em;">
+        “Pressure Line”
+      </p>
+    </div>
 
     <p><em>The sub <strong>Mercy Jane</strong> drifted through the blue-black murk like a bead of dust caught in oil.</em> Her floodlights cut narrow tunnels through suspended silt, illuminating fragments of old steel hull plating and ghostly tendrils of seaweed clinging to the wreck below.</p>
 
@@ -170,7 +183,7 @@ permalink: /
 
     <p>“Latch it,” Edda said.</p>
 
-    <p>The drone’s manipulator arms extended, clamping to the crate’s corners. Then the signal jittered, camera freezing for half a second. When it returned, the image had changed. The corridor was darker, narrower. Something—someone—moved just out of frame, drifting backward into the shadows.</p>
+    <p>The drone’s manipulator arms extended, clamping to the crate’s corners. Then the signal jittered—camera freezing for half a second. When it returned, the image had changed. The corridor was darker, narrower. Something—someone—moved just out of frame, drifting backward into the shadows.</p>
 
     <p>Edda frowned. “Playback that last—”</p>
 
@@ -215,6 +228,20 @@ permalink: /
     <p>Outside, the sonar pinged once. Then again. Then again, closer.</p>
 
     <p><strong>Whatever was in that wreck wasn’t staying there.</strong></p>
+
+    <!-- Subtle animated bottom glow -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:6px;
+      background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
+      filter:blur(2px);animation:pulseGlow 5s infinite alternate-reverse;"></div>
+  </div>
+
+  <style>
+    @keyframes pulseGlow {
+      0% {opacity:0.2;transform:scaleX(1);}
+      100% {opacity:0.8;transform:scaleX(1.1);}
+    }
+  </style>
+</section>
   </div>
 </section>
   </div>
