@@ -1,0 +1,148 @@
+---
+layout: none
+title: Gallery – Midnight Abyss
+permalink: /gallery/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery • Midnight Abyss</title>
+  <meta name="description" content="Concept art and visual exploration for Midnight Abyss." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#E5E5E5; --card:#F0F0F0; --ink:#1E1F22; --muted:#3A4046;
+      --accent:#3C7AA0; --shadow:0 10px 30px rgba(0,0,0,0.08); --radius:16px;
+    }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif; line-height:1.7; }
+    .wrap { max-width:1100px; margin:0 auto; padding:28px; }
+
+    header { background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8));
+      backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid rgba(0,0,0,0.06);
+      position:sticky; top:0; z-index:10; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; text-align:center; }
+    .brand { display:flex; align-items:center; justify-content:center; gap:16px; text-decoration:none; color:var(--ink);
+      flex:1 1 100%; flex-direction:column; margin-top:8px; }
+    .logo { width:120px; height:120px; object-fit:contain; border-radius:50%;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2); }
+    .title { font-family:'IM Fell English SC',serif; font-size:3.2rem; font-weight:400; letter-spacing:.6px; color:var(--muted); text-transform:uppercase; margin:0; }
+    nav { width:100%; display:flex; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+    nav a { color:var(--muted); text-decoration:none; font-weight:600; margin:0 10px; }
+    nav a:hover { color:var(--accent); }
+
+    .panel {
+      background:linear-gradient(180deg, rgba(10,20,30,0.98), rgba(20,40,60,0.9));
+      color:#E6ECF1; border:1px solid rgba(60,122,160,0.25); border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4), inset 0 0 60px rgba(60,122,160,0.1);
+      padding:32px;
+    }
+    h1,h2 { font-family:'Gloock',serif; font-weight:400; color:#89B4D8; margin-top:0; text-shadow:0 0 8px rgba(60,122,160,0.4); }
+    h1 { text-align:center; }
+
+    .note { color:#C7D6E2; font-size:.95rem; margin-top:6px; }
+
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:12px; }
+    .item { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; }
+    .item figure { margin:0; }
+    .item img { width:100%; height:auto; display:block; }
+    .item figcaption { padding:10px 12px; font-size:.95rem; color:#DCE7EE; border-top:1px solid rgba(255,255,255,0.08); }
+    .back { display:inline-block; margin:16px 0; color:var(--accent); text-decoration:none; border-bottom:1px dashed var(--accent); }
+
+    @media (max-width:900px){ .grid { grid-template-columns:1fr 1fr; } .title { font-size:2.6rem; } }
+    @media (max-width:560px){ .grid { grid-template-columns:1fr; } }
+    footer { margin:40px 0 22px; color:#5a6168; font-size:14px; text-align:center; }
+  </style>
+</head>
+
+<body id="top">
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img class="logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Midnight Abyss logo" />
+        <strong class="title">Midnight Abyss</strong>
+      </a>
+      <nav aria-label="Primary">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/features/' | relative_url }}">Features</a>
+        <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener">Quickstart</a>
+        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+        <a href="{{ '/' | relative_url }}#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="{{ '/' | relative_url }}">← Back to Home</a>
+
+    <div class="panel">
+      <h1>Concept Gallery</h1>
+      <p class="note"><strong>Note:</strong> All artwork shown is conceptual only and will be replaced with commissioned art for release.</p>
+
+      <div class="grid" role="list">
+        <article class="item" role="listitem">
+          <figure>
+            <img src="{{ '/docs/Trench Colony.png' | relative_url }}" alt="Concept art of a trench colony built into a steep abyssal wall" loading="lazy">
+            <figcaption>Trench Colony — habitat clinging to the Hadal drop. <em>Concept Placeholder</em>.</figcaption>
+          </figure>
+        </article>
+
+        <article class="item" role="listitem">
+          <figure>
+            <img src="{{ '/docs/Biolumiescent Shoal.png' | relative_url }}" alt="A dense shoal of bioluminescent organisms drifting in dark water" loading="lazy">
+            <figcaption>Bioluminescent Shoal — light in the crushing dark. <em>Concept Placeholder</em>.</figcaption>
+          </figure>
+        </article>
+
+        <article class="item" role="listitem">
+          <figure>
+            <img src="{{ '/docs/Market Scene.png' | relative_url }}" alt="Bustling market scene in a submerged settlement" loading="lazy">
+            <figcaption>Market Scene — trade when oxygen is currency. <em>Concept Placeholder</em>.</figcaption>
+          </figure>
+        </article>
+
+        <article class="item" role="listitem">
+          <figure>
+            <img src="{{ '/docs/Horizon Dawn.png' | relative_url }}" alt="Submersible landscape with distant floodlights on the seafloor" loading="lazy">
+            <figcaption>Horizon Dawn — lights at the edge of the trench. <em>Concept Placeholder</em>.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Duplicate one or two for layout balance, or add new images as they come in -->
+        <article class="item" role="listitem">
+          <figure>
+            <img src="{{ '/docs/Biolumiescent Shoal.png' | relative_url }}" alt="A dense shoal of bioluminescent organisms drifting in dark water" loading="lazy">
+            <figcaption>Bioluminescent Shoal — ambient mood study. <em>Concept Placeholder</em>.</figcaption>
+          </figure>
+        </article>
+
+        <article class="item" role="listitem">
+          <figure>
+            <img src="{{ '/docs/Trench Colony.png' | relative_url }}" alt="Concept art of a trench colony built into a steep abyssal wall" loading="lazy">
+            <figcaption>Trench Colony — pressure-proofed architecture. <em>Concept Placeholder</em>.</figcaption>
+          </figure>
+        </article>
+      </div>
+
+      <p class="note" style="margin-top:16px;">
+        Want to see these in context? Check the <a href="{{ '/' | relative_url }}" style="color:#9CC6E2;text-decoration:none;border-bottom:1px dashed #9CC6E2;">homepage</a> preview.
+      </p>
+    </div>
+
+    <footer>
+      <div class="divider" role="separator" aria-hidden="true" style="height:1px;background:linear-gradient(90deg,transparent, rgba(0,0,0,0.1), transparent);margin:26px 0"></div>
+      <p>© <span id="year"></span> Midnight Abyss. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
