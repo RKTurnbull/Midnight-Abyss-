@@ -10,7 +10,7 @@ permalink: /features/
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Features • Midnight Abyss</title>
-  <meta name="description" content="Core features and basic mechanics of Midnight Abyss, a deep-sea survival roleplaying game of pressure, oxygen, and choice." />
+  <meta name="description" content="Core features and mechanics of Midnight Abyss, a deep-sea survival roleplaying game of pressure, oxygen, and choice." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -120,39 +120,42 @@ permalink: /features/
       <div class="grid">
         <div class="card">
           <h2>No Attributes</h2>
-          <p class="muted small">There are <strong>no numeric attributes</strong>. Physical, Mental, and Social capabilities are defined through <strong>Traits</strong> instead of raw scores.</p>
+          <p class="muted small">There are <strong>no numeric attributes</strong>. Physical, Mental, and Social capability are defined entirely through <strong>Traits</strong> rather than statistics.</p>
         </div>
 
         <div class="card">
           <h2>Skills & Aptitude</h2>
           <p class="muted small">
-            Each skill determines which die you roll: <span class="mono">d20</span> (Untrained) to <span class="mono">d6</span> (Master).
+            Your <strong>Skill rating sets the die size</strong> you roll when the skill applies:
+            <span class="mono">d20</span> Untrained · <span class="mono">d12</span> Trained · <span class="mono">d10</span> Skilled ·
+            <span class="mono">d8</span> Expert · <span class="mono">d6</span> Master.
           </p>
-          <p class="muted small">
-            <strong>Aptitudes</strong> determine how many of those dice you roll:
-          </p>
+          <p class="muted small"><em>Design note:</em> the jump from <span class="mono">d20</span> to <span class="mono">d12</span> makes basic training a big deal.</p>
+          <p class="muted small"><strong>Aptitudes</strong> determine how many <em>skill dice</em> you roll:</p>
           <ul class="muted small" style="margin:0 0 0 1em;">
-            <li><strong>Primary Aptitude</strong> → Roll <strong>3 Skill Dice</strong> (e.g., 3×<span class="mono">d12</span>).</li>
-            <li><strong>Secondary Aptitude</strong> → Roll <strong>2 Skill Dice</strong>.</li>
-            <li>Otherwise → Roll <strong>1 Skill Die</strong>.</li>
+            <li><strong>Primary Aptitude</strong> → roll <strong>3</strong> of your skill dice (e.g., Trained = <span class="mono">3×d12</span>).</li>
+            <li><strong>Secondary Aptitude</strong> → roll <strong>2</strong> of your skill dice.</li>
+            <li>No aptitude → roll <strong>1</strong> skill die.</li>
           </ul>
         </div>
 
         <div class="card">
           <h2>Traits</h2>
           <p class="muted small">
-            Traits describe key strengths, quirks, and experience. A relevant Trait grants either:
+            Traits describe key strengths across Physical, Mental, and Social spaces. When a Trait is relevant, it grants either:
           </p>
           <ul class="muted small" style="margin:0 0 0 1em;">
-            <li><strong>+1 bonus die</strong> to your pool, or</li>
-            <li><strong>+1 bonus success</strong> in very specific circumstances (as noted on the Trait).</li>
+            <li><strong>+1 bonus die</strong> — always a <span class="mono">d12</span> added to your pool, or</li>
+            <li><strong>+1 bonus success</strong> in very specific, pre-defined circumstances.</li>
           </ul>
+          <p class="muted small"><em>Important:</em> Traits never change your skill die size; they only add a <span class="mono">d12</span> or grant a bonus success.</p>
         </div>
 
         <div class="card">
-          <h2>Gear & Specialisations</h2>
+          <h2>Gear &amp; Specialisations</h2>
           <p class="muted small">
-            Function mechanically like Traits—granting a bonus die or bonus success when relevant—except for <strong>weapons</strong> and <strong>suits/armour</strong>, which use their own rules.
+            Function mechanically like Traits—either a <strong>bonus <span class="mono">d12</span></strong> to the pool when relevant,
+            or a <strong>bonus success</strong> in a narrow case—except for <strong>weapons</strong> and <strong>suits/armour</strong>, which use separate rules.
           </p>
         </div>
 
@@ -171,13 +174,13 @@ permalink: /features/
         <div class="card">
           <h2>Example Roll</h2>
           <p class="muted small">
-            Vega tries to bypass a corroded lock under pressure. They’re <strong>Trained</strong> in Repairs (<span class="mono">d12</span>) with the Trait <em>Station Rat</em> (relevant) and the skill is their <strong>Primary Aptitude</strong>.
+            Vega tries to bypass a corroded lock under pressure. They’re <strong>Trained</strong> in Repairs (<span class="mono">d12</span>),
+            it’s their <strong>Primary Aptitude</strong>, and they have the relevant Trait <em>Station Rat</em>.
           </p>
           <p class="muted small">
-            Pool: <span class="mono">3×d12</span> (skill) + <span class="mono">1×d6</span> (bonus die from Trait). GM asks for <strong>2 successes</strong>.
-          </p>
-          <p class="muted small">
-            Vega rolls → <span class="mono">4, 9, 7, 3</span>. The <span class="mono">4</span> and <span class="mono">3</span> are ≤5 → two successes. Lock opens—but the pressure alarm flickers to life.
+            Pool: <span class="mono">3×d12</span> (skill via Primary Aptitude) + <span class="mono">1×d12</span> (Trait bonus die).
+            GM asks for <strong>2 successes</strong>. Vega rolls → <span class="mono">4, 9, 7, 3</span>.
+            The <span class="mono">4</span> and <span class="mono">3</span> are ≤5 → two successes. The lock yields; the pressure alarm chirps.
           </p>
         </div>
       </div>
