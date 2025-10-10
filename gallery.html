@@ -16,33 +16,21 @@ permalink: /gallery/
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg:#E5E5E5; --card:#F0F0F0; --ink:#1E1F22; --muted:#3A4046;
-      --accent:#3C7AA0; --shadow:0 10px 30px rgba(0,0,0,0.08); --radius:16px;
-    }
-    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif; line-height:1.7; }
+    :root { --bg:#E5E5E5; --card:#F0F0F0; --ink:#1E1F22; --muted:#3A4046; --accent:#3C7AA0; --shadow:0 10px 30px rgba(0,0,0,0.08); --radius:16px; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif; line-height:1.7; }
     .wrap { max-width:1100px; margin:0 auto; padding:28px; }
 
-    header { background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8));
-      backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid rgba(0,0,0,0.06);
-      position:sticky; top:0; z-index:10; }
+    header { background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8)); backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid rgba(0,0,0,0.06); position:sticky; top:0; z-index:10; }
     .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; text-align:center; }
-    .brand { display:flex; align-items:center; justify-content:center; gap:16px; text-decoration:none; color:var(--ink);
-      flex:1 1 100%; flex-direction:column; margin-top:8px; }
-    .logo { width:120px; height:120px; object-fit:contain; border-radius:50%;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2); }
+    .brand { display:flex; align-items:center; justify-content:center; gap:16px; text-decoration:none; color:var(--ink); flex:1 1 100%; flex-direction:column; margin-top:8px; }
+    .logo { width:120px; height:120px; object-fit:contain; border-radius:50%; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2); }
     .title { font-family:'IM Fell English SC',serif; font-size:3.2rem; font-weight:400; letter-spacing:.6px; color:var(--muted); text-transform:uppercase; margin:0; }
     nav { width:100%; display:flex; justify-content:center; flex-wrap:wrap; margin-top:10px; }
     nav a { color:var(--muted); text-decoration:none; font-weight:600; margin:0 10px; }
     nav a:hover { color:var(--accent); }
 
-    .panel {
-      background:linear-gradient(180deg, rgba(10,20,30,0.98), rgba(20,40,60,0.9));
-      color:#E6ECF1; border:1px solid rgba(60,122,160,0.25); border-radius:var(--radius);
-      box-shadow:0 10px 30px rgba(0,0,0,0.4), inset 0 0 60px rgba(60,122,160,0.1);
-      padding:32px;
-    }
+    .panel { background:linear-gradient(180deg, rgba(10,20,30,0.98), rgba(20,40,60,0.9)); color:#E6ECF1; border:1px solid rgba(60,122,160,0.25); border-radius:var(--radius);
+             box-shadow:0 10px 30px rgba(0,0,0,0.4), inset 0 0 60px rgba(60,122,160,0.1); padding:32px; }
     h1,h2 { font-family:'Gloock',serif; font-weight:400; color:#89B4D8; margin-top:0; text-shadow:0 0 8px rgba(60,122,160,0.4); }
     h1 { text-align:center; }
 
@@ -95,12 +83,16 @@ permalink: /gallery/
 
         <article class="item" role="listitem">
           <figure>
+            <!-- Correct spelling first; fall back to historical misspelling -->
             <img
-  src="{{ '/docs/Bioluminescent Shoal.png' | relative_url }}"
-  alt="A dense shoal of bioluminescent organisms drifting in dark water"
-  loading="lazy"
-  onerror="this.onerror=null; this.src='{{ '/docs/Bioluminescent Shoal.png' | relative_url }}';"
-/>
+              src="{{ '/docs/Bioluminescent Shoal.png' | relative_url }}"
+              alt="A dense shoal of bioluminescent organisms drifting in dark water"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='{{ '/docs/Biolumiescent Shoal.png' | relative_url }}';"
+            >
+            <figcaption>Bioluminescent Shoal — light in the crushing dark. <em>Concept Placeholder</em>.</figcaption>
+          </figure>
+        </article>
 
         <article class="item" role="listitem">
           <figure>
