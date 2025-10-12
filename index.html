@@ -1,4 +1,4 @@
---- 
+---
 layout: none
 title: Midnight Abyss – Official Site
 permalink: /
@@ -31,15 +31,7 @@ permalink: /
     .logo{width:168px;height:168px;object-fit:contain;border-radius:50%;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2)}
     .title{font-family:'IM Fell English SC',serif;font-size:4rem;font-weight:400;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin:0}
-    /* Optical baseline correction for IM Fell title */
-.title .lift {
-  /* Subtle height compensation for the short 'M' in IM Fell English SC */
-.title::first-letter {
-  display: inline-block;
-  transform: scaleY(1.06) translateY(-0.02em);
-  transform-origin: bottom;
-}
-nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10px}
+    nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10px}
     nav a{color:var(--muted);text-decoration:none;font-weight:600;margin:0 10px}
     nav a:hover{color:var(--accent)}
     .hero{position:relative;margin-top:18px;border-radius:var(--radius);overflow:hidden;
@@ -81,7 +73,7 @@ nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10p
       <a class="brand" href="#top">
         <!-- LOGO with smart fallback -->
         <img id="site-logo" class="logo" src="" alt="Midnight Abyss logo" />
-        <strong class="title"><span class="lift">Mi</span>dnight Abyss</strong>
+        <strong class="title">Midnight Abyss</strong>
       </a>
       <nav aria-label="Primary">
         <a href="#top">Home</a>
@@ -111,19 +103,15 @@ nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10p
             <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">direct Quickstart link</a>.
           </p>
           <p style="margin-top:12px;font-size:14px;color:#5a6168">Accessible layout: mid-grey background with dark text.</p>
-          <!-- Added creator/playtest note -->
-          <p style="margin-top:8px;font-size:14px;color:#5a6168;">
-            Created by Richard Turnbull, <em>Midnight Abyss</em> is currently in closed playtest. Dive logs and updates coming soon.
-          </p>
         </div>
 
         <div class="panel" style="padding:16px">
           <figure class="thumb">
             <!-- Use the actual (misspelled) filename as primary; fall back to the corrected spelling -->
             <img
-              src="{{ '/docs/Shoal.png' | relative_url }}"
+              src="{{ '/docs/Biolumiescent Shoal.png' | relative_url }}"
               alt="Bioluminescent shoal concept"
-              onerror="this.onerror=null; this.src='{{ '/docs/Shoal.png' | relative_url }}';"
+              onerror="this.onerror=null; this.src='{{ '/docs/Bioluminescent Shoal.png' | relative_url }}';"
             >
             <figcaption>Concept Placeholder</figcaption>
           </figure>
