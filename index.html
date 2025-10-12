@@ -14,265 +14,262 @@ permalink: /
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --bg:#E5E5E5;
-      --card:#F0F0F0;
-      --ink:#1E1F22;
-      --muted:#3A4046;
-      --accent:#3C7AA0;
-      --grid:rgba(60,122,160,0.06);
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --radius:16px;
+    :root{
+      --bg:#E5E5E5; --card:#F0F0F0; --ink:#1E1F22; --muted:#3A4046;
+      --accent:#3C7AA0; --grid:rgba(60,122,160,0.06);
+      --shadow:0 10px 30px rgba(0,0,0,0.08); --radius:16px;
     }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8));
+      backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(0,0,0,0.06);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;text-align:center}
+    .brand{display:flex;align-items:center;justify-content:center;gap:16px;text-decoration:none;color:var(--ink);
+      flex:1 1 100%;flex-direction:column;margin-top:8px}
+    .logo{width:168px;height:168px;object-fit:contain;border-radius:50%;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2)}
+
+    /* Your existing IM Fell title with lift fix — kept as-is */
+    .title{font-family:'IM Fell English SC',serif;font-size:4rem;font-weight:400;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin:0}
+    .title .lift{display:inline-block;transform:translateY(-1px)}
+    .title .lift:first-letter{display:inline-block;transform:scaleY(1.010) translateY(-1px);transform-origin:bottom}
+
+    nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;margin:0 10px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{position:relative;margin-top:18px;border-radius:var(--radius);overflow:hidden;
+      background:radial-gradient(1000px 400px at 20% 0%, rgba(60,122,160,0.25), transparent 70%),
+                 radial-gradient(900px 300px at 100% 110%, rgba(156,106,88,0.18), transparent 70%), var(--card);
+      border:1px solid rgba(0,0,0,0.06);box-shadow:var(--shadow)}
+    .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;padding:42px}
+    .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--accent);background:rgba(60,122,160,0.09);padding:6px 10px;border-radius:999px;border:1px solid rgba(60,122,160,0.25)}
+    h1{font-family:Gloock,serif;font-weight:400;line-height:1.15;margin:.4rem 0 1rem;color:var(--muted)}
+    .lead{font-size:1.1rem;color:#2a2f35}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;font-weight:800;letter-spacing:.02em;
+      background:var(--accent);color:white;box-shadow:0 6px 16px rgba(60,122,160,0.35);cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+
+    .panel{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .grid{display:grid;gap:22px}
+    .grid.features{grid-template-columns:repeat(3,1fr)}
+    .feature{padding:18px}
+    .feature h3{margin:.2rem 0 .4rem;color:var(--muted)}
+    .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,0.04);padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);font-size:12px}
+    .divider{height:1px;background:linear-gradient(90deg,transparent, rgba(0,0,0,0.1), transparent);margin:26px 0}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    figure.thumb{border-radius:12px;background:#ccc;position:relative;overflow:hidden;margin:0}
+    figure.thumb img{width:100%;height:auto;display:block}
+    figure.thumb figcaption{position:absolute;bottom:8px;right:10px;font-size:11px;color:#fff;background:rgba(0,0,0,0.45);padding:4px 8px;border-radius:999px}
+    footer{margin:40px 0 22px;color:#5a6168;font-size:14px;text-align:center}
+
+    .hero::before{content:"";position:absolute;inset:0;
+      background-image:linear-gradient(transparent 31px, var(--grid) 32px), linear-gradient(90deg, transparent 31px, var(--grid) 32px);
+      background-size:32px 32px;pointer-events:none}
+
+    @media (max-width:900px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid.features{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
     }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: linear-gradient(180deg, rgba(229,229,229,0.95), rgba(229,229,229,0.85));
-      backdrop-filter: saturate(140%) blur(6px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      z-index: 10;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      text-decoration: none;
-      color: var(--ink);
-      flex: 1 1 100%;
-      flex-direction: column;
-      margin-top: 8px;
-    }
-
-    .logo {
-      width: 168px;
-      height: 168px;
-      object-fit: contain;
-      border-radius: 50%;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2);
-      background: #fff;
-    }
-
-    /* Title and tagline */
-    .title {
-      font-family: 'IM Fell English SC', serif;
-      font-size: 3.8rem;
-      font-weight: 400;
-      letter-spacing: .4px;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin: 0;
-      line-height: 1;
-    }
-
-    /* Optical correction – balanced M */
-    .title .cap {
-      display: inline-block;
-      transform: scale(1.05) translateY(-0.02em);
-      transform-origin: bottom;
-    }
-
-    @media (min-width: 720px) {
-      .title { font-size: 4.2rem; }
-    }
-
-    .tagline {
-      margin: 8px 0 0 0;
-      color: var(--ink);
-      font-weight: 600;
-      letter-spacing: .2px;
-    }
-
-    /* Hero card */
-    .hero {
-      margin: 28px auto 0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55)),
-        radial-gradient(1200px 500px at 50% -200px, var(--grid), transparent);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .hero h2 {
-      margin: 0 0 8px 0;
-      font-family: 'Gloock', serif;
-      font-weight: 400;
-      letter-spacing: .2px;
-      color: var(--ink);
-    }
-
-    .hero p {
-      margin: 0 0 16px 0;
-      color: var(--muted);
-    }
-
-    /* Buttons */
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      appearance: none;
-      border: 1px solid rgba(0,0,0,0.08);
-      background: #fff;
-      color: var(--ink);
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      background: #fafafa;
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: transparent;
-    }
-
-    .btn.primary:hover {
-      filter: brightness(1.05);
-    }
-
-    /* Cards grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      margin-top: 28px;
-    }
-
-    .card {
-      grid-column: span 12;
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .card h3 {
-      margin: 0 0 6px 0;
-      font-family: 'Gloock', serif;
-      font-weight: 400;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    @media (min-width: 720px) {
-      .brand { flex-direction: row; flex: 0 0 auto; text-align: left; }
-      .hero { padding: 32px; }
-      .card--half { grid-column: span 6; }
-      .card--third { grid-column: span 4; }
-    }
-
-    footer {
-      margin: 36px 0 24px;
-      color: var(--muted);
-      font-size: .95rem;
-      text-align: center;
-    }
-
   </style>
 </head>
 
-<body>
+<body id="top">
   <header>
     <div class="wrap nav">
-      <a class="brand" href="/" aria-label="Midnight Abyss Home">
-        <img class="logo" src="/assets/logo.png" alt="Midnight Abyss logo" />
-        <div>
-          <h1 class="title"><span class="cap">M</span>IDNIGHT ABYSS</h1>
-          <div class="tagline">A deep-sea survival RPG of oxygen, pressure, and discovery.</div>
-        </div>
+      <a class="brand" href="#top">
+        <!-- LOGO with smart fallback -->
+        <img id="site-logo" class="logo" src="" alt="Midnight Abyss logo" />
+        <strong class="title"><span class="lift">Mi</span>dnight Abyss</strong>
       </a>
+      <nav aria-label="Primary">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="{{ '/features/' | relative_url }}">Features</a>
+        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+        <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener">Quickstart</a>
+        <a href="#pressure-line">Fiction</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="hero" aria-labelledby="get-started">
-      <h2 id="get-started">Get Started</h2>
-      <p>Read the quickstart, create a crew, and take your first descent. The ocean is indifferent—prepare accordingly.</p>
-      <div class="actions">
-        <a class="btn primary" href="/quickstart/">Read the Quickstart</a>
-        <a class="btn" href="/gallery/">View the Gallery</a>
-        <a class="btn" href="/downloads/">Downloads</a>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="badge">Deep-sea Survival RPG</span>
+          <h1>Pressure. Oxygen. Choice.</h1>
+          <p class="lead">A tabletop roleplaying game of claustrophobic dives and hard decisions. Run salvage contracts, map forbidden trenches, and bargain with factions in an O₂-based economy.</p>
+          <div class="cta">
+            <a class="btn" href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Open Quickstart (PDF)</a>
+            <a class="btn secondary" href="#about">Learn More</a>
+          </div>
+          <p style="margin:.5rem 0 0;font-size:14px;color:#5a6168">
+            If the button doesn’t work on your device, try the
+            <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">direct Quickstart link</a>.
+          </p>
+          <p style="margin-top:12px;font-size:14px;color:#5a6168">Accessible layout: mid-grey background with dark text.</p>
+          <!-- Closed playtest note (kept) -->
+          <p style="margin-top:8px;font-size:14px;color:#5a6168;">
+            Created by Richard Turnbull, <em>Midnight Abyss</em> is currently in closed playtest. Dive logs and updates coming soon.
+          </p>
+        </div>
+
+        <div class="panel" style="padding:16px">
+          <figure class="thumb">
+            <img
+              src="{{ '/docs/Shoal.png' | relative_url }}"
+              alt="Bioluminescent shoal concept"
+              onerror="this.onerror=null; this.src='{{ '/docs/shoal.png' | relative_url }}';"
+            >
+            <figcaption>Concept Placeholder</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <section class="grid" aria-label="Highlights">
-      <article class="card card--half">
-        <h3>Rules at a Glance</h3>
-        <p>Lean, hazardous, and fiction-first. Oxygen is currency; pressure is the clock.</p>
-      </article>
-      <article class="card card--half">
-        <h3>Setting Primer</h3>
-        <p>Stations, trenches, and the salvage economy—how people live where sunlight doesn’t.</p>
-      </article>
-      <article class="card card--third">
-        <h3>Character Creation</h3>
-        <p>Concept, Role, and hard choices. Who keeps the boat alive?</p>
-      </article>
-      <article class="card card--third">
-        <h3>For Directors</h3>
-        <p>Make the ocean speak: creaks, fogging masks, and the slow drift of cold water.</p>
-      </article>
-      <article class="card card--third">
-        <h3>Community</h3>
-        <p>Share play reports, house rules, and tools with other crews.</p>
-      </article>
+    <!-- Small preview gallery (homepage) -->
+    <section id="gallery" style="margin-top:26px">
+      <h2 style="font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 12px">Concept Gallery</h2>
+      <p style="margin-top:0;color:#5a6168"><strong>All artwork shown is conceptual only and will be completely replaced with commissioned custom art for the final release.</strong></p>
+      <div class="gallery">
+        <figure class="thumb">
+          <img src="{{ '/docs/Trench Colony.png' | relative_url }}" alt="Trench colony concept">
+          <figcaption>Concept Placeholder</figcaption>
+        </figure>
+        <figure class="thumb">
+          <img src="{{ '/docs/Market Scene.png' | relative_url }}" alt="Market scene concept">
+          <figcaption>Concept Placeholder</figcaption>
+        </figure>
+      </div>
+      <p style="text-align:center;margin-top:10px;">
+        <a href="{{ '/gallery/' | relative_url }}" style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)">
+          View Full Gallery →
+        </a>
+      </p>
     </section>
+
+    <!-- Fiction: Pressure Line -->
+    <section id="pressure-line" style="margin-top:36px;">
+      <div class="panel" style="
+        position:relative;
+        padding:40px 36px 32px;
+        background:linear-gradient(180deg, rgba(6,12,20,0.98), rgba(14,28,40,0.9));
+        color:#E6ECF1;
+        border:1px solid rgba(60,122,160,0.35);
+        box-shadow:0 10px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(60,122,160,0.15);
+        border-radius:16px;
+        font-family:Inter,system-ui,sans-serif;
+        line-height:1.75;
+        overflow:hidden;
+      ">
+        <div style="position:absolute;top:0;left:0;right:0;height:6px;
+          background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
+          filter:blur(2px);animation:pulseGlow 5s infinite alternate;"></div>
+
+        <div style="
+          text-align:center;margin-bottom:30px;
+          font-family:'Gloock',serif;letter-spacing:0.1em;color:#89B4D8;
+          text-shadow:0 0 12px rgba(60,122,160,0.8),0 0 24px rgba(60,122,160,0.4);
+        ">
+          <h2 style="margin:0;font-weight:400;font-size:1.6rem;">PRESSURE LOG ENTRY — 08-A</h2>
+          <p style="margin:6px 0 0;font-family:'IM Fell English SC',serif;
+            font-size:2.3rem;color:#C7D6E2;letter-spacing:0.04em;">“Pressure Line”</p>
+        </div>
+
+        <p><em>The sub <strong>Mercy Jane</strong> drifted through the blue-black murk like a bead of dust caught in oil.</em> Her floodlights cut narrow tunnels through suspended silt, illuminating fragments of old steel hull plating and ghostly tendrils of seaweed clinging to the wreck below.</p>
+        <p>Captain Edda Raines leaned over the console, eyes flicking between sonar pings. “Hold her steady. That’s our target—cargo bay three.”</p>
+        <p>“Copy,” said Vega, the diver tech, his gloved hands already on the drone controls. “Hull breach about ten meters wide. Structural scan’s iffy. Might be pressure fatigue.”</p>
+        <p>They were three days out from the nearest relay buoy, running lean on oxygen and even leaner on patience. The job was a mid-tier contract: recover a sealed crate from the <em>Harlow’s Dream</em>, a drowned luxury cruiser from before the Drowning. No one said what was in the crate, just that it was sealed and stamped with a corporate sigil no one recognized anymore.</p>
+        <p>Edda watched Vega’s drone snake into the breach. The feed flickered, static crawling across the image, then stabilized to show a long corridor sagging under pressure. Chairs, porcelain cups, and a child’s toy drifted lazily past.</p>
+        <p>“Getting something,” Vega murmured. “Crate matches the manifest. Still sealed.”</p>
+        <p>“Latch it,” Edda said.</p>
+        <p>The drone’s manipulator arms extended, clamping to the crate’s corners. Then the signal jittered—camera freezing for half a second. When it returned, the image had changed. The corridor was darker, narrower. Something—someone—moved just out of frame, drifting backward into the shadows.</p>
+        <p>Edda frowned. “Playback that last—”</p>
+        <p>The feed went black.</p>
+        <p>“Drone’s dead,” Vega said. “Full disconnect. That’s not a signal loss—something fried the link.”</p>
+        <p>Raines turned to the others. “We go in.”</p>
+        <p>Inside the wreck, light behaved like something alive—bending, twisting, caught on invisible currents. The team’s lamps illuminated flaking paint and rotted fixtures, bubbles spiraling upward from cracks in their suits.</p>
+        <p>They found the crate in a tilted ballroom, half-buried in silt and broken glass. The floor groaned with every step.</p>
+        <p>Vega knelt by it, brushing sediment away. “Looks intact. But the markings… these aren’t Union seals.”</p>
+        <p>Edda’s wrist display blinked—depth telemetry spiking. The pressure around them shifted, like the ocean itself inhaled.</p>
+        <p>Then, from the corridor they’d entered, came a low vibration. A hum.</p>
+        <p>The lights flickered.</p>
+        <p>Something floated into view—a shape like a person, but boneless, limbs trailing like ribbons. Its face was a blur of light, refracting their beams back at them.</p>
+        <p>Edda’s breath caught. “Fall back—”</p>
+        <p>The shape rippled, and the sound hit them—not a roar, but a resonance deep enough to shake their bones.</p>
+        <p>Their comms flooded with static. The crate behind them began to vibrate, faintly glowing where the seals had cracked with age.</p>
+        <p>“Vega, move!”</p>
+        <p>He grabbed the crate’s handle and kicked off toward the exit. The shape followed, slow and deliberate.</p>
+        <p>Back aboard the <em>Mercy Jane</em>, they sealed the hatch and flooded the chamber dry. The crate sat between them, dull and wet.</p>
+        <p>Edda looked at the condensation forming along its edges. It pulsed faintly, like a heartbeat.</p>
+        <p>“Don’t open it,” Vega said quietly.</p>
+        <p>Edda nodded—but she didn’t look away.</p>
+        <p>Outside, the sonar pinged once. Then again. Then again, closer.</p>
+        <p><strong>Whatever was in that wreck wasn’t staying there.</strong></p>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;height:6px;
+          background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
+          filter:blur(2px);animation:pulseGlow 5s infinite alternate-reverse;"></div>
+      </div>
+
+      <style>
+        @keyframes pulseGlow {
+          0% {opacity:0.2;transform:scaleX(1);}
+          100% {opacity:0.8;transform:scaleX(1.1);}
+        }
+      </style>
+    </section>
+
+    <section id="about" class="two" style="margin-top:26px">
+      <div class="panel" style="padding:22px">
+        <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">What is Midnight Abyss?</h2>
+        <p><em>Midnight Abyss</em> is a rules-light survival roleplaying game set in the crushing dark of the deep ocean.</p>
+        <p>Crews dive for freedom, answers, and the promise of more than just another breath. Down here, O₂ isn’t only what keeps you alive — it’s what buys you time, choices, and debts. Pressure grinds, hulls groan, and every dive is a wager against the deep and those who claim to own it.</p>
+      </div>
+
+      <div class="panel" id="contact" style="padding:22px">
+        <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">Contact</h2>
+        <p>Questions or press enquiries? Email
+          <a href="mailto:midnightabyssttrpg@gmail.com" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">midnightabyssttrpg@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="divider" role="separator" aria-hidden="true"></div>
+      <div class="two">
+        <p>© <span id="year"></span> Midnight Abyss. All rights reserved.</p>
+        <p style="text-align:right">Theme: mid-tone accessibility</p>
+      </div>
+    </footer>
   </main>
 
-  <footer>
-    © <span id="year"></span> Midnight Abyss. All rights reserved.
-  </footer>
-
+  <!-- Logo + year -->
   <script>
-    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Try assets/logo.png, then /logo.png, then /docs/logo.png
+    const logoPaths = [
+      "{{ '/assets/logo.png' | relative_url }}",
+      "{{ '/logo.png' | relative_url }}",
+      "{{ '/docs/logo.png' | relative_url }}"
+    ];
+    (function loadLogo(i=0){
+      if(i >= logoPaths.length) return;
+      const img = document.getElementById('site-logo');
+      img.onerror = () => loadLogo(i+1);
+      img.src = logoPaths[i];
+    })();
   </script>
 </body>
 </html>
