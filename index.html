@@ -34,12 +34,10 @@ permalink: /
     /* Optical baseline correction for IM Fell title */
 .title .lift {
   /* Subtle height compensation for the short 'M' in IM Fell English SC */
-.title .lift:first-letter {
-  display:inline-block;
-  transform:scaleY(1.15) translateY(-1px);
-  transform-origin:bottom;}
-display:inline-block;
-  transform:translateY(-1px);
+.title::first-letter {
+  display: inline-block;
+  transform: scaleY(1.06) translateY(-0.02em);
+  transform-origin: bottom;
 }
 nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10px}
     nav a{color:var(--muted);text-decoration:none;font-weight:600;margin:0 10px}
