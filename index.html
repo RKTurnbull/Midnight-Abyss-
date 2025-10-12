@@ -33,7 +33,13 @@ permalink: /
     .title{font-family:'IM Fell English SC',serif;font-size:4rem;font-weight:400;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin:0}
     /* Optical baseline correction for IM Fell title */
 .title .lift {
+  /* Subtle height compensation for the short 'M' in IM Fell English SC */
+.title .lift:first-letter {
   display:inline-block;
+  transform:scaleY(1.05) translateY(-1px);
+  transform-origin:bottom;
+}
+display:inline-block;
   transform:translateY(-1px);
 }
 nav{width:100%;display:flex;justify-content:center;flex-wrap:wrap;margin-top:10px}
