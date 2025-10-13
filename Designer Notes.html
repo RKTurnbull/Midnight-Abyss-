@@ -1,0 +1,82 @@
+---
+layout: none
+title: Designer Notes – Midnight Abyss
+permalink: /designer-notes/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="Designer notes and behind-the-scenes reasoning for Midnight Abyss." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#E5E5E5; --card:#F7F7F7; --ink:#1E1F22; --muted:#4A4F55; --accent:#3C7AA0;
+      --shadow:0 6px 24px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.06);
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    .wrap{max-width:900px;margin:0 auto;padding:clamp(16px,4vw,40px);}
+    header{margin-bottom:24px;}
+    header h1{font-family:"Gloock",serif;font-size:clamp(30px,4vw,42px);margin:0;}
+    header .sub{font-family:"IM Fell English SC",serif;color:var(--muted);font-size:clamp(14px,1.8vw,16px);}
+    .intro{background:var(--card);border-radius:16px;padding:24px;box-shadow:var(--shadow);margin-bottom:32px;}
+    .intro p{margin:0;color:var(--muted);}
+    main article{background:var(--card);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:28px;}
+    main h2{font-family:"Gloock",serif;font-size:clamp(24px,3vw,32px);margin-top:0;}
+    p{line-height:1.7;margin:0 0 14px;}
+    .note{font-size:.95rem;color:var(--muted);}
+    nav{margin-bottom:28px;}
+    nav a{margin-right:12px;text-decoration:none;color:var(--accent);font-weight:600;}
+    nav a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Midnight Abyss</h1>
+      <div class="sub">Designer Notes</div>
+    </header>
+
+    <section class="intro">
+      <p>Occasional reflections on why certain decisions were made during the development of <em>Midnight Abyss</em> — from setting logic to design philosophy. These are meant as candid insights rather than formal rules.</p>
+    </section>
+
+    <nav aria-label="Jump links">
+      <a href="#why-dive-dogs">Why Dive Dogs</a>
+      <!-- Add more links here as you expand -->
+    </nav>
+
+    <main>
+      <article id="why-dive-dogs">
+        <h2>Why Dive Dogs</h2>
+
+        <p>The reasons are twofold.</p>
+
+        <p>Firstly — as a lifelong pet owner — I can’t imagine most people leaving behind a creature they see as family. Especially in America, where dogs hold such a strong place in people’s hearts, I doubt many would relocate to an undersea habitat without doing everything possible to bring their companions along. A friend of mine over there dotes on his boy — a gorgeous dog, endlessly spoiled — and I’m fairly sure that if his family had to move beneath the waves, he’d raise merry hell until the pooch was cleared to come too.</p>
+
+        <p>Secondly, it was also a shameless attempt to win over another friend of mine, who insists on having a canine companion in every game he plays. If adding dive dogs might convince him to dive into this one (pun only slightly intended), then it seemed a sound design choice.</p>
+
+        <p>Of course, in the world of <em>Midnight Abyss</em>, dogs can’t just be mascots. Oxygen and space are life; everything and everyone has to earn their keep. So, these dogs have jobs — search-and-rescue partners, therapy animals for med crews handling trauma, or recovery specialists assisting in partially flooded sections of a vessel, where their heightened senses and training can help locate trapped survivors or valuable equipment.</p>
+
+        <p>To make them plausible, I imagined a level of selective breeding and adaptation. They’d need to handle pressure changes, shed less (to avoid fouling air filters or triggering allergies), and meet certain size and temperament requirements. Working dogs would almost certainly be small — something closer to a beagle than a shepherd — compact, trainable, and able to thrive in the tight, oxygen-limited habitats of the deep.</p>
+
+        <p class="note"><strong>Realism note:</strong> scent work only applies in air-filled or partially flooded compartments. In fully submerged operations, dive dogs rely on handler cues, tactile commands, and environmental awareness rather than smell.</p>
+      </article>
+
+      <!-- Example placeholder for future entries -->
+      <!--
+      <article id="pressure-and-oxygen">
+        <h2>Pressure & Oxygen</h2>
+        <p>Coming soon.</p>
+      </article>
+      -->
+    </main>
+  </div>
+</body>
+</html>
