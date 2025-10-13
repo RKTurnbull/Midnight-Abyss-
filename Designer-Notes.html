@@ -21,36 +21,35 @@ permalink: /designer-notes/
     }
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    header{background:var(--card);border-bottom:1px solid #ddd;padding:16px 5vw;box-shadow:var(--shadow);}
+    .nav{display:flex;gap:1.2rem;flex-wrap:wrap;font-weight:600;}
+    .nav a{text-decoration:none;color:var(--ink);}
+    .nav a:hover{color:var(--accent);}
     .wrap{max-width:900px;margin:0 auto;padding:clamp(16px,4vw,40px);}
-    header{margin-bottom:24px;}
-    header h1{font-family:"Gloock",serif;font-size:clamp(30px,4vw,42px);margin:0;}
-    header .sub{font-family:"IM Fell English SC",serif;color:var(--muted);font-size:clamp(14px,1.8vw,16px);}
     .intro{background:var(--card);border-radius:16px;padding:24px;box-shadow:var(--shadow);margin-bottom:32px;}
     .intro p{margin:0;color:var(--muted);}
     main article{background:var(--card);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:28px;}
     main h2{font-family:"Gloock",serif;font-size:clamp(24px,3vw,32px);margin-top:0;}
     p{line-height:1.7;margin:0 0 14px;}
     .note{font-size:.95rem;color:var(--muted);}
-    nav{margin-bottom:28px;}
-    nav a{margin-right:12px;text-decoration:none;color:var(--accent);font-weight:600;}
-    nav a:hover{text-decoration:underline;}
+    footer{padding:16px 5vw;text-align:center;font-size:.9rem;color:var(--muted);}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Midnight Abyss</h1>
-      <div class="sub">Designer Notes</div>
-    </header>
+  <header>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/features/">Features</a>
+      <a href="/designer-notes/">Designer Notes</a>
+    </nav>
+  </header>
 
+  <div class="wrap">
     <section class="intro">
+      <h1 style="font-family:'Gloock',serif;">Designer Notes</h1>
       <p>Occasional reflections on why certain decisions were made during the development of <em>Midnight Abyss</em> — from setting logic to design philosophy. These are meant as candid insights rather than formal rules.</p>
     </section>
-
-    <nav aria-label="Jump links">
-      <a href="#why-dive-dogs">Why Dive Dogs</a>
-      <!-- Add more links here as you expand -->
-    </nav>
 
     <main>
       <article id="why-dive-dogs">
@@ -69,14 +68,18 @@ permalink: /designer-notes/
         <p class="note"><strong>Realism note:</strong> scent work only applies in air-filled or partially flooded compartments. In fully submerged operations, dive dogs rely on handler cues, tactile commands, and environmental awareness rather than smell.</p>
       </article>
 
-      <!-- Example placeholder for future entries -->
+      <!-- Placeholder for future entries -->
       <!--
-      <article id="pressure-and-oxygen">
+      <article id="pressure-oxygen">
         <h2>Pressure & Oxygen</h2>
         <p>Coming soon.</p>
       </article>
       -->
     </main>
   </div>
+
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} Midnight Abyss — <a href="/designer-notes/">Designer Notes</a></p>
+  </footer>
 </body>
 </html>
