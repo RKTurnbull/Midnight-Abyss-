@@ -32,7 +32,6 @@ permalink: /
     .logo{width:168px;height:168px;object-fit:contain;border-radius:50%;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2)}
 
-    /* Title (kept exactly as you had it) */
     .title{font-family:'IM Fell English SC',serif;font-size:4rem;font-weight:400;letter-spacing:.6px;color:var(--muted);text-transform:uppercase;margin:0}
     .title .lift{display:inline-block;transform:translateY(-1px)}
     .title .lift:first-letter{display:inline-block;transform:scaleY(1.010) translateY(-1px);transform-origin:bottom}
@@ -58,6 +57,15 @@ permalink: /
     .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;font-weight:800;letter-spacing:.02em;
       background:var(--accent);color:white;box-shadow:0 6px 16px rgba(60,122,160,0.35);cursor:pointer}
     .btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+
+    /* Discord button style */
+    .btn.discord{
+      background:#5865F2;
+      color:#fff;
+      border:none;
+      box-shadow:0 6px 16px rgba(88,101,242,0.35);
+    }
+    .btn.discord:hover{ filter:brightness(1.08); transform:translateY(-1px); }
 
     .panel{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:var(--radius);box-shadow:var(--shadow)}
     .grid{display:grid;gap:22px}
@@ -86,12 +94,10 @@ permalink: /
   <header>
     <div class="wrap nav">
       <a class="brand" href="#top">
-        <!-- LOGO with smart fallback -->
         <img id="site-logo" class="logo" src="" alt="Midnight Abyss logo" />
         <strong class="title"><span class="lift">Mi</span>dnight Abyss</strong>
       </a>
 
-      <!-- Main navigation -->
       <nav aria-label="Primary">
         <a href="#top">Home</a>
         <a href="#about">About</a>
@@ -100,13 +106,14 @@ permalink: /
         <a href="{{ '/designer-notes/' | relative_url }}">Designer Notes</a>
         <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener">Quickstart</a>
         <a href="#pressure-line">Fiction</a>
+        <a href="https://discord.gg/5WUCjAn2zg" target="_blank" rel="noopener">Discord</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <!-- HERO (two-column) -->
+    <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-inner">
         <div>
@@ -126,168 +133,61 @@ permalink: /
             Created by Richard Turnbull, <em>Midnight Abyss</em> is currently in closed playtest.
             Dive logs and updates coming soon.
           </p>
-          <!-- COMMUNITY / DISCORD -->
-<section id="community" class="panel" style="padding:22px;margin-top:28px">
-  <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">
-    Join the Community
-  </h2>
-  <p class="lead" style="margin-top:6px">
-    Playtest sign-ups, session coordination, dev updates, and chatter all happen on Discord.
-  </p>
-  <div class="cta" style="margin-top:14px">
-    <a class="btn discord" href="https://discord.gg/5WUCjAn2zg" target="_blank" rel="noopener">
-      Join our Discord
-    </a>
-  </div>
-  <p style="margin-top:10px;font-size:14px;color:#5a6168">
-    Invite link never expires. Safe, moderated space.
-  </p>
-</section>
           <p style="margin-top:6px;font-size:14px;color:#5a6168;">
             For insight into design choices and upcoming changes, visit the
-            <a href="{{ '/designer-notes/' | relative_url }}"
-               style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
-               Designer Notes
-            </a>
+            <a href="{{ '/designer-notes/' | relative_url }}" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">Designer Notes</a>
             page.
           </p>
         </div>
 
-        <!-- Right column art -->
         <div class="panel" style="padding:16px">
           <figure class="thumb">
-            <img
-              src="{{ '/docs/Shoal.png' | relative_url }}"
-              alt="Bioluminescent shoal concept"
-              onerror="this.onerror=null; this.src='{{ '/docs/shoal.png' | relative_url }}';"
-            >
+            <img src="{{ '/docs/Shoal.png' | relative_url }}" alt="Bioluminescent shoal concept"
+              onerror="this.onerror=null; this.src='{{ '/docs/shoal.png' | relative_url }}';">
             <figcaption>Concept Placeholder</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- FULL-WIDTH DESIGNER NOTES INTRO (separate from hero grid) -->
-    <section id="designer-notes" class="panel" style="padding:22px;margin-top:28px">
-      <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">
-        Designer Notes
-      </h2>
-
-      <p><em>Designer Notes</em> is a space for me to share the thoughts and reasoning
-      behind the design of <em>Midnight Abyss</em> — why certain mechanics exist,
-      what they’re meant to evoke, and how the game’s tone and themes shaped
-      its structure.</p>
-
-      <p>Some entries expand on choices made during development; others explore
-      ideas that didn’t make it into the core text but still help illuminate the world
-      or play experience. Think of this page as a look behind the bulkhead — part
-      commentary, part journal.</p>
-
-      <p>If you have a question or would like clarification on any aspect of the game,
-      please
-        <a href="mailto:midnightabyssttrpg@gmail.com"
-           style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
-           email me
-        </a>.
-      I’m always glad to hear from players and Directors; where a question might
-      help others, I’ll add the answer here.</p>
-
-      <p style="margin-top:8px;font-size:14px;color:#5a6168">
-        Updated as development continues and new dives bring new discoveries.
+    <!-- COMMUNITY / DISCORD -->
+    <section id="community" class="panel" style="padding:22px;margin-top:28px">
+      <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">Join the Community</h2>
+      <p class="lead" style="margin-top:6px">
+        Playtest sign-ups, session coordination, dev updates, and chatter all happen on Discord.
+      </p>
+      <div class="cta" style="margin-top:14px">
+        <a class="btn discord" href="https://discord.gg/5WUCjAn2zg" target="_blank" rel="noopener">
+          Join our Discord
+        </a>
+      </div>
+      <p style="margin-top:10px;font-size:14px;color:#5a6168">
+        Invite link never expires. Safe, moderated space.
       </p>
     </section>
 
-    <!-- Small preview gallery (homepage) -->
+    <!-- DESIGNER NOTES -->
+    <section id="designer-notes" class="panel" style="padding:22px;margin-top:28px">
+      <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">Designer Notes</h2>
+      <p><em>Designer Notes</em> is a space for me to share the thoughts and reasoning behind the design of <em>Midnight Abyss</em> — why certain mechanics exist, what they’re meant to evoke, and how the game’s tone and themes shaped its structure.</p>
+      <p>Some entries expand on choices made during development; others explore ideas that didn’t make it into the core text but still help illuminate the world or play experience. Think of this page as a look behind the bulkhead — part commentary, part journal.</p>
+      <p>If you have a question or would like clarification on any aspect of the game, please
+        <a href="mailto:midnightabyssttrpg@gmail.com" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">email me</a>.
+      </p>
+      <p style="margin-top:8px;font-size:14px;color:#5a6168">Updated as development continues and new dives bring new discoveries.</p>
+    </section>
+
+    <!-- GALLERY -->
     <section id="gallery" style="margin-top:26px">
       <h2 style="font-family:Gloock,serif;font-weight:400;color:var(--muted);margin:0 0 12px">Concept Gallery</h2>
       <p style="margin-top:0;color:#5a6168"><strong>All artwork shown is conceptual only and will be completely replaced with commissioned custom art for the final release.</strong></p>
       <div class="gallery">
-        <figure class="thumb">
-          <img src="{{ '/docs/Trench Colony.png' | relative_url }}" alt="Trench colony concept">
-          <figcaption>Concept Placeholder</figcaption>
-        </figure>
-        <figure class="thumb">
-          <img src="{{ '/docs/Market Scene.png' | relative_url }}" alt="Market scene concept">
-          <figcaption>Concept Placeholder</figcaption>
-        </figure>
+        <figure class="thumb"><img src="{{ '/docs/Trench Colony.png' | relative_url }}" alt="Trench colony concept"><figcaption>Concept Placeholder</figcaption></figure>
+        <figure class="thumb"><img src="{{ '/docs/Market Scene.png' | relative_url }}" alt="Market scene concept"><figcaption>Concept Placeholder</figcaption></figure>
       </div>
       <p style="text-align:center;margin-top:10px;">
-        <a href="{{ '/gallery/' | relative_url }}" style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)">
-          View Full Gallery →
-        </a>
+        <a href="{{ '/gallery/' | relative_url }}" style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)">View Full Gallery →</a>
       </p>
-    </section>
-
-    <!-- Fiction: Pressure Line -->
-    <section id="pressure-line" style="margin-top:36px;">
-      <div class="panel" style="
-        position:relative;
-        padding:40px 36px 32px;
-        background:linear-gradient(180deg, rgba(6,12,20,0.98), rgba(14,28,40,0.9));
-        color:#E6ECF1;
-        border:1px solid rgba(60,122,160,0.35);
-        box-shadow:0 10px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(60,122,160,0.15);
-        border-radius:16px;
-        font-family:Inter,system-ui,sans-serif;
-        line-height:1.75;
-        overflow:hidden;
-      ">
-        <div style="position:absolute;top:0;left:0;right:0;height:6px;
-          background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
-          filter:blur(2px);animation:pulseGlow 5s infinite alternate;"></div>
-
-        <div style="
-          text-align:center;margin-bottom:30px;
-          font-family:'Gloock',serif;letter-spacing:0.1em;color:#89B4D8;
-          text-shadow:0 0 12px rgba(60,122,160,0.8),0 0 24px rgba(60,122,160,0.4);
-        ">
-          <h2 style="margin:0;font-weight:400;font-size:1.6rem;">PRESSURE LOG ENTRY — 08-A</h2>
-          <p style="margin:6px 0 0;font-family:'IM Fell English SC',serif;
-            font-size:2.3rem;color:#C7D6E2;letter-spacing:0.04em;">“Pressure Line”</p>
-        </div>
-
-        <p><em>The sub <strong>Mercy Jane</strong> drifted through the blue-black murk like a bead of dust caught in oil.</em> Her floodlights cut narrow tunnels through suspended silt, illuminating fragments of old steel hull plating and ghostly tendrils of seaweed clinging to the wreck below.</p>
-        <p>Captain Edda Raines leaned over the console, eyes flicking between sonar pings. “Hold her steady. That’s our target—cargo bay three.”</p>
-        <p>“Copy,” said Vega, the diver tech, his gloved hands already on the drone controls. “Hull breach about ten meters wide. Structural scan’s iffy. Might be pressure fatigue.”</p>
-        <p>They were three days out from the nearest relay buoy, running lean on oxygen and even leaner on patience. The job was a mid-tier contract: recover a sealed crate from the <em>Harlow’s Dream</em>, a drowned luxury cruiser from before the Drowning. No one said what was in the crate, just that it was sealed and stamped with a corporate sigil no one recognized anymore.</p>
-        <p>Edda watched Vega’s drone snake into the breach. The feed flickered, static crawling across the image, then stabilized to show a long corridor sagging under pressure. Chairs, porcelain cups, and a child’s toy drifted lazily past.</p>
-        <p>“Getting something,” Vega murmured. “Crate matches the manifest. Still sealed.”</p>
-        <p>“Latch it,” Edda said.</p>
-        <p>The drone’s manipulator arms extended, clamping to the crate’s corners. Then the signal jittered—camera freezing for half a second. When it returned, the image had changed. The corridor was darker, narrower. Something—someone—moved just out of frame, drifting backward into the shadows.</p>
-        <p>Edda frowned. “Playback that last—”</p>
-        <p>The feed went black.</p>
-        <p>“Drone’s dead,” Vega said. “Full disconnect. That’s not a signal loss—something fried the link.”</p>
-        <p>Raines turned to the others. “We go in.”</p>
-        <p>Inside the wreck, light behaved like something alive—bending, twisting, caught on invisible currents. The team’s lamps illuminated flaking paint and rotted fixtures, bubbles spiraling upward from cracks in their suits.</p>
-        <p>They found the crate in a tilted ballroom, half-buried in silt and broken glass. The floor groaned with every step.</p>
-        <p>Vega knelt by it, brushing sediment away. “Looks intact. But the markings… these aren’t Union seals.”</p>
-        <p>Edda’s wrist display blinked—depth telemetry spiking. The pressure around them shifted, like the ocean itself inhaled.</p>
-        <p>Then, from the corridor they’d entered, came a low vibration. A hum.</p>
-        <p>The lights flickered.</p>
-        <p>Something floated into view—a shape like a person, but boneless, limbs trailing like ribbons. Its face was a blur of light, refracting their beams back at them.</p>
-        <p>Edda’s breath caught. “Fall back—”</p>
-        <p>The shape rippled, and the sound hit them—not a roar, but a resonance deep enough to shake their bones.</p>
-        <p>Their comms flooded with static. The crate behind them began to vibrate, faintly glowing where the seals had cracked with age.</p>
-        <p>“Vega, move!”</p>
-        <p>He grabbed the crate’s handle and kicked off toward the exit. The shape followed, slow and deliberate.</p>
-        <p>Back aboard the <em>Mercy Jane</em>, they sealed the hatch and flooded the chamber dry. The crate sat between them, dull and wet.</p>
-        <p>Edda looked at the condensation forming along its edges. It pulsed faintly, like a heartbeat.</p>
-        <p>“Don’t open it,” Vega said quietly.</p>
-        <p>Edda nodded—but she didn’t look away.</p>
-        <p>Outside, the sonar pinged once. Then again. Then again, closer.</p>
-        <p><strong>Whatever was in that wreck wasn’t staying there.</strong></p>
-
-        <div style="position:absolute;bottom:0;left:0;right:0;height:6px;
-          background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
-          filter:blur(2px);animation:pulseGlow 5s infinite alternate-reverse;"></div>
-      </div>
-
-      <style>
-        @keyframes pulseGlow {
-          0% {opacity:0.2;transform:scaleX(1);}
-          100% {opacity:0.8;transform:scaleX(1.1);}
-        }
-      </style>
     </section>
 
     <!-- About + Contact -->
@@ -310,16 +210,16 @@ permalink: /
       <div class="divider" role="separator" aria-hidden="true"></div>
       <div class="two">
         <p>© <span id="year"></span> Midnight Abyss. All rights reserved.</p>
-        <p style="text-align:right">Theme: mid-tone accessibility</p>
+        <p style="text-align:right">
+          Theme: mid-tone accessibility ·
+          <a href="https://discord.gg/5WUCjAn2zg" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">Join Discord</a>
+        </p>
       </div>
     </footer>
   </main>
 
-  <!-- Logo + year -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Try assets/logo.png, then /logo.png, then /docs/logo.png
     const logoPaths = [
       "{{ '/assets/logo.png' | relative_url }}",
       "{{ '/logo.png' | relative_url }}",
