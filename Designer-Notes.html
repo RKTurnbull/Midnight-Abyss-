@@ -30,14 +30,19 @@ permalink: /designer-notes/
     .intro p{margin:0;color:var(--muted);}
     main article{background:var(--card);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:28px;}
     main h2{font-family:"Gloock",serif;font-size:clamp(24px,3vw,32px);margin-top:0;}
+    h3{margin-top:1.1rem;margin-bottom:.4rem}
     p{line-height:1.7;margin:0 0 14px;}
-    .note{font-size:.95rem;color:var(--muted);}
+    ul{margin:0 0 14px 20px}
+    .note, .meta{font-size:.95rem;color:var(--muted);}
+    .meta{margin-bottom:12px}
     footer{padding:16px 5vw;text-align:center;font-size:.9rem;color:var(--muted);}
+    .panel{background:var(--card);border-radius:16px;box-shadow:var(--shadow);}
+    a.inline{color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)}
   </style>
 </head>
 <body>
   <header>
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/gallery/">Gallery</a>
       <a href="/features/">Features</a>
@@ -46,21 +51,18 @@ permalink: /designer-notes/
   </header>
 
   <div class="wrap">
-    <section class="intro">
-      <h1 style="font-family:'Gloock',serif;">Designer Notes</h1>
+    <section class="intro" aria-labelledby="dn-title">
+      <h1 id="dn-title" style="font-family:'Gloock',serif;">Designer Notes</h1>
       <p>Occasional reflections on why certain decisions were made during the development of <em>Midnight Abyss</em> — from setting logic to design philosophy. These are meant as candid insights rather than formal rules.</p>
     </section>
 
     <section id="questions" class="panel" style="padding:22px; margin-top:26px">
       <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">
-        Questions & Designer Notes
+        Questions &amp; Designer Notes
       </h2>
       <p>
         If you have a specific question about <em>Midnight Abyss</em>, please
-        <a href="mailto:midnightabyssttrpg@gmail.com"
-           style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
-          email me
-        </a>.
+        <a class="inline" href="mailto:midnightabyssttrpg@gmail.com">email me</a>.
         I’ll respond as I’m able and, if it helps other players, I’ll add the answer to this page.
       </p>
       <p style="margin-top:8px;font-size:14px;color:#5a6168">
@@ -69,95 +71,92 @@ permalink: /designer-notes/
     </section>
 
     <main>
-      ---
-layout: post
-title: "Updates and Tweaks"
-date: 2025-11-02
-categories: devlog
-tags: [playtest, competencies, wounds, oxygen, design-notes]
----
 
-# Updates and Tweaks – 02/11/25
+      <!-- UPDATES & TWEAKS -->
+      <article id="updates-and-tweaks-2025-11-02">
+        <h2>Updates and Tweaks — 02/11/25</h2>
+        <p class="meta">
+          <time datetime="2025-11-02">2 November 2025</time> · Playtest reflections and small rules adjustments.
+        </p>
 
-Well, we have had one playtest and the game went quite well. I have received three of the five filled-in questionnaires, and they were pretty positive overall. Changes we are looking at based on the playtest are primarily focused on the **Competencies** (formerly called *Aptitudes*).
+        <p>Well, we have had one playtest and the game went quite well. I have received three of the five filled-in questionnaires, and they were pretty positive overall. Changes we are looking at based on the playtest are primarily focused on the <strong>Competencies</strong> (formerly called <em>Aptitudes</em>).</p>
 
-## Competency Allocation
+        <h3>Competency Allocation</h3>
+        <p>Instead of having one Primary and two Secondary, players now have <strong>eight points</strong> to spend at character creation:</p>
+        <ul>
+          <li><strong>1 point</strong> buys a <strong>Secondary Competency</strong>.</li>
+          <li><strong>2 points</strong> buys a <strong>Primary Competency</strong>.</li>
+          <li>A character may have <strong>a maximum of two Primaries</strong> at character generation.</li>
+        </ul>
+        <p>This should provide a little more capability, as one piece of feedback was that difficulties felt a little high. That said, the group were not utilising the <strong>Group Drama Pool</strong> to buy additional traits, which likely contributed to the pressure.</p>
 
-Instead of having one Primary and two Secondary, players now have **eight points** to spend at character creation:
+        <h3>Next Playtest</h3>
+        <p>The next playtest should start at the end of the month and will be recorded for YouTube. This will include <strong>character creation</strong>, so we will see how these updates affect builds in practice.</p>
 
-- **1 point** buys a **Secondary Competency**.  
-- **2 points** buys a **Primary Competency**.  
-- A character may have **a maximum of two Primaries** at character generation.
+        <h3>Damage: Limited Exposure</h3>
+        <p>Another comment was regarding <strong>damage</strong>. We did not really get into that. A few characters took a <strong>Graze</strong> when their DSV was almost dragged into the Abyssal Trench, but there was no sustained combat, so the exposure to the wound system was limited.</p>
 
-This should provide a little more capability, as one piece of feedback was that difficulties felt a little high. That said, the group were not utilising the **Group Drama Pool** to buy additional traits, which likely contributed to the pressure.
+        <h3>Oxygen Tracking</h3>
+        <p>Lastly, the <strong>Oxygen tracking</strong> mechanic. I did not push this too much in the first playtest. Some characters used extra O₂ as complications on mixed successes, but I did not lean on the depletion checks this time either. In hindsight that was perhaps a mistake.</p>
 
-## Next Playtest
+        <p>That said, the group all enjoyed the game and stated a desire to play a <strong>longer-form campaign</strong>.</p>
 
-The next playtest should start at the end of the month and will be recorded for YouTube. This will include **character creation**, so we will see how these updates affect builds in practice.
+        <h3>Tell Me What You Think</h3>
+        <p>I hope to hear from others. Have you tried the game based on the <strong>QuickStart</strong>? Do you have any questions? Visit the <strong>Designer Notes</strong> page or the <strong>Discord</strong> and let me know.</p>
+      </article>
 
-## Damage: Limited Exposure
+      <!-- WOUNDS -->
+      <article id="wounds-2025-10-26">
+        <h2>Wounds — 26/10/25</h2>
+        <p class="meta">
+          <time datetime="2025-10-26">26 October 2025</time> · How the wound track escalates.</p>
 
-Another comment was regarding **damage**. We did not really get into that. A few characters took a **Graze** when their DSV was almost dragged into the Abyssal Trench, but there was no sustained combat, so the exposure to the wound system was limited.
+        <p>For those who have played or examined the character sheet, the wound track may appear unusual at first glance. So how does it work?</p>
 
-## Oxygen Tracking
+        <h3>Wounds and Damage</h3>
+        <p><em>Midnight Abyss</em> does not use hit points. Instead, injury is tracked through escalating wound levels. Every cut, bruise, or puncture carries both narrative and mechanical weight, ensuring that combat feels dangerous without descending into a grind of numbers.</p>
 
-Lastly, the **Oxygen tracking** mechanic. I did not push this too much in the first playtest. Some characters used extra O₂ as complications on mixed successes, but I did not lean on the depletion checks this time either. In hindsight that was perhaps a mistake.
+        <p>This system is designed to emphasise clarity: players and Directors alike should always understand what each blow means. Tension builds naturally as wounds accumulate and escalate.</p>
 
-That said, the group all enjoyed the game and stated a desire to play a **longer-form campaign**.
+        <p>Wounds are not isolated events but part of a cumulative spiral of damage. Each small injury chips away at endurance until collapse becomes inevitable.</p>
 
-## Tell Me What You Think
+        <ul>
+          <li>Four Grazes combine into one Minor Wound.</li>
+          <li>Three Minor Wounds combine into one Serious Wound.</li>
+          <li>Two Serious Wounds combine into one Critical Wound.</li>
+          <li>Further injury beyond a Critical Wound results in incapacitation or death, as determined by the Director.</li>
+        </ul>
 
-I hope to hear from others. Have you tried the game based on the **QuickStart**? Do you have any questions? Visit the **Designer Notes** page or the **Discord** and let me know.
+        <p>Escalation makes combat tense and unforgiving. Every blow matters, and even a handful of grazes will eventually draw a diver towards serious harm unless they find cover, treatment, or a means to retreat.</p>
 
-<!-- WOUNDS -->
-<article id="wounds-2025-10-26">
-  <h2>Wounds – 26/10/25</h2>
+        <h3>By Attack Successes</h3>
+        <p>The severity of a wound is determined by the number of <strong>uncancelled successes</strong> remaining after defence rolls are compared.</p>
 
-  <p>For those who have played or examined the character sheet, the wound track may appear unusual at first glance. So how does it work?</p>
+        <ul>
+          <li>One success: Graze</li>
+          <li>Two successes: Minor Wound</li>
+          <li>Three successes: Serious Wound</li>
+          <li>Four or more successes: Critical Wound</li>
+        </ul>
 
-  <h3>Wounds and Damage</h3>
-  <p><em>Midnight Abyss</em> does not use hit points. Instead, injury is tracked through escalating wound levels. Every cut, bruise, or puncture carries both narrative and mechanical weight, ensuring that combat feels dangerous without descending into a grind of numbers.</p>
+        <p>This ensures that both small skirmishes and desperate brawls can escalate quickly. A single lucky strike, or a failed defence, can change the tone of a fight instantly—shifting the focus from aggression to survival.</p>
 
-  <p>This system is designed to emphasise clarity: players and Directors alike should always understand what each blow means. Tension builds naturally as wounds accumulate and escalate.</p>
+        <h3>Wound Penalties</h3>
+        <p>At present, wound penalties are expressed through <strong>dice quality</strong>. As injuries worsen, hands shake and focus fades, reducing the effectiveness of rolls.</p>
 
-  <p>Wounds are not isolated events but part of a cumulative spiral of damage. Each small injury chips away at endurance until collapse becomes inevitable.</p>
+        <p>A <strong>Minor Wound</strong> represents pain and shock. The next roll the character makes using any skill worsens by one dice step (for example, a D10 becomes a D12). If the character is diving or relying on a personal oxygen supply, they must also make an immediate O₂ Depletion check or lose one O₂. After that roll, the wound has no further mechanical effect.</p>
 
-  <ul>
-    <li>Four Grazes combine into one Minor Wound.</li>
-    <li>Three Minor Wounds combine into one Serious Wound.</li>
-    <li>Two Serious Wounds combine into one Critical Wound.</li>
-    <li>Further injury beyond a Critical Wound results in incapacitation or death, as determined by the Director.</li>
-  </ul>
+        <p>A <strong>Serious Wound</strong> represents lasting impairment. All rolls worsen by one dice step until the wound is treated or healed. Multiple Serious Wounds stack, but the minimum dice type a player may roll is a D20 (untrained).</p>
 
-  <p>Escalation makes combat tense and unforgiving. Every blow matters, and even a handful of grazes will eventually draw a diver towards serious harm unless they find cover, treatment, or a means to retreat.</p>
+        <p>The maximum impairment from wounds is therefore two dice steps in total, with the Minor Wound’s one-time penalty representing brief shock rather than sustained injury. The intention is to create meaningful setbacks without stripping a character of capability. Through the <strong>Drama</strong> mechanic, a character may be able to ignore certain penalties temporarily—an idea still under testing.</p>
 
-  <h3>By Attack Successes</h3>
-  <p>The severity of a wound is determined by the number of <strong>uncancelled successes</strong> remaining after defence rolls are compared.</p>
-
-  <ul>
-    <li>One success: Graze</li>
-    <li>Two successes: Minor Wound</li>
-    <li>Three successes: Serious Wound</li>
-    <li>Four or more successes: Critical Wound</li>
-  </ul>
-
-  <p>This ensures that both small skirmishes and desperate brawls can escalate quickly. A single lucky strike, or a failed defence, can change the tone of a fight instantly—shifting the focus from aggression to survival.</p>
-
-  <h3>Wound Penalties</h3>
-  <p>At present, wound penalties are expressed through <strong>dice quality</strong>. As injuries worsen, hands shake and focus fades, reducing the effectiveness of rolls.</p>
-
-  <p>A <strong>Minor Wound</strong> represents pain and shock. The next roll the character makes using any skill worsens by one dice step (for example, a D10 becomes a D12). If the character is diving or relying on a personal oxygen supply, they must also make an immediate O₂ Depletion check or lose one O₂. After that roll, the wound has no further mechanical effect.</p>
-
-  <p>A <strong>Serious Wound</strong> represents lasting impairment. All rolls worsen by one dice step until the wound is treated or healed. Multiple Serious Wounds stack, but the minimum dice type a player may roll is a D20 (untrained).</p>
-
-  <p>The maximum impairment from wounds is therefore two dice steps in total, with the Minor Wound’s one-time penalty representing brief shock rather than sustained injury. The intention is to create meaningful setbacks without stripping a character of capability. Through the <strong>Drama</strong> mechanic, a character may be able to ignore certain penalties temporarily—an idea still under testing.</p>
-
-  <p>Hopefully this clarifies the wound system and helps it feel as narrative and transparent as intended.</p>
-</article>
+        <p>Hopefully this clarifies the wound system and helps it feel as narrative and transparent as intended.</p>
+      </article>
 
       <!-- ART NOTES -->
       <article id="art-notes-2025-10-18">
         <h2>What Is the Story with the Art — 18/10/25</h2>
+        <p class="meta"><time datetime="2025-10-18">18 October 2025</time></p>
 
         <p>From the very start I had a specific aesthetic in mind — industrial and semi-realistic. But I have no artistic ability and currently no art budget. So I did what I could for my own review and used AI.</p>
 
@@ -173,6 +172,7 @@ I hope to hear from others. Have you tried the game based on the **QuickStart**?
       <!-- DIVE DOGS -->
       <article id="why-dive-dogs">
         <h2>Why Dive Dogs — 13/10/25</h2>
+        <p class="meta"><time datetime="2025-10-13">13 October 2025</time></p>
 
         <p>The reasons are twofold.</p>
 
@@ -190,6 +190,7 @@ I hope to hear from others. Have you tried the game based on the **QuickStart**?
       <!-- DROWNED WORLD -->
       <article id="what-is-the-drowned-world">
         <h2>What Is the Drowned World — 13/10/25</h2>
+        <p class="meta"><time datetime="2025-10-13">13 October 2025</time></p>
 
         <p>I wanted to create a world where survival itself felt like an adventure — where discovery carried weight, and every breath was borrowed.
         <em>The Drowned World</em> began with a simple truth: the surface failed.
