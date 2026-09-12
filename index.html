@@ -9,12 +9,21 @@ permalink: /
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Midnight Abyss – Official Site</title>
-  <meta name="description" content="Midnight Abyss is a deep-sea survival RPG of oxygen, pressure, and discovery. Read the quickstart and explore the setting." />
+
+  <meta
+    name="description"
+    content="Midnight Abyss is a deep-sea survival RPG of oxygen, pressure, and discovery. Read the quickstart and explore the setting."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -27,20 +36,36 @@ permalink: /
       --grid:rgba(60,122,160,0.06);
       --shadow:0 10px 30px rgba(0,0,0,0.08);
       --radius:16px;
+      --header-height:0px;
     }
 
-    html,body{
+
+    /* =========================================================
+       BASE
+       ========================================================= */
+
+    html,
+    body{
       margin:0;
       padding:0;
       background:var(--bg);
       color:var(--ink);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Ubuntu,
+        Cantarell,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
       line-height:1.6;
     }
 
-    body{
-      padding-top:0;
-    }
 
     .wrap{
       max-width:1100px;
@@ -49,78 +74,122 @@ permalink: /
     }
 
 
+    /*
+      The main content reserves enough space for the fixed
+      header while the visitor is at the top of the page.
+    */
+
+    main.wrap{
+      max-width:1100px;
+      margin:0 auto;
+
+      padding:
+        calc(var(--header-height, 0px) + 28px)
+        28px
+        28px;
+    }
+
+
     /* =========================================================
-       COLLAPSING HEADER
+       HEADER
        ========================================================= */
 
     header{
       position:fixed;
+
       top:0;
       left:0;
       right:0;
 
-      background:linear-gradient(
-        180deg,
-        rgba(229,229,229,0.97),
-        rgba(229,229,229,0.88)
-      );
+      background:
+        linear-gradient(
+          180deg,
+          rgba(229,229,229,0.97),
+          rgba(229,229,229,0.88)
+        );
 
-      backdrop-filter:saturate(140%) blur(6px);
+      backdrop-filter:
+        saturate(140%)
+        blur(6px);
 
-      border-bottom:1px solid rgba(0,0,0,0.06);
+      border-bottom:
+        1px solid rgba(0,0,0,0.06);
 
       z-index:1000;
 
       transform:translateY(0);
-      transition:transform 0.35s ease;
+
+      transition:
+        transform 0.35s ease;
     }
+
 
     header.header-hidden{
       transform:translateY(-100%);
     }
 
+
     /*
-      Invisible trigger zone at the very top of
-      the browser window. Moving the mouse here
-      reveals the header.
+      Invisible trigger zone at the very top of the screen.
+      Moving the mouse here reveals the header.
     */
 
     body::before{
       content:"";
+
       position:fixed;
+
       top:0;
       left:0;
       right:0;
+
       height:14px;
+
       z-index:999;
+
       pointer-events:auto;
     }
 
+
     .nav{
       display:flex;
+
       align-items:center;
       justify-content:space-between;
+
       gap:16px;
+
       flex-wrap:wrap;
+
       text-align:center;
     }
 
+
     .brand{
       display:flex;
+
       align-items:center;
       justify-content:center;
+
       gap:16px;
+
       text-decoration:none;
       color:var(--ink);
+
       flex:1 1 100%;
+
       flex-direction:column;
+
       margin-top:8px;
     }
+
 
     .logo{
       width:168px;
       height:168px;
+
       object-fit:contain;
+
       border-radius:50%;
 
       box-shadow:
@@ -128,41 +197,66 @@ permalink: /
         0 6px 18px rgba(0,0,0,0.2);
     }
 
+
     .title{
-      font-family:'IM Fell English SC',serif;
+      font-family:
+        'IM Fell English SC',
+        serif;
+
       font-size:4rem;
+
       font-weight:400;
+
       letter-spacing:.6px;
+
       color:var(--muted);
+
       text-transform:uppercase;
+
       margin:0;
     }
+
 
     .title .lift{
       display:inline-block;
       transform:translateY(-1px);
     }
 
+
     .title .lift:first-letter{
       display:inline-block;
-      transform:scaleY(1.010) translateY(-1px);
+
+      transform:
+        scaleY(1.010)
+        translateY(-1px);
+
       transform-origin:bottom;
     }
 
+
     nav{
       width:100%;
+
       display:flex;
+
       justify-content:center;
+
       flex-wrap:wrap;
+
       margin-top:10px;
     }
 
+
     nav a{
       color:var(--muted);
+
       text-decoration:none;
+
       font-weight:600;
+
       margin:0 10px;
     }
+
 
     nav a:hover{
       color:var(--accent);
@@ -175,44 +269,62 @@ permalink: /
 
     .hero{
       position:relative;
+
       margin-top:18px;
+
       border-radius:var(--radius);
+
       overflow:hidden;
 
       background:
+
         radial-gradient(
           1000px 400px at 20% 0%,
           rgba(60,122,160,0.25),
           transparent 70%
         ),
+
         radial-gradient(
           900px 300px at 100% 110%,
           rgba(156,106,88,0.18),
           transparent 70%
         ),
+
         var(--card);
 
-      border:1px solid rgba(0,0,0,0.06);
+      border:
+        1px solid rgba(0,0,0,0.06);
+
       box-shadow:var(--shadow);
     }
 
+
     .hero-inner{
       display:grid;
-      grid-template-columns:1.2fr 1fr;
+
+      grid-template-columns:
+        1.2fr 1fr;
+
       gap:28px;
+
       padding:42px;
     }
 
+
     .hero::before{
       content:"";
+
       position:absolute;
+
       inset:0;
 
       background-image:
+
         linear-gradient(
           transparent 31px,
           var(--grid) 32px
         ),
+
         linear-gradient(
           90deg,
           transparent 31px,
@@ -220,59 +332,97 @@ permalink: /
         );
 
       background-size:32px 32px;
+
       pointer-events:none;
     }
 
+
     .badge{
       display:inline-block;
+
       font-size:12px;
+
       font-weight:700;
+
       letter-spacing:.08em;
+
       text-transform:uppercase;
+
       color:var(--accent);
-      background:rgba(60,122,160,0.09);
+
+      background:
+        rgba(60,122,160,0.09);
+
       padding:6px 10px;
+
       border-radius:999px;
-      border:1px solid rgba(60,122,160,0.25);
+
+      border:
+        1px solid rgba(60,122,160,0.25);
     }
+
 
     h1{
       font-family:Gloock,serif;
+
       font-weight:400;
+
       line-height:1.15;
+
       margin:.4rem 0 1rem;
+
       color:var(--muted);
     }
+
 
     .lead{
       font-size:1.1rem;
       color:#2a2f35;
     }
 
+
     .cta{
       display:flex;
+
       flex-wrap:wrap;
+
       gap:12px;
+
       margin-top:18px;
     }
 
+
     .btn{
       appearance:none;
+
       border:none;
+
       border-radius:12px;
+
       padding:12px 16px;
+
       font-weight:800;
+
       letter-spacing:.02em;
+
       background:var(--accent);
+
       color:white;
-      box-shadow:0 6px 16px rgba(60,122,160,0.35);
+
+      box-shadow:
+        0 6px 16px rgba(60,122,160,0.35);
+
       cursor:pointer;
     }
 
+
     .btn.secondary{
       background:transparent;
+
       color:var(--accent);
-      border:2px solid var(--accent);
+
+      border:
+        2px solid var(--accent);
     }
 
 
@@ -282,13 +432,19 @@ permalink: /
 
     .btn.discord{
       background:#5865F2;
+
       color:#fff;
+
       border:none;
-      box-shadow:0 6px 16px rgba(88,101,242,0.35);
+
+      box-shadow:
+        0 6px 16px rgba(88,101,242,0.35);
     }
+
 
     .btn.discord:hover{
       filter:brightness(1.08);
+
       transform:translateY(-1px);
     }
 
@@ -299,54 +455,83 @@ permalink: /
 
     .panel{
       background:var(--card);
-      border:1px solid rgba(0,0,0,0.06);
+
+      border:
+        1px solid rgba(0,0,0,0.06);
+
       border-radius:var(--radius);
+
       box-shadow:var(--shadow);
     }
 
+
     .grid{
       display:grid;
+
       gap:22px;
     }
 
+
     .grid.features{
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:
+        repeat(3,1fr);
     }
+
 
     .feature{
       padding:18px;
     }
 
+
     .feature h3{
       margin:.2rem 0 .4rem;
+
       color:var(--muted);
     }
 
+
     .tag{
       display:inline-flex;
+
       align-items:center;
+
       gap:8px;
-      background:rgba(0,0,0,0.04);
+
+      background:
+        rgba(0,0,0,0.04);
+
       padding:6px 10px;
+
       border-radius:999px;
-      border:1px solid rgba(0,0,0,0.06);
+
+      border:
+        1px solid rgba(0,0,0,0.06);
+
       font-size:12px;
     }
 
+
     .divider{
       height:1px;
-      background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(0,0,0,0.1),
-        transparent
-      );
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(0,0,0,0.1),
+          transparent
+        );
+
       margin:26px 0;
     }
 
+
     .two{
       display:grid;
-      grid-template-columns:1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap:22px;
     }
 
@@ -357,79 +542,141 @@ permalink: /
 
     .gallery{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+
+      grid-template-columns:
+        repeat(2,1fr);
+
       gap:10px;
     }
 
+
     figure.thumb{
       border-radius:12px;
+
       background:#ccc;
+
       position:relative;
+
       overflow:hidden;
+
       margin:0;
     }
 
+
     figure.thumb img{
       width:100%;
+
       height:auto;
+
       display:block;
     }
 
+
     figure.thumb figcaption{
       position:absolute;
+
       bottom:8px;
       right:10px;
+
       font-size:11px;
+
       color:#fff;
-      background:rgba(0,0,0,0.45);
+
+      background:
+        rgba(0,0,0,0.45);
+
       padding:4px 8px;
+
       border-radius:999px;
     }
 
 
     /* =========================================================
-       YOUTUBE VIDEOS
+       VIDEOS
        ========================================================= */
 
     .video-section{
       margin-top:28px;
     }
 
+
     .video-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+
+      grid-template-columns:
+        repeat(2,1fr);
+
       gap:22px;
     }
+
 
     .video-panel{
       padding:18px;
     }
 
+
     .video-panel h2{
       margin-top:0;
+
       color:var(--muted);
+
       font-family:Gloock,serif;
+
       font-weight:400;
     }
 
+
     .video-wrapper{
       position:relative;
+
       width:100%;
+
       padding-bottom:56.25%;
+
       height:0;
+
       overflow:hidden;
+
       border-radius:12px;
+
       background:#111;
-      box-shadow:0 8px 24px rgba(0,0,0,0.18);
+
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.18);
     }
+
 
     .video-wrapper iframe{
       position:absolute;
+
       top:0;
       left:0;
+
       width:100%;
       height:100%;
+
       border:0;
+    }
+
+
+    /* =========================================================
+       PRESSURE LINE
+       ========================================================= */
+
+    @keyframes pulseGlow{
+
+      0%{
+        opacity:0.2;
+
+        transform:scaleX(1);
+      }
+
+      100%{
+        opacity:0.8;
+
+        transform:scaleX(1.1);
+      }
+
     }
 
 
@@ -439,8 +686,11 @@ permalink: /
 
     footer{
       margin:40px 0 22px;
+
       color:#5a6168;
+
       font-size:14px;
+
       text-align:center;
     }
 
@@ -455,17 +705,21 @@ permalink: /
         grid-template-columns:1fr;
       }
 
+
       .grid.features{
         grid-template-columns:1fr;
       }
+
 
       .two{
         grid-template-columns:1fr;
       }
 
+
       .gallery{
         grid-template-columns:1fr;
       }
+
 
       .video-grid{
         grid-template-columns:1fr;
@@ -480,14 +734,25 @@ permalink: /
         padding:18px;
       }
 
+
+      main.wrap{
+        padding:
+          calc(var(--header-height, 0px) + 18px)
+          18px
+          18px;
+      }
+
+
       .logo{
         width:130px;
         height:130px;
       }
 
+
       .title{
         font-size:3rem;
       }
+
 
       .hero-inner{
         padding:28px;
@@ -510,14 +775,18 @@ permalink: /
 
     <div class="wrap nav">
 
-      <a class="brand" href="#top">
+      <a
+        class="brand"
+        href="#top"
+      >
 
         <img
           id="site-logo"
           class="logo"
           src=""
           alt="Midnight Abyss logo"
-        />
+        >
+
 
         <strong class="title">
           <span class="lift">Mi</span>dnight Abyss
@@ -528,9 +797,13 @@ permalink: /
 
       <nav aria-label="Primary">
 
-        <a href="#top">Home</a>
+        <a href="#top">
+          Home
+        </a>
 
-        <a href="#about">About</a>
+        <a href="#about">
+          About
+        </a>
 
         <a href="{{ '/features/' | relative_url }}">
           Features
@@ -579,6 +852,10 @@ permalink: /
   </header>
 
 
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+
   <main class="wrap">
 
 
@@ -586,7 +863,10 @@ permalink: /
          HERO
          ========================================================= -->
 
-    <section class="hero" id="hero">
+    <section
+      class="hero"
+      id="hero"
+    >
 
       <div class="hero-inner">
 
@@ -596,9 +876,11 @@ permalink: /
             Deep-sea Survival RPG
           </span>
 
+
           <h1>
             Pressure. Oxygen. Choice.
           </h1>
+
 
           <p class="lead">
             A tabletop roleplaying game of claustrophobic dives and hard decisions.
@@ -618,6 +900,7 @@ permalink: /
               Open Quickstart (PDF)
             </a>
 
+
             <a
               class="btn secondary"
               href="#about"
@@ -628,7 +911,13 @@ permalink: /
           </div>
 
 
-          <p style="margin:.5rem 0 0;font-size:14px;color:#5a6168">
+          <p
+            style="
+              margin:.5rem 0 0;
+              font-size:14px;
+              color:#5a6168
+            "
+          >
 
             If the button doesn’t work on your device, try the
 
@@ -636,7 +925,11 @@ permalink: /
               href="{{ '/docs/Quickstart.pdf' | relative_url }}"
               target="_blank"
               rel="noopener noreferrer"
-              style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+              style="
+                color:var(--accent);
+                text-decoration:none;
+                border-bottom:1px dashed var(--accent)
+              "
             >
               direct Quickstart link
             </a>.
@@ -644,26 +937,48 @@ permalink: /
           </p>
 
 
-          <p style="margin-top:12px;font-size:14px;color:#5a6168">
-            Accessible layout: mid-grey background with dark text.
+          <p
+            style="
+              margin-top:12px;
+              font-size:14px;
+              color:#5a6168
+            "
+          >
+            Accessible layout: mid-tone background with dark text.
           </p>
 
 
-          <p style="margin-top:8px;font-size:14px;color:#5a6168;">
+          <p
+            style="
+              margin-top:8px;
+              font-size:14px;
+              color:#5a6168;
+            "
+          >
 
-            Created by Richard Turnbull, <em>Midnight Abyss</em> is currently in closed playtest.
-            Dive logs and updates coming soon.
+            Created by Richard Turnbull, <em>Midnight Abyss</em> is currently in
+            closed playtest. Dive logs and updates coming soon.
 
           </p>
 
 
-          <p style="margin-top:6px;font-size:14px;color:#5a6168;">
+          <p
+            style="
+              margin-top:6px;
+              font-size:14px;
+              color:#5a6168;
+            "
+          >
 
             For insight into design choices and upcoming changes, visit the
 
             <a
               href="{{ '/designer-notes/' | relative_url }}"
-              style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+              style="
+                color:var(--accent);
+                text-decoration:none;
+                border-bottom:1px dashed var(--accent)
+              "
             >
               Designer Notes
             </a>
@@ -713,16 +1028,20 @@ permalink: /
       <div class="video-grid">
 
 
-        <!-- VIDEO 1 -->
-
-        <div class="panel video-panel">
+        <div
+          class="panel video-panel"
+        >
 
           <h2>
             Midnight Abyss
           </h2>
 
+
           <p
-            style="margin-top:6px;color:#5a6168;"
+            style="
+              margin-top:6px;
+              color:#5a6168;
+            "
           >
             Take a first look at <em>Midnight Abyss</em>.
           </p>
@@ -742,16 +1061,20 @@ permalink: /
         </div>
 
 
-        <!-- VIDEO 2 -->
-
-        <div class="panel video-panel">
+        <div
+          class="panel video-panel"
+        >
 
           <h2>
             Midnight Abyss
           </h2>
 
+
           <p
-            style="margin-top:6px;color:#5a6168;"
+            style="
+              margin-top:6px;
+              color:#5a6168;
+            "
           >
             Discover more about the game.
           </p>
@@ -776,13 +1099,16 @@ permalink: /
 
 
     <!-- =========================================================
-         COMMUNITY / DISCORD
+         COMMUNITY
          ========================================================= -->
 
     <section
       id="community"
       class="panel"
-      style="padding:22px;margin-top:28px"
+      style="
+        padding:22px;
+        margin-top:28px
+      "
     >
 
       <h2
@@ -795,6 +1121,7 @@ permalink: /
       >
         Join the Community
       </h2>
+
 
       <p
         class="lead"
@@ -822,7 +1149,11 @@ permalink: /
 
 
       <p
-        style="margin-top:10px;font-size:14px;color:#5a6168"
+        style="
+          margin-top:10px;
+          font-size:14px;
+          color:#5a6168
+        "
       >
         Invite link never expires. Safe, moderated space.
       </p>
@@ -837,7 +1168,10 @@ permalink: /
     <section
       id="designer-notes"
       class="panel"
-      style="padding:22px;margin-top:28px"
+      style="
+        padding:22px;
+        margin-top:28px
+      "
     >
 
       <h2
@@ -873,7 +1207,11 @@ permalink: /
 
         <a
           href="mailto:midnightabyssttrpg@gmail.com"
-          style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+          style="
+            color:var(--accent);
+            text-decoration:none;
+            border-bottom:1px dashed var(--accent)
+          "
         >
           email me
         </a>.
@@ -882,7 +1220,11 @@ permalink: /
 
 
       <p
-        style="margin-top:8px;font-size:14px;color:#5a6168"
+        style="
+          margin-top:8px;
+          font-size:14px;
+          color:#5a6168
+        "
       >
         Updated as development continues and new dives bring new discoveries.
       </p>
@@ -912,12 +1254,17 @@ permalink: /
 
 
       <p
-        style="margin-top:0;color:#5a6168"
+        style="
+          margin-top:0;
+          color:#5a6168
+        "
       >
+
         <strong>
           All artwork shown is conceptual only and will be completely replaced
           with commissioned custom art for the final release.
         </strong>
+
       </p>
 
 
@@ -956,12 +1303,20 @@ permalink: /
 
 
       <p
-        style="text-align:center;margin-top:10px;"
+        style="
+          text-align:center;
+          margin-top:10px;
+        "
       >
 
         <a
           href="{{ '/gallery/' | relative_url }}"
-          style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)"
+          style="
+            color:var(--accent);
+            font-weight:600;
+            text-decoration:none;
+            border-bottom:1px dashed var(--accent)
+          "
         >
           View Full Gallery →
         </a>
@@ -972,7 +1327,7 @@ permalink: /
 
 
     <!-- =========================================================
-         FICTION: PRESSURE LINE
+         PRESSURE LINE
          ========================================================= -->
 
     <section
@@ -985,25 +1340,33 @@ permalink: /
         style="
           position:relative;
           padding:40px 36px 32px;
-          background:linear-gradient(
-            180deg,
-            rgba(6,12,20,0.98),
-            rgba(14,28,40,0.9)
-          );
+
+          background:
+            linear-gradient(
+              180deg,
+              rgba(6,12,20,0.98),
+              rgba(14,28,40,0.9)
+            );
+
           color:#E6ECF1;
-          border:1px solid rgba(60,122,160,0.35);
+
+          border:
+            1px solid rgba(60,122,160,0.35);
+
           box-shadow:
             0 10px 30px rgba(0,0,0,0.45),
             inset 0 0 60px rgba(60,122,160,0.15);
+
           border-radius:16px;
+
           font-family:Inter,system-ui,sans-serif;
+
           line-height:1.75;
+
           overflow:hidden;
         "
       >
 
-
-        <!-- Subtle animated top glow -->
 
         <div
           style="
@@ -1012,27 +1375,34 @@ permalink: /
             left:0;
             right:0;
             height:6px;
-            background:linear-gradient(
-              90deg,
-              transparent,
-              rgba(60,122,160,0.8),
-              transparent
-            );
+
+            background:
+              linear-gradient(
+                90deg,
+                transparent,
+                rgba(60,122,160,0.8),
+                transparent
+              );
+
             filter:blur(2px);
-            animation:pulseGlow 5s infinite alternate;
+
+            animation:
+              pulseGlow 5s infinite alternate;
           "
         ></div>
 
-
-        <!-- Header -->
 
         <div
           style="
             text-align:center;
             margin-bottom:30px;
+
             font-family:'Gloock',serif;
+
             letter-spacing:0.1em;
+
             color:#89B4D8;
+
             text-shadow:
               0 0 12px rgba(60,122,160,0.8),
               0 0 24px rgba(60,122,160,0.4);
@@ -1053,9 +1423,13 @@ permalink: /
           <p
             style="
               margin:6px 0 0;
+
               font-family:'IM Fell English SC',serif;
+
               font-size:2.3rem;
+
               color:#C7D6E2;
+
               letter-spacing:0.04em;
             "
           >
@@ -1246,8 +1620,6 @@ permalink: /
         </p>
 
 
-        <!-- Subtle animated bottom glow -->
-
         <div
           style="
             position:absolute;
@@ -1255,37 +1627,23 @@ permalink: /
             left:0;
             right:0;
             height:6px;
-            background:linear-gradient(
-              90deg,
-              transparent,
-              rgba(60,122,160,0.8),
-              transparent
-            );
+
+            background:
+              linear-gradient(
+                90deg,
+                transparent,
+                rgba(60,122,160,0.8),
+                transparent
+              );
+
             filter:blur(2px);
-            animation:pulseGlow 5s infinite alternate-reverse;
+
+            animation:
+              pulseGlow 5s infinite alternate-reverse;
           "
         ></div>
 
       </div>
-
-
-      <style>
-
-        @keyframes pulseGlow{
-
-          0%{
-            opacity:0.2;
-            transform:scaleX(1);
-          }
-
-          100%{
-            opacity:0.8;
-            transform:scaleX(1.1);
-          }
-
-        }
-
-      </style>
 
     </section>
 
@@ -1358,7 +1716,11 @@ permalink: /
 
           <a
             href="mailto:midnightabyssttrpg@gmail.com"
-            style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+            style="
+              color:var(--accent);
+              text-decoration:none;
+              border-bottom:1px dashed var(--accent)
+            "
           >
             midnightabyssttrpg@gmail.com
           </a>.
@@ -1398,7 +1760,11 @@ permalink: /
             href="https://discord.gg/5WUCjAn2zg"
             target="_blank"
             rel="noopener"
-            style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+            style="
+              color:var(--accent);
+              text-decoration:none;
+              border-bottom:1px dashed var(--accent)
+            "
           >
             Join Discord
           </a>
@@ -1418,6 +1784,7 @@ permalink: /
 
   <script>
 
+
     /* ---------------------------------------------------------
        Copyright year
        --------------------------------------------------------- */
@@ -1433,7 +1800,9 @@ permalink: /
     const logoPaths = [
 
       "{{ '/assets/logo.png' | relative_url }}",
+
       "{{ '/logo.png' | relative_url }}",
+
       "{{ '/docs/logo.png' | relative_url }}"
 
     ];
@@ -1441,13 +1810,18 @@ permalink: /
 
     (function loadLogo(i=0){
 
-      if(i >= logoPaths.length) return;
+      if(i >= logoPaths.length){
+        return;
+      }
+
 
       const img =
         document.getElementById('site-logo');
 
+
       img.onerror =
-        () => loadLogo(i+1);
+        () => loadLogo(i + 1);
+
 
       img.src =
         logoPaths[i];
@@ -1456,35 +1830,71 @@ permalink: /
 
 
     /* ---------------------------------------------------------
-       Collapsing header
+       Header
        --------------------------------------------------------- */
 
     const header =
       document.querySelector('header');
 
-    let headerTimeout;
+
+    /*
+      Measure the actual header height.
+
+      This is important because the header changes size
+      on smaller screens.
+    */
+
+    function updateHeaderHeight(){
+
+      document.documentElement.style.setProperty(
+        '--header-height',
+        header.offsetHeight + 'px'
+      );
+
+    }
+
+
+    updateHeaderHeight();
+
+
+    window.addEventListener(
+      'resize',
+      updateHeaderHeight
+    );
 
 
     /*
       Show the header.
 
-      If the visitor is already down the page,
-      automatically hide it again after 1.8 seconds.
+      When we are already down the page, it will hide
+      again after 1.8 seconds.
     */
+
+    let headerTimeout;
+
 
     function showHeader(){
 
-      header.classList.remove('header-hidden');
+      header.classList.remove(
+        'header-hidden'
+      );
 
-      clearTimeout(headerTimeout);
+
+      clearTimeout(
+        headerTimeout
+      );
+
 
       if(window.scrollY > 80){
 
-        headerTimeout = setTimeout(() => {
+        headerTimeout =
+          setTimeout(() => {
 
-          header.classList.add('header-hidden');
+            header.classList.add(
+              'header-hidden'
+            );
 
-        }, 1800);
+          }, 1800);
 
       }
 
@@ -1492,15 +1902,17 @@ permalink: /
 
 
     /*
-      Hide the header if we have scrolled
-      far enough down the page.
+      Hide the header once we have moved
+      away from the top of the page.
     */
 
     function hideHeader(){
 
       if(window.scrollY > 80){
 
-        header.classList.add('header-hidden');
+        header.classList.add(
+          'header-hidden'
+        );
 
       }
 
@@ -1509,56 +1921,67 @@ permalink: /
 
     /*
       Scrolling.
-
-      At the top of the page the header is always visible.
-      Once below 80px it hides.
     */
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener(
+      'scroll',
+      () => {
 
-      if(window.scrollY <= 80){
+        if(window.scrollY <= 80){
 
-        header.classList.remove('header-hidden');
+          header.classList.remove(
+            'header-hidden'
+          );
 
-      } else {
+        }
+        else{
 
-        hideHeader();
+          hideHeader();
+
+        }
 
       }
-
-    });
+    );
 
 
     /*
-      Moving the mouse into the very top of the
-      browser window reveals the header.
+      Moving the mouse to the top of the screen
+      reveals the header.
     */
 
-    document.addEventListener('mousemove', (event) => {
+    document.addEventListener(
+      'mousemove',
+      (event) => {
 
-      if(event.clientY <= 14){
+        if(event.clientY <= 14){
 
-        showHeader();
+          showHeader();
+
+        }
 
       }
-
-    });
+    );
 
 
     /*
-      Keep the header visible when returning
-      to the top of the page.
+      Keep the header visible at the very top.
     */
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener(
+      'scroll',
+      () => {
 
-      if(window.scrollY <= 80){
+        if(window.scrollY <= 80){
 
-        header.classList.remove('header-hidden');
+          header.classList.remove(
+            'header-hidden'
+          );
+
+        }
 
       }
+    );
 
-    });
 
   </script>
 
