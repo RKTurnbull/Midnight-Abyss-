@@ -11,15 +11,22 @@ permalink: /
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Midnight Abyss – Official Site</title>
   <meta name="description" content="Midnight Abyss is a deep-sea survival RPG of oxygen, pressure, and discovery. Read the quickstart and explore the setting." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
+
     :root{
-      --bg:#E5E5E5; --card:#F0F0F0; --ink:#1E1F22; --muted:#3A4046;
-      --accent:#3C7AA0; --grid:rgba(60,122,160,0.06);
-      --shadow:0 10px 30px rgba(0,0,0,0.08); --radius:16px;
+      --bg:#E5E5E5;
+      --card:#F0F0F0;
+      --ink:#1E1F22;
+      --muted:#3A4046;
+      --accent:#3C7AA0;
+      --grid:rgba(60,122,160,0.06);
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --radius:16px;
     }
 
     html,body{
@@ -40,7 +47,11 @@ permalink: /
     header{
       position:sticky;
       top:0;
-      background:linear-gradient(180deg,rgba(229,229,229,0.95),rgba(229,229,229,0.8));
+      background:linear-gradient(
+        180deg,
+        rgba(229,229,229,0.95),
+        rgba(229,229,229,0.8)
+      );
       backdrop-filter:saturate(140%) blur(6px);
       border-bottom:1px solid rgba(0,0,0,0.06);
       z-index:10
@@ -72,7 +83,9 @@ permalink: /
       height:168px;
       object-fit:contain;
       border-radius:50%;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.25), 0 6px 18px rgba(0,0,0,0.2)
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.25),
+        0 6px 18px rgba(0,0,0,0.2)
     }
 
     .title{
@@ -115,14 +128,25 @@ permalink: /
       color:var(--accent)
     }
 
+
+    /* HERO */
+
     .hero{
       position:relative;
       margin-top:18px;
       border-radius:var(--radius);
       overflow:hidden;
       background:
-        radial-gradient(1000px 400px at 20% 0%, rgba(60,122,160,0.25), transparent 70%),
-        radial-gradient(900px 300px at 100% 110%, rgba(156,106,88,0.18), transparent 70%),
+        radial-gradient(
+          1000px 400px at 20% 0%,
+          rgba(60,122,160,0.25),
+          transparent 70%
+        ),
+        radial-gradient(
+          900px 300px at 100% 110%,
+          rgba(156,106,88,0.18),
+          transparent 70%
+        ),
         var(--card);
       border:1px solid rgba(0,0,0,0.06);
       box-shadow:var(--shadow)
@@ -140,8 +164,15 @@ permalink: /
       position:absolute;
       inset:0;
       background-image:
-        linear-gradient(transparent 31px, var(--grid) 32px),
-        linear-gradient(90deg, transparent 31px, var(--grid) 32px);
+        linear-gradient(
+          transparent 31px,
+          var(--grid) 32px
+        ),
+        linear-gradient(
+          90deg,
+          transparent 31px,
+          var(--grid) 32px
+        );
       background-size:32px 32px;
       pointer-events:none
     }
@@ -199,6 +230,7 @@ permalink: /
     }
 
     /* Discord button style */
+
     .btn.discord{
       background:#5865F2;
       color:#fff;
@@ -210,6 +242,9 @@ permalink: /
       filter:brightness(1.08);
       transform:translateY(-1px)
     }
+
+
+    /* GENERAL PANELS */
 
     .panel{
       background:var(--card);
@@ -249,7 +284,12 @@ permalink: /
 
     .divider{
       height:1px;
-      background:linear-gradient(90deg,transparent, rgba(0,0,0,0.1), transparent);
+      background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,0,0,0.1),
+        transparent
+      );
       margin:26px 0
     }
 
@@ -258,6 +298,9 @@ permalink: /
       grid-template-columns:1fr 1fr;
       gap:22px
     }
+
+
+    /* GALLERY */
 
     .gallery{
       display:grid;
@@ -290,13 +333,28 @@ permalink: /
       border-radius:999px
     }
 
-    /* YouTube video */
+
+    /* YOUTUBE VIDEOS */
+
     .video-section{
       margin-top:28px
     }
 
-    .video-section .video-panel{
-      padding:22px
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px
+    }
+
+    .video-panel{
+      padding:18px
+    }
+
+    .video-panel h2{
+      margin-top:0;
+      color:var(--muted);
+      font-family:Gloock,serif;
+      font-weight:400
     }
 
     .video-wrapper{
@@ -319,6 +377,9 @@ permalink: /
       border:0
     }
 
+
+    /* FOOTER */
+
     footer{
       margin:40px 0 22px;
       color:#5a6168;
@@ -326,7 +387,11 @@ permalink: /
       text-align:center
     }
 
+
+    /* RESPONSIVE */
+
     @media (max-width:900px){
+
       .hero-inner{
         grid-template-columns:1fr
       }
@@ -342,49 +407,110 @@ permalink: /
       .gallery{
         grid-template-columns:1fr
       }
+
+      .video-grid{
+        grid-template-columns:1fr
+      }
+
     }
+
   </style>
 </head>
+
 
 <body id="top">
 
   <header>
+
     <div class="wrap nav">
 
       <a class="brand" href="#top">
-        <img id="site-logo" class="logo" src="" alt="Midnight Abyss logo" />
+
+        <img
+          id="site-logo"
+          class="logo"
+          src=""
+          alt="Midnight Abyss logo"
+        />
 
         <strong class="title">
           <span class="lift">Mi</span>dnight Abyss
         </strong>
+
       </a>
 
+
       <nav aria-label="Primary">
+
         <a href="#top">Home</a>
+
         <a href="#about">About</a>
-        <a href="{{ '/features/' | relative_url }}">Features</a>
-        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
-        <a href="{{ '/designer-notes/' | relative_url }}">Designer Notes</a>
-        <a href="#video">Video</a>
-        <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener">Quickstart</a>
-        <a href="#pressure-line">Fiction</a>
-        <a href="https://discord.gg/5WUCjAn2zg" target="_blank" rel="noopener">Discord</a>
-        <a href="#contact">Contact</a>
+
+        <a href="{{ '/features/' | relative_url }}">
+          Features
+        </a>
+
+        <a href="{{ '/gallery/' | relative_url }}">
+          Gallery
+        </a>
+
+        <a href="{{ '/designer-notes/' | relative_url }}">
+          Designer Notes
+        </a>
+
+        <a href="#video">
+          Video
+        </a>
+
+        <a
+          href="{{ '/docs/Quickstart.pdf' | relative_url }}"
+          target="_blank"
+          rel="noopener"
+        >
+          Quickstart
+        </a>
+
+        <a href="#pressure-line">
+          Fiction
+        </a>
+
+        <a
+          href="https://discord.gg/5WUCjAn2zg"
+          target="_blank"
+          rel="noopener"
+        >
+          Discord
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
       </nav>
 
     </div>
+
   </header>
+
 
   <main class="wrap">
 
+
     <!-- HERO -->
+
     <section class="hero" id="hero">
+
       <div class="hero-inner">
 
         <div>
-          <span class="badge">Deep-sea Survival RPG</span>
 
-          <h1>Pressure. Oxygen. Choice.</h1>
+          <span class="badge">
+            Deep-sea Survival RPG
+          </span>
+
+          <h1>
+            Pressure. Oxygen. Choice.
+          </h1>
 
           <p class="lead">
             A tabletop roleplaying game of claustrophobic dives and hard decisions.
@@ -393,82 +519,155 @@ permalink: /
           </p>
 
           <div class="cta">
-            <a class="btn" href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="btn"
+              href="{{ '/docs/Quickstart.pdf' | relative_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open Quickstart (PDF)
             </a>
 
-            <a class="btn secondary" href="#about">
+            <a
+              class="btn secondary"
+              href="#about"
+            >
               Learn More
             </a>
+
           </div>
 
+
           <p style="margin:.5rem 0 0;font-size:14px;color:#5a6168">
+
             If the button doesn’t work on your device, try the
-            <a href="{{ '/docs/Quickstart.pdf' | relative_url }}"
-               target="_blank"
-               rel="noopener noreferrer"
-               style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+
+            <a
+              href="{{ '/docs/Quickstart.pdf' | relative_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+            >
               direct Quickstart link
             </a>.
+
           </p>
+
 
           <p style="margin-top:12px;font-size:14px;color:#5a6168">
             Accessible layout: mid-grey background with dark text.
           </p>
 
+
           <p style="margin-top:8px;font-size:14px;color:#5a6168;">
+
             Created by Richard Turnbull, <em>Midnight Abyss</em> is currently in closed playtest.
             Dive logs and updates coming soon.
+
           </p>
+
 
           <p style="margin-top:6px;font-size:14px;color:#5a6168;">
+
             For insight into design choices and upcoming changes, visit the
-            <a href="{{ '/designer-notes/' | relative_url }}"
-               style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+
+            <a
+              href="{{ '/designer-notes/' | relative_url }}"
+              style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+            >
               Designer Notes
             </a>
+
             page.
+
           </p>
+
         </div>
 
-        <div class="panel" style="padding:16px">
+
+        <div
+          class="panel"
+          style="padding:16px"
+        >
+
           <figure class="thumb">
-            <img src="{{ '/docs/Shoal.png' | relative_url }}"
-                 alt="Bioluminescent shoal concept"
-                 onerror="this.onerror=null; this.src='{{ '/docs/shoal.png' | relative_url }}';">
-            <figcaption>Concept Placeholder</figcaption>
+
+            <img
+              src="{{ '/docs/Shoal.png' | relative_url }}"
+              alt="Bioluminescent shoal concept"
+              onerror="this.onerror=null; this.src='{{ '/docs/shoal.png' | relative_url }}';"
+            >
+
+            <figcaption>
+              Concept Placeholder
+            </figcaption>
+
           </figure>
+
         </div>
 
       </div>
+
     </section>
 
 
     <!-- VIDEO -->
+
     <section id="video" class="video-section">
 
-      <div class="panel video-panel">
+      <div class="video-grid">
 
-        <h2 style="
-          margin-top:0;
-          color:var(--muted);
-          font-family:Gloock,serif;
-          font-weight:400;
-        ">
-          Midnight Abyss
-        </h2>
 
-        <p class="lead" style="margin-top:6px;">
-          Take a first look at <em>Midnight Abyss</em>.
-        </p>
+        <!-- VIDEO 1 -->
 
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/gy9HTOA3A54"
-            title="Midnight Abyss"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+        <div class="panel video-panel">
+
+          <h2>
+            Midnight Abyss
+          </h2>
+
+          <p style="margin-top:6px;color:#5a6168;">
+            Take a first look at <em>Midnight Abyss</em>.
+          </p>
+
+          <div class="video-wrapper">
+
+            <iframe
+              src="https://www.youtube.com/embed/gy9HTOA3A54"
+              title="Midnight Abyss"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+        </div>
+
+
+        <!-- VIDEO 2 -->
+
+        <div class="panel video-panel">
+
+          <h2>
+            Midnight Abyss
+          </h2>
+
+          <p style="margin-top:6px;color:#5a6168;">
+            Discover more about the game.
+          </p>
+
+          <div class="video-wrapper">
+
+            <iframe
+              src="https://www.youtube.com/embed/eGZC_3-MuaU"
+              title="Midnight Abyss"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
         </div>
 
       </div>
@@ -477,31 +676,50 @@ permalink: /
 
 
     <!-- COMMUNITY / DISCORD -->
-    <section id="community" class="panel" style="padding:22px;margin-top:28px">
 
-      <h2 style="
-        margin-top:0;
-        color:var(--muted);
-        font-family:Gloock,serif;
-        font-weight:400
-      ">
+    <section
+      id="community"
+      class="panel"
+      style="padding:22px;margin-top:28px"
+    >
+
+      <h2
+        style="
+          margin-top:0;
+          color:var(--muted);
+          font-family:Gloock,serif;
+          font-weight:400
+        "
+      >
         Join the Community
       </h2>
 
-      <p class="lead" style="margin-top:6px">
+      <p
+        class="lead"
+        style="margin-top:6px"
+      >
         Session coordination, dev updates, and chatter all happen on Discord.
       </p>
 
-      <div class="cta" style="margin-top:14px">
-        <a class="btn discord"
-           href="https://discord.gg/5WUCjAn2zg"
-           target="_blank"
-           rel="noopener">
+      <div
+        class="cta"
+        style="margin-top:14px"
+      >
+
+        <a
+          class="btn discord"
+          href="https://discord.gg/5WUCjAn2zg"
+          target="_blank"
+          rel="noopener"
+        >
           Join our Discord
         </a>
+
       </div>
 
-      <p style="margin-top:10px;font-size:14px;color:#5a6168">
+      <p
+        style="margin-top:10px;font-size:14px;color:#5a6168"
+      >
         Invite link never expires. Safe, moderated space.
       </p>
 
@@ -509,14 +727,21 @@ permalink: /
 
 
     <!-- DESIGNER NOTES -->
-    <section id="designer-notes" class="panel" style="padding:22px;margin-top:28px">
 
-      <h2 style="
-        margin-top:0;
-        color:var(--muted);
-        font-family:Gloock,serif;
-        font-weight:400
-      ">
+    <section
+      id="designer-notes"
+      class="panel"
+      style="padding:22px;margin-top:28px"
+    >
+
+      <h2
+        style="
+          margin-top:0;
+          color:var(--muted);
+          font-family:Gloock,serif;
+          font-weight:400
+        "
+      >
         Designer Notes
       </h2>
 
@@ -535,13 +760,19 @@ permalink: /
 
       <p>
         If you have a question or would like clarification on any aspect of the game, please
-        <a href="mailto:midnightabyssttrpg@gmail.com"
-           style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+
+        <a
+          href="mailto:midnightabyssttrpg@gmail.com"
+          style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+        >
           email me
         </a>.
+
       </p>
 
-      <p style="margin-top:8px;font-size:14px;color:#5a6168">
+      <p
+        style="margin-top:8px;font-size:14px;color:#5a6168"
+      >
         Updated as development continues and new dives bring new discoveries.
       </p>
 
@@ -549,18 +780,26 @@ permalink: /
 
 
     <!-- GALLERY -->
-    <section id="gallery" style="margin-top:26px">
 
-      <h2 style="
-        font-family:Gloock,serif;
-        font-weight:400;
-        color:var(--muted);
-        margin:0 0 12px
-      ">
+    <section
+      id="gallery"
+      style="margin-top:26px"
+    >
+
+      <h2
+        style="
+          font-family:Gloock,serif;
+          font-weight:400;
+          color:var(--muted);
+          margin:0 0 12px
+        "
+      >
         Concept Gallery
       </h2>
 
-      <p style="margin-top:0;color:#5a6168">
+      <p
+        style="margin-top:0;color:#5a6168"
+      >
         <strong>
           All artwork shown is conceptual only and will be completely replaced
           with commissioned custom art for the final release.
@@ -570,82 +809,139 @@ permalink: /
       <div class="gallery">
 
         <figure class="thumb">
-          <img src="{{ '/docs/Trench Colony.png' | relative_url }}"
-               alt="Trench colony concept">
-          <figcaption>Concept Placeholder</figcaption>
+
+          <img
+            src="{{ '/docs/Trench Colony.png' | relative_url }}"
+            alt="Trench colony concept"
+          >
+
+          <figcaption>
+            Concept Placeholder
+          </figcaption>
+
         </figure>
 
+
         <figure class="thumb">
-          <img src="{{ '/docs/Market Scene.png' | relative_url }}"
-               alt="Market scene concept">
-          <figcaption>Concept Placeholder</figcaption>
+
+          <img
+            src="{{ '/docs/Market Scene.png' | relative_url }}"
+            alt="Market scene concept"
+          >
+
+          <figcaption>
+            Concept Placeholder
+          </figcaption>
+
         </figure>
 
       </div>
 
-      <p style="text-align:center;margin-top:10px;">
-        <a href="{{ '/gallery/' | relative_url }}"
-           style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)">
+      <p
+        style="text-align:center;margin-top:10px;"
+      >
+
+        <a
+          href="{{ '/gallery/' | relative_url }}"
+          style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)"
+        >
           View Full Gallery →
         </a>
+
       </p>
 
     </section>
 
 
-    <!-- Fiction: Pressure Line -->
-    <section id="pressure-line" style="margin-top:36px;">
+    <!-- FICTION: PRESSURE LINE -->
 
-      <div class="panel" style="
-        position:relative;
-        padding:40px 36px 32px;
-        background:linear-gradient(180deg, rgba(6,12,20,0.98), rgba(14,28,40,0.9));
-        color:#E6ECF1;
-        border:1px solid rgba(60,122,160,0.35);
-        box-shadow:0 10px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(60,122,160,0.15);
-        border-radius:16px;
-        font-family:Inter,system-ui,sans-serif;
-        line-height:1.75;
-        overflow:hidden;
-      ">
+    <section
+      id="pressure-line"
+      style="margin-top:36px;"
+    >
+
+      <div
+        class="panel"
+        style="
+          position:relative;
+          padding:40px 36px 32px;
+          background:linear-gradient(
+            180deg,
+            rgba(6,12,20,0.98),
+            rgba(14,28,40,0.9)
+          );
+          color:#E6ECF1;
+          border:1px solid rgba(60,122,160,0.35);
+          box-shadow:
+            0 10px 30px rgba(0,0,0,0.45),
+            inset 0 0 60px rgba(60,122,160,0.15);
+          border-radius:16px;
+          font-family:Inter,system-ui,sans-serif;
+          line-height:1.75;
+          overflow:hidden;
+        "
+      >
 
         <!-- Subtle animated top glow -->
-        <div style="
-          position:absolute;
-          top:0;
-          left:0;
-          right:0;
-          height:6px;
-          background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
-          filter:blur(2px);
-          animation:pulseGlow 5s infinite alternate;
-        "></div>
+
+        <div
+          style="
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            height:6px;
+            background:linear-gradient(
+              90deg,
+              transparent,
+              rgba(60,122,160,0.8),
+              transparent
+            );
+            filter:blur(2px);
+            animation:pulseGlow 5s infinite alternate;
+          "
+        ></div>
+
 
         <!-- Header -->
-        <div style="
-          text-align:center;
-          margin-bottom:30px;
-          font-family:'Gloock',serif;
-          letter-spacing:0.1em;
-          color:#89B4D8;
-          text-shadow:0 0 12px rgba(60,122,160,0.8),0 0 24px rgba(60,122,160,0.4);
-        ">
 
-          <h2 style="margin:0;font-weight:400;font-size:1.6rem;">
+        <div
+          style="
+            text-align:center;
+            margin-bottom:30px;
+            font-family:'Gloock',serif;
+            letter-spacing:0.1em;
+            color:#89B4D8;
+            text-shadow:
+              0 0 12px rgba(60,122,160,0.8),
+              0 0 24px rgba(60,122,160,0.4);
+          "
+        >
+
+          <h2
+            style="
+              margin:0;
+              font-weight:400;
+              font-size:1.6rem;
+            "
+          >
             PRESSURE LOG ENTRY — 08-A
           </h2>
 
-          <p style="
-            margin:6px 0 0;
-            font-family:'IM Fell English SC',serif;
-            font-size:2.3rem;
-            color:#C7D6E2;
-            letter-spacing:0.04em;
-          ">
+          <p
+            style="
+              margin:6px 0 0;
+              font-family:'IM Fell English SC',serif;
+              font-size:2.3rem;
+              color:#C7D6E2;
+              letter-spacing:0.04em;
+            "
+          >
             “Pressure Line”
           </p>
 
         </div>
+
 
         <p>
           <em>
@@ -793,51 +1089,77 @@ permalink: /
         </p>
 
         <p>
-          <strong>Whatever was in that wreck wasn’t staying there.</strong>
+          <strong>
+            Whatever was in that wreck wasn’t staying there.
+          </strong>
         </p>
 
+
         <!-- Subtle animated bottom glow -->
-        <div style="
-          position:absolute;
-          bottom:0;
-          left:0;
-          right:0;
-          height:6px;
-          background:linear-gradient(90deg,transparent,rgba(60,122,160,0.8),transparent);
-          filter:blur(2px);
-          animation:pulseGlow 5s infinite alternate-reverse;
-        "></div>
+
+        <div
+          style="
+            position:absolute;
+            bottom:0;
+            left:0;
+            right:0;
+            height:6px;
+            background:linear-gradient(
+              90deg,
+              transparent,
+              rgba(60,122,160,0.8),
+              transparent
+            );
+            filter:blur(2px);
+            animation:pulseGlow 5s infinite alternate-reverse;
+          "
+        ></div>
 
       </div>
 
+
       <style>
-        @keyframes pulseGlow {
-          0% {
+
+        @keyframes pulseGlow{
+
+          0%{
             opacity:0.2;
             transform:scaleX(1);
           }
 
-          100% {
+          100%{
             opacity:0.8;
             transform:scaleX(1.1);
           }
+
         }
+
       </style>
 
     </section>
 
 
-    <!-- About + Contact -->
-    <section id="about" class="two" style="margin-top:26px">
+    <!-- ABOUT + CONTACT -->
 
-      <div class="panel" style="padding:22px">
+    <section
+      id="about"
+      class="two"
+      style="margin-top:26px"
+    >
 
-        <h2 style="
-          margin-top:0;
-          color:var(--muted);
-          font-family:Gloock,serif;
-          font-weight:400
-        ">
+      <div
+        class="panel"
+        style="padding:22px"
+      >
+
+        <h2
+          style="
+            margin-top:0;
+            color:var(--muted);
+            font-family:Gloock,serif;
+            font-weight:400
+          "
+        >
           What is Midnight Abyss?
         </h2>
 
@@ -856,23 +1178,34 @@ permalink: /
       </div>
 
 
-      <div class="panel" id="contact" style="padding:22px">
+      <div
+        class="panel"
+        id="contact"
+        style="padding:22px"
+      >
 
-        <h2 style="
-          margin-top:0;
-          color:var(--muted);
-          font-family:Gloock,serif;
-          font-weight:400
-        ">
+        <h2
+          style="
+            margin-top:0;
+            color:var(--muted);
+            font-family:Gloock,serif;
+            font-weight:400
+          "
+        >
           Contact
         </h2>
 
         <p>
+
           Questions or press enquiries? Email
-          <a href="mailto:midnightabyssttrpg@gmail.com"
-             style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+
+          <a
+            href="mailto:midnightabyssttrpg@gmail.com"
+            style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+          >
             midnightabyssttrpg@gmail.com
           </a>.
+
         </p>
 
       </div>
@@ -881,9 +1214,14 @@ permalink: /
 
 
     <!-- FOOTER -->
+
     <footer>
 
-      <div class="divider" role="separator" aria-hidden="true"></div>
+      <div
+        class="divider"
+        role="separator"
+        aria-hidden="true"
+      ></div>
 
       <div class="two">
 
@@ -892,13 +1230,18 @@ permalink: /
         </p>
 
         <p style="text-align:right">
+
           Theme: mid-tone accessibility ·
-          <a href="https://discord.gg/5WUCjAn2zg"
-             target="_blank"
-             rel="noopener"
-             style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+
+          <a
+            href="https://discord.gg/5WUCjAn2zg"
+            target="_blank"
+            rel="noopener"
+            style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)"
+          >
             Join Discord
           </a>
+
         </p>
 
       </div>
@@ -910,21 +1253,31 @@ permalink: /
 
   <script>
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
 
     const logoPaths = [
+
       "{{ '/assets/logo.png' | relative_url }}",
       "{{ '/logo.png' | relative_url }}",
       "{{ '/docs/logo.png' | relative_url }}"
+
     ];
 
+
     (function loadLogo(i=0){
+
       if(i >= logoPaths.length) return;
 
-      const img = document.getElementById('site-logo');
+      const img =
+        document.getElementById('site-logo');
 
-      img.onerror = () => loadLogo(i+1);
-      img.src = logoPaths[i];
+      img.onerror =
+        () => loadLogo(i+1);
+
+      img.src =
+        logoPaths[i];
 
     })();
 
