@@ -35,26 +35,65 @@ permalink: /
       background:var(--bg);
       color:var(--ink);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
-      line-height:1.6
+      line-height:1.6;
+    }
+
+    body{
+      padding-top:0;
     }
 
     .wrap{
       max-width:1100px;
       margin:0 auto;
-      padding:28px
+      padding:28px;
     }
 
+
+    /* =========================================================
+       COLLAPSING HEADER
+       ========================================================= */
+
     header{
-      position:sticky;
+      position:fixed;
       top:0;
+      left:0;
+      right:0;
+
       background:linear-gradient(
         180deg,
-        rgba(229,229,229,0.95),
-        rgba(229,229,229,0.8)
+        rgba(229,229,229,0.97),
+        rgba(229,229,229,0.88)
       );
+
       backdrop-filter:saturate(140%) blur(6px);
+
       border-bottom:1px solid rgba(0,0,0,0.06);
-      z-index:10
+
+      z-index:1000;
+
+      transform:translateY(0);
+      transition:transform 0.35s ease;
+    }
+
+    header.header-hidden{
+      transform:translateY(-100%);
+    }
+
+    /*
+      Invisible trigger zone at the very top of
+      the browser window. Moving the mouse here
+      reveals the header.
+    */
+
+    body::before{
+      content:"";
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:14px;
+      z-index:999;
+      pointer-events:auto;
     }
 
     .nav{
@@ -63,7 +102,7 @@ permalink: /
       justify-content:space-between;
       gap:16px;
       flex-wrap:wrap;
-      text-align:center
+      text-align:center;
     }
 
     .brand{
@@ -75,7 +114,7 @@ permalink: /
       color:var(--ink);
       flex:1 1 100%;
       flex-direction:column;
-      margin-top:8px
+      margin-top:8px;
     }
 
     .logo{
@@ -83,9 +122,10 @@ permalink: /
       height:168px;
       object-fit:contain;
       border-radius:50%;
+
       box-shadow:
         inset 0 0 0 1px rgba(255,255,255,0.25),
-        0 6px 18px rgba(0,0,0,0.2)
+        0 6px 18px rgba(0,0,0,0.2);
     }
 
     .title{
@@ -95,18 +135,18 @@ permalink: /
       letter-spacing:.6px;
       color:var(--muted);
       text-transform:uppercase;
-      margin:0
+      margin:0;
     }
 
     .title .lift{
       display:inline-block;
-      transform:translateY(-1px)
+      transform:translateY(-1px);
     }
 
     .title .lift:first-letter{
       display:inline-block;
       transform:scaleY(1.010) translateY(-1px);
-      transform-origin:bottom
+      transform-origin:bottom;
     }
 
     nav{
@@ -114,28 +154,31 @@ permalink: /
       display:flex;
       justify-content:center;
       flex-wrap:wrap;
-      margin-top:10px
+      margin-top:10px;
     }
 
     nav a{
       color:var(--muted);
       text-decoration:none;
       font-weight:600;
-      margin:0 10px
+      margin:0 10px;
     }
 
     nav a:hover{
-      color:var(--accent)
+      color:var(--accent);
     }
 
 
-    /* HERO */
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .hero{
       position:relative;
       margin-top:18px;
       border-radius:var(--radius);
       overflow:hidden;
+
       background:
         radial-gradient(
           1000px 400px at 20% 0%,
@@ -148,21 +191,23 @@ permalink: /
           transparent 70%
         ),
         var(--card);
+
       border:1px solid rgba(0,0,0,0.06);
-      box-shadow:var(--shadow)
+      box-shadow:var(--shadow);
     }
 
     .hero-inner{
       display:grid;
       grid-template-columns:1.2fr 1fr;
       gap:28px;
-      padding:42px
+      padding:42px;
     }
 
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
+
       background-image:
         linear-gradient(
           transparent 31px,
@@ -173,8 +218,9 @@ permalink: /
           transparent 31px,
           var(--grid) 32px
         );
+
       background-size:32px 32px;
-      pointer-events:none
+      pointer-events:none;
     }
 
     .badge{
@@ -187,7 +233,7 @@ permalink: /
       background:rgba(60,122,160,0.09);
       padding:6px 10px;
       border-radius:999px;
-      border:1px solid rgba(60,122,160,0.25)
+      border:1px solid rgba(60,122,160,0.25);
     }
 
     h1{
@@ -195,19 +241,19 @@ permalink: /
       font-weight:400;
       line-height:1.15;
       margin:.4rem 0 1rem;
-      color:var(--muted)
+      color:var(--muted);
     }
 
     .lead{
       font-size:1.1rem;
-      color:#2a2f35
+      color:#2a2f35;
     }
 
     .cta{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:18px
+      margin-top:18px;
     }
 
     .btn{
@@ -220,55 +266,60 @@ permalink: /
       background:var(--accent);
       color:white;
       box-shadow:0 6px 16px rgba(60,122,160,0.35);
-      cursor:pointer
+      cursor:pointer;
     }
 
     .btn.secondary{
       background:transparent;
       color:var(--accent);
-      border:2px solid var(--accent)
+      border:2px solid var(--accent);
     }
 
-    /* Discord button style */
+
+    /* =========================================================
+       DISCORD
+       ========================================================= */
 
     .btn.discord{
       background:#5865F2;
       color:#fff;
       border:none;
-      box-shadow:0 6px 16px rgba(88,101,242,0.35)
+      box-shadow:0 6px 16px rgba(88,101,242,0.35);
     }
 
     .btn.discord:hover{
       filter:brightness(1.08);
-      transform:translateY(-1px)
+      transform:translateY(-1px);
     }
 
 
-    /* GENERAL PANELS */
+    /* =========================================================
+       GENERAL PANELS
+       ========================================================= */
 
     .panel{
       background:var(--card);
       border:1px solid rgba(0,0,0,0.06);
       border-radius:var(--radius);
-      box-shadow:var(--shadow)
+      box-shadow:var(--shadow);
     }
 
     .grid{
       display:grid;
-      gap:22px
+      gap:22px;
     }
 
     .grid.features{
-      grid-template-columns:repeat(3,1fr)
+      grid-template-columns:repeat(3,1fr);
     }
 
     .feature{
-      padding:18px
+      padding:18px;
     }
 
     .feature h3{
       margin:.2rem 0 .4rem;
-      color:var(--muted)
+      color:var(--muted);
     }
 
     .tag{
@@ -279,7 +330,7 @@ permalink: /
       padding:6px 10px;
       border-radius:999px;
       border:1px solid rgba(0,0,0,0.06);
-      font-size:12px
+      font-size:12px;
     }
 
     .divider{
@@ -290,22 +341,24 @@ permalink: /
         rgba(0,0,0,0.1),
         transparent
       );
-      margin:26px 0
+      margin:26px 0;
     }
 
     .two{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:22px
+      gap:22px;
     }
 
 
-    /* GALLERY */
+    /* =========================================================
+       GALLERY
+       ========================================================= */
 
     .gallery{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:10px
+      gap:10px;
     }
 
     figure.thumb{
@@ -313,13 +366,13 @@ permalink: /
       background:#ccc;
       position:relative;
       overflow:hidden;
-      margin:0
+      margin:0;
     }
 
     figure.thumb img{
       width:100%;
       height:auto;
-      display:block
+      display:block;
     }
 
     figure.thumb figcaption{
@@ -330,31 +383,33 @@ permalink: /
       color:#fff;
       background:rgba(0,0,0,0.45);
       padding:4px 8px;
-      border-radius:999px
+      border-radius:999px;
     }
 
 
-    /* YOUTUBE VIDEOS */
+    /* =========================================================
+       YOUTUBE VIDEOS
+       ========================================================= */
 
     .video-section{
-      margin-top:28px
+      margin-top:28px;
     }
 
     .video-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:22px
+      gap:22px;
     }
 
     .video-panel{
-      padding:18px
+      padding:18px;
     }
 
     .video-panel h2{
       margin-top:0;
       color:var(--muted);
       font-family:Gloock,serif;
-      font-weight:400
+      font-weight:400;
     }
 
     .video-wrapper{
@@ -365,7 +420,7 @@ permalink: /
       overflow:hidden;
       border-radius:12px;
       background:#111;
-      box-shadow:0 8px 24px rgba(0,0,0,0.18)
+      box-shadow:0 8px 24px rgba(0,0,0,0.18);
     }
 
     .video-wrapper iframe{
@@ -374,42 +429,68 @@ permalink: /
       left:0;
       width:100%;
       height:100%;
-      border:0
+      border:0;
     }
 
 
-    /* FOOTER */
+    /* =========================================================
+       FOOTER
+       ========================================================= */
 
     footer{
       margin:40px 0 22px;
       color:#5a6168;
       font-size:14px;
-      text-align:center
+      text-align:center;
     }
 
 
-    /* RESPONSIVE */
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
 
     @media (max-width:900px){
 
       .hero-inner{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
       }
 
       .grid.features{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
       }
 
       .two{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
       }
 
       .gallery{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
       }
 
       .video-grid{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
+      }
+
+    }
+
+
+    @media (max-width:600px){
+
+      .wrap{
+        padding:18px;
+      }
+
+      .logo{
+        width:130px;
+        height:130px;
+      }
+
+      .title{
+        font-size:3rem;
+      }
+
+      .hero-inner{
+        padding:28px;
       }
 
     }
@@ -419,6 +500,11 @@ permalink: /
 
 
 <body id="top">
+
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
 
   <header>
 
@@ -496,7 +582,9 @@ permalink: /
   <main class="wrap">
 
 
-    <!-- HERO -->
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
 
     <section class="hero" id="hero">
 
@@ -517,6 +605,7 @@ permalink: /
             Run salvage contracts, map forbidden trenches, and bargain with factions
             in an O₂-based economy.
           </p>
+
 
           <div class="cta">
 
@@ -612,9 +701,14 @@ permalink: /
     </section>
 
 
-    <!-- VIDEO -->
+    <!-- =========================================================
+         VIDEOS
+         ========================================================= -->
 
-    <section id="video" class="video-section">
+    <section
+      id="video"
+      class="video-section"
+    >
 
       <div class="video-grid">
 
@@ -627,9 +721,12 @@ permalink: /
             Midnight Abyss
           </h2>
 
-          <p style="margin-top:6px;color:#5a6168;">
+          <p
+            style="margin-top:6px;color:#5a6168;"
+          >
             Take a first look at <em>Midnight Abyss</em>.
           </p>
+
 
           <div class="video-wrapper">
 
@@ -653,9 +750,12 @@ permalink: /
             Midnight Abyss
           </h2>
 
-          <p style="margin-top:6px;color:#5a6168;">
+          <p
+            style="margin-top:6px;color:#5a6168;"
+          >
             Discover more about the game.
           </p>
+
 
           <div class="video-wrapper">
 
@@ -675,7 +775,9 @@ permalink: /
     </section>
 
 
-    <!-- COMMUNITY / DISCORD -->
+    <!-- =========================================================
+         COMMUNITY / DISCORD
+         ========================================================= -->
 
     <section
       id="community"
@@ -701,6 +803,7 @@ permalink: /
         Session coordination, dev updates, and chatter all happen on Discord.
       </p>
 
+
       <div
         class="cta"
         style="margin-top:14px"
@@ -717,6 +820,7 @@ permalink: /
 
       </div>
 
+
       <p
         style="margin-top:10px;font-size:14px;color:#5a6168"
       >
@@ -726,7 +830,9 @@ permalink: /
     </section>
 
 
-    <!-- DESIGNER NOTES -->
+    <!-- =========================================================
+         DESIGNER NOTES
+         ========================================================= -->
 
     <section
       id="designer-notes"
@@ -745,11 +851,13 @@ permalink: /
         Designer Notes
       </h2>
 
+
       <p>
         <em>Designer Notes</em> is a space for me to share the thoughts and reasoning
         behind the design of <em>Midnight Abyss</em> — why certain mechanics exist,
         what they’re meant to evoke, and how the game’s tone and themes shaped its structure.
       </p>
+
 
       <p>
         Some entries expand on choices made during development; others explore ideas
@@ -758,7 +866,9 @@ permalink: /
         part journal.
       </p>
 
+
       <p>
+
         If you have a question or would like clarification on any aspect of the game, please
 
         <a
@@ -770,6 +880,7 @@ permalink: /
 
       </p>
 
+
       <p
         style="margin-top:8px;font-size:14px;color:#5a6168"
       >
@@ -779,7 +890,9 @@ permalink: /
     </section>
 
 
-    <!-- GALLERY -->
+    <!-- =========================================================
+         GALLERY
+         ========================================================= -->
 
     <section
       id="gallery"
@@ -797,6 +910,7 @@ permalink: /
         Concept Gallery
       </h2>
 
+
       <p
         style="margin-top:0;color:#5a6168"
       >
@@ -806,7 +920,9 @@ permalink: /
         </strong>
       </p>
 
+
       <div class="gallery">
+
 
         <figure class="thumb">
 
@@ -835,7 +951,9 @@ permalink: /
 
         </figure>
 
+
       </div>
+
 
       <p
         style="text-align:center;margin-top:10px;"
@@ -853,7 +971,9 @@ permalink: /
     </section>
 
 
-    <!-- FICTION: PRESSURE LINE -->
+    <!-- =========================================================
+         FICTION: PRESSURE LINE
+         ========================================================= -->
 
     <section
       id="pressure-line"
@@ -881,6 +1001,7 @@ permalink: /
           overflow:hidden;
         "
       >
+
 
         <!-- Subtle animated top glow -->
 
@@ -928,6 +1049,7 @@ permalink: /
             PRESSURE LOG ENTRY — 08-A
           </h2>
 
+
           <p
             style="
               margin:6px 0 0;
@@ -953,15 +1075,18 @@ permalink: /
           to the wreck below.
         </p>
 
+
         <p>
           Captain Edda Raines leaned over the console, eyes flicking between sonar pings.
           “Hold her steady. That’s our target—cargo bay three.”
         </p>
 
+
         <p>
           “Copy,” said Vega, the diver tech, his gloved hands already on the drone controls.
           “Hull breach about ten meters wide. Structural scan’s iffy. Might be pressure fatigue.”
         </p>
+
 
         <p>
           They were three days out from the nearest relay buoy, running lean on oxygen and
@@ -971,19 +1096,23 @@ permalink: /
           corporate sigil no one recognized anymore.
         </p>
 
+
         <p>
           Edda watched Vega’s drone snake into the breach. The feed flickered, static
           crawling across the image, then stabilized to show a long corridor sagging under
           pressure. Chairs, porcelain cups, and a child’s toy drifted lazily past.
         </p>
 
+
         <p>
           “Getting something,” Vega murmured. “Crate matches the manifest. Still sealed.”
         </p>
 
+
         <p>
           “Latch it,” Edda said.
         </p>
+
 
         <p>
           The drone’s manipulator arms extended, clamping to the crate’s corners. Then the
@@ -992,22 +1121,27 @@ permalink: /
           frame, drifting backward into the shadows.
         </p>
 
+
         <p>
           Edda frowned. “Playback that last—”
         </p>
 
+
         <p>
           The feed went black.
         </p>
+
 
         <p>
           “Drone’s dead,” Vega said. “Full disconnect. That’s not a signal loss—something
           fried the link.”
         </p>
 
+
         <p>
           Raines turned to the others. “We go in.”
         </p>
+
 
         <p>
           Inside the wreck, light behaved like something alive—bending, twisting, caught on
@@ -1015,78 +1149,95 @@ permalink: /
           bubbles spiraling upward from cracks in their suits.
         </p>
 
+
         <p>
           They found the crate in a tilted ballroom, half-buried in silt and broken glass.
           The floor groaned with every step.
         </p>
+
 
         <p>
           Vega knelt by it, brushing sediment away. “Looks intact. But the markings… these
           aren’t Union seals.”
         </p>
 
+
         <p>
           Edda’s wrist display blinked—depth telemetry spiking. The pressure around them
           shifted, like the ocean itself inhaled.
         </p>
 
+
         <p>
           Then, from the corridor they’d entered, came a low vibration. A hum.
         </p>
 
+
         <p>
           The lights flickered.
         </p>
+
 
         <p>
           Something floated into view—a shape like a person, but boneless, limbs trailing
           like ribbons. Its face was a blur of light, refracting their beams back at them.
         </p>
 
+
         <p>
           Edda’s breath caught. “Fall back—”
         </p>
+
 
         <p>
           The shape rippled, and the sound hit them—not a roar, but a resonance deep enough
           to shake their bones.
         </p>
 
+
         <p>
           Their comms flooded with static. The crate behind them began to vibrate, faintly
           glowing where the seals had cracked with age.
         </p>
 
+
         <p>
           “Vega, move!”
         </p>
+
 
         <p>
           He grabbed the crate’s handle and kicked off toward the exit. The shape followed,
           slow and deliberate.
         </p>
 
+
         <p>
           Back aboard the <em>Mercy Jane</em>, they sealed the hatch and flooded the chamber dry.
           The crate sat between them, dull and wet.
         </p>
+
 
         <p>
           Edda looked at the condensation forming along its edges. It pulsed faintly,
           like a heartbeat.
         </p>
 
+
         <p>
           “Don’t open it,” Vega said quietly.
         </p>
+
 
         <p>
           Edda nodded—but she didn’t look away.
         </p>
 
+
         <p>
           Outside, the sonar pinged once. Then again. Then again, closer.
         </p>
+
 
         <p>
           <strong>
@@ -1139,13 +1290,16 @@ permalink: /
     </section>
 
 
-    <!-- ABOUT + CONTACT -->
+    <!-- =========================================================
+         ABOUT + CONTACT
+         ========================================================= -->
 
     <section
       id="about"
       class="two"
       style="margin-top:26px"
     >
+
 
       <div
         class="panel"
@@ -1163,10 +1317,12 @@ permalink: /
           What is Midnight Abyss?
         </h2>
 
+
         <p>
           <em>Midnight Abyss</em> is a survival roleplaying game set in the crushing
           dark of the deep ocean.
         </p>
+
 
         <p>
           Crews dive for freedom, answers, and the promise of more than just another breath.
@@ -1195,6 +1351,7 @@ permalink: /
           Contact
         </h2>
 
+
         <p>
 
           Questions or press enquiries? Email
@@ -1213,7 +1370,9 @@ permalink: /
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
 
     <footer>
 
@@ -1223,11 +1382,13 @@ permalink: /
         aria-hidden="true"
       ></div>
 
+
       <div class="two">
 
         <p>
           © <span id="year"></span> Midnight Abyss. All rights reserved.
         </p>
+
 
         <p style="text-align:right">
 
@@ -1251,11 +1412,23 @@ permalink: /
   </main>
 
 
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
   <script>
+
+    /* ---------------------------------------------------------
+       Copyright year
+       --------------------------------------------------------- */
 
     document.getElementById('year').textContent =
       new Date().getFullYear();
 
+
+    /* ---------------------------------------------------------
+       Logo fallback
+       --------------------------------------------------------- */
 
     const logoPaths = [
 
@@ -1280,6 +1453,112 @@ permalink: /
         logoPaths[i];
 
     })();
+
+
+    /* ---------------------------------------------------------
+       Collapsing header
+       --------------------------------------------------------- */
+
+    const header =
+      document.querySelector('header');
+
+    let headerTimeout;
+
+
+    /*
+      Show the header.
+
+      If the visitor is already down the page,
+      automatically hide it again after 1.8 seconds.
+    */
+
+    function showHeader(){
+
+      header.classList.remove('header-hidden');
+
+      clearTimeout(headerTimeout);
+
+      if(window.scrollY > 80){
+
+        headerTimeout = setTimeout(() => {
+
+          header.classList.add('header-hidden');
+
+        }, 1800);
+
+      }
+
+    }
+
+
+    /*
+      Hide the header if we have scrolled
+      far enough down the page.
+    */
+
+    function hideHeader(){
+
+      if(window.scrollY > 80){
+
+        header.classList.add('header-hidden');
+
+      }
+
+    }
+
+
+    /*
+      Scrolling.
+
+      At the top of the page the header is always visible.
+      Once below 80px it hides.
+    */
+
+    window.addEventListener('scroll', () => {
+
+      if(window.scrollY <= 80){
+
+        header.classList.remove('header-hidden');
+
+      } else {
+
+        hideHeader();
+
+      }
+
+    });
+
+
+    /*
+      Moving the mouse into the very top of the
+      browser window reveals the header.
+    */
+
+    document.addEventListener('mousemove', (event) => {
+
+      if(event.clientY <= 14){
+
+        showHeader();
+
+      }
+
+    });
+
+
+    /*
+      Keep the header visible when returning
+      to the top of the page.
+    */
+
+    window.addEventListener('scroll', () => {
+
+      if(window.scrollY <= 80){
+
+        header.classList.remove('header-hidden');
+
+      }
+
+    });
 
   </script>
 
