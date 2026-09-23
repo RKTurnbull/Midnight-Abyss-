@@ -74,11 +74,6 @@ permalink: /
     }
 
 
-    /*
-      The main content reserves enough space for the fixed
-      header while the visitor is at the top of the page.
-    */
-
     main.wrap{
       max-width:1100px;
       margin:0 auto;
@@ -128,11 +123,6 @@ permalink: /
       transform:translateY(-100%);
     }
 
-
-    /*
-      Invisible trigger zone at the very top of the screen.
-      Moving the mouse here reveals the header.
-    */
 
     body::before{
       content:"";
@@ -604,7 +594,7 @@ permalink: /
       display:grid;
 
       grid-template-columns:
-        repeat(2,1fr);
+        repeat(3,1fr);
 
       gap:22px;
     }
@@ -699,6 +689,16 @@ permalink: /
        RESPONSIVE
        ========================================================= */
 
+    @media (max-width:1000px){
+
+      .video-grid{
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+    }
+
+
     @media (max-width:900px){
 
       .hero-inner{
@@ -720,6 +720,10 @@ permalink: /
         grid-template-columns:1fr;
       }
 
+    }
+
+
+    @media (max-width:650px){
 
       .video-grid{
         grid-template-columns:1fr;
@@ -1028,6 +1032,8 @@ permalink: /
       <div class="video-grid">
 
 
+        <!-- VIDEO 1 -->
+
         <div
           class="panel video-panel"
         >
@@ -1061,6 +1067,8 @@ permalink: /
         </div>
 
 
+        <!-- VIDEO 2 -->
+
         <div
           class="panel video-panel"
         >
@@ -1084,6 +1092,41 @@ permalink: /
 
             <iframe
               src="https://www.youtube.com/embed/eGZC_3-MuaU"
+              title="Midnight Abyss"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+        </div>
+
+
+        <!-- VIDEO 3 -->
+
+        <div
+          class="panel video-panel"
+        >
+
+          <h2>
+            Midnight Abyss
+          </h2>
+
+
+          <p
+            style="
+              margin-top:6px;
+              color:#5a6168;
+            "
+          >
+            More from <em>Midnight Abyss</em>.
+          </p>
+
+
+          <div class="video-wrapper">
+
+            <iframe
+              src="https://www.youtube.com/embed/WMuuJDasrdI"
               title="Midnight Abyss"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
@@ -1838,10 +1881,9 @@ permalink: /
 
 
     /*
-      Measure the actual header height.
-
-      This is important because the header changes size
-      on smaller screens.
+      Measure the actual header height so that the page
+      content never sits underneath it when we are at
+      the top of the page.
     */
 
     function updateHeaderHeight(){
@@ -1866,8 +1908,8 @@ permalink: /
     /*
       Show the header.
 
-      When we are already down the page, it will hide
-      again after 1.8 seconds.
+      When we are already down the page, it hides again
+      after 1.8 seconds.
     */
 
     let headerTimeout;
