@@ -1,25 +1,24 @@
 
----
-layout: none
-title: Midnight Abyss – Official Site
-permalink: /
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Midnight Abyss – Official Site</title>
 
-<meta name="description" content="Midnight Abyss is a deep-sea survival RPG of oxygen, pressure, and discovery. Read the quickstart and explore the setting.">
+<meta name="description" content="Midnight Abyss is a deep-sea survival tabletop roleplaying game of pressure, oxygen and difficult choices.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=IM+Fell+English+SC&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* ==========================================
+   GENERAL STYLING
+========================================== */
+
 :root {
   --bg:#E5E5E5;
   --card:#F0F0F0;
@@ -40,7 +39,7 @@ html {
   scroll-behavior:smooth;
 }
 
-html, body {
+html,body {
   margin:0;
   padding:0;
   background:var(--bg);
@@ -59,7 +58,13 @@ main.wrap {
   padding:calc(var(--header-height) + 28px) 28px 28px;
 }
 
-/* HEADER */
+a {
+  color:var(--accent);
+}
+
+/* ==========================================
+   HEADER AND NAVIGATION
+========================================== */
 
 header {
   position:fixed;
@@ -82,21 +87,10 @@ header.header-hidden {
   transform:translateY(-100%);
 }
 
-body::before {
-  content:"";
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:14px;
-  z-index:999;
-  pointer-events:auto;
-}
-
 .nav {
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
   gap:16px;
   flex-wrap:wrap;
   text-align:center;
@@ -106,12 +100,12 @@ body::before {
   display:flex;
   align-items:center;
   justify-content:center;
+  flex-direction:column;
   gap:16px;
+  flex:1 1 100%;
+  margin-top:8px;
   text-decoration:none;
   color:var(--ink);
-  flex:1 1 100%;
-  flex-direction:column;
-  margin-top:8px;
 }
 
 .logo {
@@ -120,9 +114,7 @@ body::before {
   height:168px;
   object-fit:contain;
   border-radius:50%;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.25),
-    0 6px 18px rgba(0,0,0,.2);
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
 }
 
 .title {
@@ -133,17 +125,6 @@ body::before {
   color:var(--muted);
   text-transform:uppercase;
   margin:0;
-}
-
-.title .lift {
-  display:inline-block;
-  transform:translateY(-1px);
-}
-
-.title .lift:first-letter {
-  display:inline-block;
-  transform:scaleY(1.010) translateY(-1px);
-  transform-origin:bottom;
 }
 
 nav {
@@ -165,7 +146,9 @@ nav a:hover {
   color:var(--accent);
 }
 
-/* HERO */
+/* ==========================================
+   HERO
+========================================== */
 
 .hero {
   position:relative;
@@ -173,20 +156,13 @@ nav a:hover {
   border-radius:var(--radius);
   overflow:hidden;
   background:
-    radial-gradient(1000px 400px at 20% 0%,rgba(60,122,160,.25),transparent 70%),
-    radial-gradient(900px 300px at 100% 110%,rgba(156,106,88,.18),transparent 70%),
+    radial-gradient(1000px 400px at 20% 0%,
+      rgba(60,122,160,.25),transparent 70%),
+    radial-gradient(900px 300px at 100% 110%,
+      rgba(156,106,88,.18),transparent 70%),
     var(--card);
   border:1px solid rgba(0,0,0,.06);
   box-shadow:var(--shadow);
-}
-
-.hero-inner {
-  position:relative;
-  z-index:1;
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:28px;
-  padding:42px;
 }
 
 .hero::before {
@@ -198,6 +174,15 @@ nav a:hover {
     linear-gradient(90deg,transparent 31px,var(--grid) 32px);
   background-size:32px 32px;
   pointer-events:none;
+}
+
+.hero-inner {
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:28px;
+  padding:42px;
 }
 
 .badge {
@@ -235,7 +220,6 @@ h1 {
 
 .btn {
   display:inline-block;
-  appearance:none;
   border:none;
   border-radius:12px;
   padding:12px 16px;
@@ -257,16 +241,16 @@ h1 {
 .btn.discord {
   background:#5865F2;
   color:white;
-  border:none;
   box-shadow:0 6px 16px rgba(88,101,242,.35);
 }
 
 .btn.discord:hover {
   filter:brightness(1.08);
-  transform:translateY(-1px);
 }
 
-/* PANELS */
+/* ==========================================
+   PANELS AND LAYOUT
+========================================== */
 
 .panel {
   background:var(--card);
@@ -275,48 +259,26 @@ h1 {
   box-shadow:var(--shadow);
 }
 
-.grid {
-  display:grid;
-  gap:22px;
-}
-
-.grid.features {
-  grid-template-columns:repeat(3,1fr);
-}
-
-.feature {
-  padding:18px;
-}
-
-.feature h3 {
-  margin:.2rem 0 .4rem;
-  color:var(--muted);
-}
-
-.tag {
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:rgba(0,0,0,.04);
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(0,0,0,.06);
-  font-size:12px;
-}
-
-.divider {
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(0,0,0,.1),transparent);
-  margin:26px 0;
-}
-
 .two {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
 }
 
-/* ARTWORK */
+.divider {
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(0,0,0,.1),
+    transparent
+  );
+  margin:26px 0;
+}
+
+/* ==========================================
+   IMAGES
+========================================== */
 
 .gallery {
   display:grid;
@@ -333,10 +295,9 @@ figure.thumb {
 }
 
 figure.thumb img {
+  display:block;
   width:100%;
   height:auto;
-  display:block;
-  object-fit:contain;
 }
 
 figure.thumb figcaption {
@@ -350,7 +311,9 @@ figure.thumb figcaption {
   border-radius:999px;
 }
 
-/* PLAYTEST VIDEOS */
+/* ==========================================
+   VIDEOS
+========================================== */
 
 .video-section {
   margin-top:28px;
@@ -421,20 +384,93 @@ figure.thumb figcaption {
   border:0;
 }
 
-/* FICTION */
+/* ==========================================
+   FICTION
+========================================== */
+
+.fiction-panel {
+  position:relative;
+  padding:40px 36px 32px;
+  background:linear-gradient(
+    180deg,
+    rgba(6,12,20,.98),
+    rgba(14,28,40,.9)
+  );
+  color:#E6ECF1;
+  border:1px solid rgba(60,122,160,.35);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.45),
+    inset 0 0 60px rgba(60,122,160,.15);
+  border-radius:16px;
+  line-height:1.75;
+  overflow:hidden;
+}
+
+.fiction-heading {
+  text-align:center;
+  margin-bottom:30px;
+  font-family:Gloock,serif;
+  letter-spacing:.1em;
+  color:#89B4D8;
+  text-shadow:
+    0 0 12px rgba(60,122,160,.8),
+    0 0 24px rgba(60,122,160,.4);
+}
+
+.fiction-heading h2 {
+  margin:0;
+  font-weight:400;
+  font-size:1.6rem;
+}
+
+.fiction-heading p {
+  margin:6px 0 0;
+  font-family:'IM Fell English SC',serif;
+  font-size:2.3rem;
+  color:#C7D6E2;
+  letter-spacing:.04em;
+}
+
+.fiction-panel::before,
+.fiction-panel::after {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:6px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(60,122,160,.8),
+    transparent
+  );
+  filter:blur(2px);
+  animation:pulseGlow 5s infinite alternate;
+}
+
+.fiction-panel::before {
+  top:0;
+}
+
+.fiction-panel::after {
+  bottom:0;
+  animation-direction:alternate-reverse;
+}
 
 @keyframes pulseGlow {
-  0% {
+  from {
     opacity:.2;
     transform:scaleX(1);
   }
-  100% {
+  to {
     opacity:.8;
     transform:scaleX(1.1);
   }
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER
+========================================== */
 
 footer {
   margin:40px 0 22px;
@@ -443,14 +479,12 @@ footer {
   text-align:center;
 }
 
-/* RESPONSIVE */
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media(max-width:900px) {
-  .hero-inner {
-    grid-template-columns:1fr;
-  }
-
-  .grid.features,
+  .hero-inner,
   .two,
   .gallery,
   .session-zero-row,
@@ -484,44 +518,73 @@ footer {
   .hero-inner {
     padding:28px;
   }
+
+  .fiction-panel {
+    padding:28px 22px;
+  }
 }
+
 </style>
 </head>
 
 <body id="top">
 
-<!-- HEADER -->
+<!-- ==========================================
+     HEADER
+========================================== -->
 
 <header>
   <div class="wrap nav">
 
     <a class="brand" href="#top">
 
-      <!-- LOGO: DIRECT SOURCE WITH FALLBACKS -->
       <img
-        id="site-logo"
         class="logo"
-        src="{{ '/assets/logo.png' | relative_url }}"
+        src="https://www.midnightabyss.com/assets/logo.png"
         alt="Midnight Abyss logo"
-        data-fallbacks="{{ '/logo.png' | relative_url }}|{{ '/docs/logo.png' | relative_url }}|{{ '/assets/Logo.png' | relative_url }}|{{ '/docs/Logo.png' | relative_url }}"
+        width="168"
+        height="168"
       >
 
       <strong class="title">
-        <span class="lift">Mi</span>dnight Abyss
+        Midnight Abyss
       </strong>
+
     </a>
 
     <nav aria-label="Primary">
+
       <a href="#top">Home</a>
       <a href="#about">About</a>
-      <a href="{{ '/features/' | relative_url }}">Features</a>
-      <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
-      <a href="{{ '/designer-notes/' | relative_url }}">Designer Notes</a>
+
+      <a href="https://www.midnightabyss.com/features/">
+        Features
+      </a>
+
+      <a href="https://www.midnightabyss.com/gallery/">
+        Gallery
+      </a>
+
+      <a href="https://www.midnightabyss.com/designer-notes/">
+        Designer Notes
+      </a>
+
       <a href="#video">Video</a>
-      <a href="{{ '/docs/Quickstart.pdf' | relative_url }}" target="_blank" rel="noopener">Quickstart</a>
+
+      <a href="https://www.midnightabyss.com/docs/Quickstart.pdf"
+         target="_blank" rel="noopener">
+        Quickstart
+      </a>
+
       <a href="#pressure-line">Fiction</a>
-      <a href="https://discord.gg/5WUCjAn2zg" target="_blank" rel="noopener">Discord</a>
+
+      <a href="https://discord.gg/5WUCjAn2zg"
+         target="_blank" rel="noopener">
+        Discord
+      </a>
+
       <a href="#contact">Contact</a>
+
     </nav>
 
   </div>
@@ -529,25 +592,35 @@ footer {
 
 <main class="wrap">
 
-<!-- HERO -->
+<!-- ==========================================
+     HERO
+========================================== -->
 
 <section class="hero" id="hero">
+
   <div class="hero-inner">
 
     <div>
-      <span class="badge">Deep-sea Survival RPG</span>
 
-      <h1>Pressure. Oxygen. Choice.</h1>
+      <span class="badge">
+        Deep-sea Survival RPG
+      </span>
+
+      <h1>
+        Pressure. Oxygen. Choice.
+      </h1>
 
       <p class="lead">
-        A tabletop roleplaying game of claustrophobic dives and hard decisions.
-        Run salvage contracts, map forbidden trenches, and bargain with factions
-        in an O₂-based economy.
+        A tabletop roleplaying game of claustrophobic dives
+        and hard decisions. Run salvage contracts, map
+        forbidden trenches, and bargain with factions in
+        an O₂-based economy.
       </p>
 
       <div class="cta">
+
         <a class="btn"
-           href="{{ '/docs/Quickstart.pdf' | relative_url }}"
+           href="https://www.midnightabyss.com/docs/Quickstart.pdf"
            target="_blank"
            rel="noopener noreferrer">
           Open Quickstart (PDF)
@@ -556,14 +629,14 @@ footer {
         <a class="btn secondary" href="#about">
           Learn More
         </a>
+
       </div>
 
       <p style="margin:.5rem 0 0;font-size:14px;color:#5a6168">
         If the button doesn’t work on your device, try the
-        <a href="{{ '/docs/Quickstart.pdf' | relative_url }}"
+        <a href="https://www.midnightabyss.com/docs/Quickstart.pdf"
            target="_blank"
-           rel="noopener noreferrer"
-           style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+           rel="noopener noreferrer">
           direct Quickstart link
         </a>.
       </p>
@@ -573,51 +646,67 @@ footer {
       </p>
 
       <p style="margin-top:8px;font-size:14px;color:#5a6168">
-        Created by Richard Turnbull, <em>Midnight Abyss</em> is currently
-        in closed playtest. Dive logs and updates coming soon.
+        Created by Richard Turnbull, <em>Midnight Abyss</em>
+        is currently in closed playtest. Dive logs and updates
+        coming soon.
       </p>
 
       <p style="margin-top:6px;font-size:14px;color:#5a6168">
-        For insight into design choices and upcoming changes, visit the
-        <a href="{{ '/designer-notes/' | relative_url }}"
-           style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+        For insight into design choices and upcoming changes,
+        visit the
+        <a href="https://www.midnightabyss.com/designer-notes/">
           Designer Notes
         </a>
         page.
       </p>
+
     </div>
 
     <div class="panel" style="padding:16px">
+
       <figure class="thumb">
 
-        <!-- SHOAL ARTWORK -->
         <img
-          src="{{ '/docs/Shoal.png' | relative_url }}"
+          src="https://www.midnightabyss.com/docs/Shoal.png"
           alt="Bioluminescent shoal concept"
-          data-fallbacks="{{ '/docs/shoal.png' | relative_url }}|{{ '/assets/Shoal.png' | relative_url }}|{{ '/assets/shoal.png' | relative_url }}"
         >
 
-        <figcaption>Concept Placeholder</figcaption>
+        <figcaption>
+          Concept Placeholder
+        </figcaption>
+
       </figure>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- PLAYTEST SESSIONS -->
+<!-- ==========================================
+     PLAYTEST VIDEOS
+========================================== -->
 
 <section id="video" class="video-section">
 
-  <h2 class="video-section-title">Playtest Sessions</h2>
+  <h2 class="video-section-title">
+    Playtest Sessions
+  </h2>
 
   <!-- SESSION ZERO -->
 
   <div class="session-zero-row">
+
     <div class="panel session-zero-panel">
+
       <h2>Session Zero</h2>
-      <p>Session Zero of <em>Midnight Abyss</em>.</p>
+
+      <p>
+        Session Zero of <em>Midnight Abyss</em>.
+      </p>
 
       <div class="video-wrapper">
+
         <iframe
           src="https://www.youtube.com/embed/gy9HTOA3A54"
           title="Midnight Abyss - Session Zero"
@@ -625,8 +714,11 @@ footer {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
+
       </div>
+
     </div>
+
   </div>
 
   <!-- NUMBERED SESSIONS -->
@@ -636,10 +728,13 @@ footer {
     <!-- SESSION ONE -->
 
     <div class="panel video-panel">
+
       <h2>Session One</h2>
+
       <p>Session One of <em>Midnight Abyss</em>.</p>
 
       <div class="video-wrapper">
+
         <iframe
           src="https://www.youtube.com/embed/eGZC_3-MuaU"
           title="Midnight Abyss - Session One"
@@ -647,16 +742,21 @@ footer {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
+
       </div>
+
     </div>
 
     <!-- SESSION TWO -->
 
     <div class="panel video-panel">
+
       <h2>Session Two</h2>
+
       <p>Session Two of <em>Midnight Abyss</em>.</p>
 
       <div class="video-wrapper">
+
         <iframe
           src="https://www.youtube.com/embed/WMuuJDasrdI"
           title="Midnight Abyss - Session Two"
@@ -664,16 +764,21 @@ footer {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
+
       </div>
+
     </div>
 
     <!-- SESSION THREE -->
 
     <div class="panel video-panel">
+
       <h2>Session Three</h2>
+
       <p>Session Three of <em>Midnight Abyss</em>.</p>
 
       <div class="video-wrapper">
+
         <iframe
           src="https://www.youtube.com/embed/6F6ABcAPdQE"
           title="Midnight Abyss - Session Three"
@@ -681,16 +786,21 @@ footer {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
+
       </div>
+
     </div>
 
     <!-- SESSION FOUR -->
 
     <div class="panel video-panel">
+
       <h2>Session Four</h2>
+
       <p>Session Four of <em>Midnight Abyss</em>.</p>
 
       <div class="video-wrapper">
+
         <iframe
           src="https://www.youtube.com/embed/TglTC-KlNBM"
           title="Midnight Abyss - Session Four"
@@ -698,16 +808,21 @@ footer {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
+
       </div>
+
     </div>
 
     <!-- SESSION FIVE -->
 
     <div class="panel video-panel">
+
       <h2>Session Five</h2>
+
       <p>Session Five of <em>Midnight Abyss</em>.</p>
 
       <div class="video-wrapper">
+
         <iframe
           src="https://www.youtube.com/embed/ErblJcNu9Zo"
           title="Midnight Abyss - Session Five"
@@ -715,16 +830,21 @@ footer {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
+
       </div>
+
     </div>
 
     <!-- SESSION SIX -->
 
     <div class="panel video-panel">
+
       <h2>Session Six</h2>
+
       <p>Session Six of <em>Midnight Abyss</em>.</p>
 
       <div class="video-wrapper">
+
         <iframe
           src="https://www.youtube.com/embed/ekbCH_jazDw"
           title="Midnight Abyss - Session Six"
@@ -732,31 +852,41 @@ footer {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
+
       </div>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- COMMUNITY -->
+<!-- ==========================================
+     COMMUNITY
+========================================== -->
 
-<section id="community" class="panel" style="padding:22px;margin-top:28px">
+<section id="community"
+         class="panel"
+         style="padding:22px;margin-top:28px">
 
   <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">
     Join the Community
   </h2>
 
   <p class="lead" style="margin-top:6px">
-    Session coordination, dev updates, and chatter all happen on Discord.
+    Session coordination, dev updates, and chatter all happen
+    on Discord.
   </p>
 
   <div class="cta" style="margin-top:14px">
+
     <a class="btn discord"
        href="https://discord.gg/5WUCjAn2zg"
        target="_blank"
        rel="noopener">
       Join our Discord
     </a>
+
   </div>
 
   <p style="margin-top:10px;font-size:14px;color:#5a6168">
@@ -765,43 +895,52 @@ footer {
 
 </section>
 
-<!-- DESIGNER NOTES -->
+<!-- ==========================================
+     DESIGNER NOTES
+========================================== -->
 
-<section id="designer-notes" class="panel" style="padding:22px;margin-top:28px">
+<section id="designer-notes"
+         class="panel"
+         style="padding:22px;margin-top:28px">
 
   <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">
     Designer Notes
   </h2>
 
   <p>
-    <em>Designer Notes</em> is a space for me to share the thoughts and reasoning
-    behind the design of <em>Midnight Abyss</em> — why certain mechanics exist,
-    what they’re meant to evoke, and how the game’s tone and themes shaped its structure.
+    <em>Designer Notes</em> is a space for me to share
+    the thoughts and reasoning behind the design of
+    <em>Midnight Abyss</em> — why certain mechanics exist,
+    what they’re meant to evoke, and how the game’s tone
+    and themes shaped its structure.
   </p>
 
   <p>
-    Some entries expand on choices made during development; others explore ideas
-    that didn’t make it into the core text but still help illuminate the world or
-    play experience. Think of this page as a look behind the bulkhead — part commentary,
-    part journal.
+    Some entries expand on choices made during development;
+    others explore ideas that didn’t make it into the core
+    text but still help illuminate the world or play
+    experience. Think of this page as a look behind the
+    bulkhead — part commentary, part journal.
   </p>
 
   <p>
-    If you have a question or would like clarification on any aspect of the game,
-    please
-    <a href="mailto:midnightabyssttrpg@gmail.com"
-       style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+    If you have a question or would like clarification on
+    any aspect of the game, please
+    <a href="mailto:midnightabyssttrpg@gmail.com">
       email me
     </a>.
   </p>
 
   <p style="margin-top:8px;font-size:14px;color:#5a6168">
-    Updated as development continues and new dives bring new discoveries.
+    Updated as development continues and new dives bring
+    new discoveries.
   </p>
 
 </section>
 
-<!-- CONCEPT GALLERY -->
+<!-- ==========================================
+     CONCEPT GALLERY
+========================================== -->
 
 <section id="gallery" style="margin-top:26px">
 
@@ -810,212 +949,215 @@ footer {
   </h2>
 
   <p style="margin-top:0;color:#5a6168">
+
     <strong>
-      All artwork shown is conceptual only and will be completely replaced
-      with commissioned custom art for the final release.
+      All artwork shown is conceptual only and will be
+      completely replaced with commissioned custom art
+      for the final release.
     </strong>
+
   </p>
 
   <div class="gallery">
 
     <figure class="thumb">
 
-      <!-- TRENCH COLONY ARTWORK -->
       <img
-        src="{{ '/docs/Trench Colony.png' | relative_url }}"
+        src="https://www.midnightabyss.com/docs/Trench%20Colony.png"
         alt="Trench colony concept"
-        data-fallbacks="{{ '/docs/Trench%20Colony.png' | relative_url }}|{{ '/assets/Trench Colony.png' | relative_url }}|{{ '/docs/trench colony.png' | relative_url }}"
       >
 
-      <figcaption>Concept Placeholder</figcaption>
+      <figcaption>
+        Concept Placeholder
+      </figcaption>
+
     </figure>
 
     <figure class="thumb">
 
-      <!-- MARKET SCENE ARTWORK -->
       <img
-        src="{{ '/docs/Market Scene.png' | relative_url }}"
+        src="https://www.midnightabyss.com/docs/Market%20Scene.png"
         alt="Market scene concept"
-        data-fallbacks="{{ '/docs/Market%20Scene.png' | relative_url }}|{{ '/assets/Market Scene.png' | relative_url }}|{{ '/docs/market scene.png' | relative_url }}"
       >
 
-      <figcaption>Concept Placeholder</figcaption>
+      <figcaption>
+        Concept Placeholder
+      </figcaption>
+
     </figure>
 
   </div>
 
   <p style="text-align:center;margin-top:10px">
-    <a href="{{ '/gallery/' | relative_url }}"
-       style="color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)">
+
+    <a href="https://www.midnightabyss.com/gallery/"
+       style="font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent)">
       View Full Gallery →
     </a>
+
   </p>
 
 </section>
 
-<!-- FICTION: PRESSURE LINE -->
+<!-- ==========================================
+     FICTION: PRESSURE LINE
+========================================== -->
 
 <section id="pressure-line" style="margin-top:36px">
 
-  <div class="panel" style="
-    position:relative;
-    padding:40px 36px 32px;
-    background:linear-gradient(180deg,rgba(6,12,20,.98),rgba(14,28,40,.9));
-    color:#E6ECF1;
-    border:1px solid rgba(60,122,160,.35);
-    box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 0 60px rgba(60,122,160,.15);
-    border-radius:16px;
-    font-family:Inter,system-ui,sans-serif;
-    line-height:1.75;
-    overflow:hidden;
-  ">
+  <div class="fiction-panel">
 
-    <div style="
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:6px;
-      background:linear-gradient(90deg,transparent,rgba(60,122,160,.8),transparent);
-      filter:blur(2px);
-      animation:pulseGlow 5s infinite alternate;
-    "></div>
+    <div class="fiction-heading">
 
-    <div style="
-      text-align:center;
-      margin-bottom:30px;
-      font-family:Gloock,serif;
-      letter-spacing:.1em;
-      color:#89B4D8;
-      text-shadow:0 0 12px rgba(60,122,160,.8),0 0 24px rgba(60,122,160,.4);
-    ">
-
-      <h2 style="margin:0;font-weight:400;font-size:1.6rem">
+      <h2>
         PRESSURE LOG ENTRY — 08-A
       </h2>
 
-      <p style="
-        margin:6px 0 0;
-        font-family:'IM Fell English SC',serif;
-        font-size:2.3rem;
-        color:#C7D6E2;
-        letter-spacing:.04em;
-      ">
+      <p>
         “Pressure Line”
       </p>
+
     </div>
 
     <p>
-      <em>The sub <strong>Mercy Jane</strong> drifted through the blue-black murk
-      like a bead of dust caught in oil.</em>
-      Her floodlights cut narrow tunnels through suspended silt, illuminating
-      fragments of old steel hull plating and ghostly tendrils of seaweed clinging
-      to the wreck below.
+      <em>
+        The sub <strong>Mercy Jane</strong> drifted through
+        the blue-black murk like a bead of dust caught in oil.
+      </em>
+      Her floodlights cut narrow tunnels through suspended silt,
+      illuminating fragments of old steel hull plating and ghostly
+      tendrils of seaweed clinging to the wreck below.
     </p>
 
     <p>
-      Captain Edda Raines leaned over the console, eyes flicking between sonar pings.
-      “Hold her steady. That’s our target—cargo bay three.”
+      Captain Edda Raines leaned over the console, eyes flicking
+      between sonar pings. “Hold her steady. That’s our target—cargo
+      bay three.”
     </p>
 
     <p>
-      “Copy,” said Vega, the diver tech, his gloved hands already on the drone controls.
-      “Hull breach about ten meters wide. Structural scan’s iffy. Might be pressure fatigue.”
+      “Copy,” said Vega, the diver tech, his gloved hands already
+      on the drone controls. “Hull breach about ten meters wide.
+      Structural scan’s iffy. Might be pressure fatigue.”
     </p>
 
     <p>
-      They were three days out from the nearest relay buoy, running lean on oxygen
-      and even leaner on patience. The job was a mid-tier contract: recover a sealed
-      crate from the <em>Harlow’s Dream</em>, a drowned luxury cruiser from before
-      the Drowning. No one said what was in the crate, just that it was sealed and
-      stamped with a corporate sigil no one recognized anymore.
+      They were three days out from the nearest relay buoy, running
+      lean on oxygen and even leaner on patience. The job was a
+      mid-tier contract: recover a sealed crate from the
+      <em>Harlow’s Dream</em>, a drowned luxury cruiser from before
+      the Drowning. No one said what was in the crate, just that
+      it was sealed and stamped with a corporate sigil no one
+      recognized anymore.
     </p>
 
     <p>
-      Edda watched Vega’s drone snake into the breach. The feed flickered, static
-      crawling across the image, then stabilized to show a long corridor sagging
-      under pressure. Chairs, porcelain cups, and a child’s toy drifted lazily past.
+      Edda watched Vega’s drone snake into the breach. The feed
+      flickered, static crawling across the image, then stabilized
+      to show a long corridor sagging under pressure. Chairs,
+      porcelain cups, and a child’s toy drifted lazily past.
     </p>
 
     <p>
-      “Getting something,” Vega murmured. “Crate matches the manifest. Still sealed.”
+      “Getting something,” Vega murmured. “Crate matches the
+      manifest. Still sealed.”
     </p>
 
-    <p>“Latch it,” Edda said.</p>
+    <p>
+      “Latch it,” Edda said.
+    </p>
 
     <p>
-      The drone’s manipulator arms extended, clamping to the crate’s corners.
-      Then the signal jittered—camera freezing for half a second. When it returned,
-      the image had changed. The corridor was darker, narrower. Something—someone—moved
+      The drone’s manipulator arms extended, clamping to the
+      crate’s corners. Then the signal jittered—camera freezing
+      for half a second. When it returned, the image had changed.
+      The corridor was darker, narrower. Something—someone—moved
       just out of frame, drifting backward into the shadows.
     </p>
 
-    <p>Edda frowned. “Playback that last—”</p>
-
-    <p>The feed went black.</p>
-
     <p>
-      “Drone’s dead,” Vega said. “Full disconnect. That’s not a signal loss—something
-      fried the link.”
-    </p>
-
-    <p>Raines turned to the others. “We go in.”</p>
-
-    <p>
-      Inside the wreck, light behaved like something alive—bending, twisting, caught
-      on invisible currents. The team’s lamps illuminated flaking paint and rotted
-      fixtures, bubbles spiraling upward from cracks in their suits.
+      Edda frowned. “Playback that last—”
     </p>
 
     <p>
-      They found the crate in a tilted ballroom, half-buried in silt and broken glass.
-      The floor groaned with every step.
+      The feed went black.
     </p>
 
     <p>
-      Vega knelt by it, brushing sediment away. “Looks intact. But the markings…
-      these aren’t Union seals.”
+      “Drone’s dead,” Vega said. “Full disconnect. That’s not
+      a signal loss—something fried the link.”
     </p>
 
     <p>
-      Edda’s wrist display blinked—depth telemetry spiking. The pressure around
-      them shifted, like the ocean itself inhaled.
+      Raines turned to the others. “We go in.”
     </p>
 
     <p>
-      Then, from the corridor they’d entered, came a low vibration. A hum.
-    </p>
-
-    <p>The lights flickered.</p>
-
-    <p>
-      Something floated into view—a shape like a person, but boneless, limbs
-      trailing like ribbons. Its face was a blur of light, refracting their
-      beams back at them.
-    </p>
-
-    <p>Edda’s breath caught. “Fall back—”</p>
-
-    <p>
-      The shape rippled, and the sound hit them—not a roar, but a resonance
-      deep enough to shake their bones.
+      Inside the wreck, light behaved like something alive—bending,
+      twisting, caught on invisible currents. The team’s lamps
+      illuminated flaking paint and rotted fixtures, bubbles
+      spiraling upward from cracks in their suits.
     </p>
 
     <p>
-      Their comms flooded with static. The crate behind them began to vibrate,
-      faintly glowing where the seals had cracked with age.
-    </p>
-
-    <p>“Vega, move!”</p>
-
-    <p>
-      He grabbed the crate’s handle and kicked off toward the exit.
-      The shape followed, slow and deliberate.
+      They found the crate in a tilted ballroom, half-buried in
+      silt and broken glass. The floor groaned with every step.
     </p>
 
     <p>
-      Back aboard the <em>Mercy Jane</em>, they sealed the hatch and flooded
-      the chamber dry. The crate sat between them, dull and wet.
+      Vega knelt by it, brushing sediment away. “Looks intact.
+      But the markings… these aren’t Union seals.”
+    </p>
+
+    <p>
+      Edda’s wrist display blinked—depth telemetry spiking.
+      The pressure around them shifted, like the ocean itself
+      inhaled.
+    </p>
+
+    <p>
+      Then, from the corridor they’d entered, came a low
+      vibration. A hum.
+    </p>
+
+    <p>
+      The lights flickered.
+    </p>
+
+    <p>
+      Something floated into view—a shape like a person, but
+      boneless, limbs trailing like ribbons. Its face was a blur
+      of light, refracting their beams back at them.
+    </p>
+
+    <p>
+      Edda’s breath caught. “Fall back—”
+    </p>
+
+    <p>
+      The shape rippled, and the sound hit them—not a roar,
+      but a resonance deep enough to shake their bones.
+    </p>
+
+    <p>
+      Their comms flooded with static. The crate behind them
+      began to vibrate, faintly glowing where the seals had
+      cracked with age.
+    </p>
+
+    <p>
+      “Vega, move!”
+    </p>
+
+    <p>
+      He grabbed the crate’s handle and kicked off toward the
+      exit. The shape followed, slow and deliberate.
+    </p>
+
+    <p>
+      Back aboard the <em>Mercy Jane</em>, they sealed the hatch
+      and flooded the chamber dry. The crate sat between them,
+      dull and wet.
     </p>
 
     <p>
@@ -1023,145 +1165,114 @@ footer {
       It pulsed faintly, like a heartbeat.
     </p>
 
-    <p>“Don’t open it,” Vega said quietly.</p>
-
-    <p>Edda nodded—but she didn’t look away.</p>
-
     <p>
-      Outside, the sonar pinged once. Then again. Then again, closer.
+      “Don’t open it,” Vega said quietly.
     </p>
 
     <p>
-      <strong>Whatever was in that wreck wasn’t staying there.</strong>
+      Edda nodded—but she didn’t look away.
     </p>
 
-    <div style="
-      position:absolute;
-      bottom:0;
-      left:0;
-      right:0;
-      height:6px;
-      background:linear-gradient(90deg,transparent,rgba(60,122,160,.8),transparent);
-      filter:blur(2px);
-      animation:pulseGlow 5s infinite alternate-reverse;
-    "></div>
+    <p>
+      Outside, the sonar pinged once. Then again. Then again,
+      closer.
+    </p>
+
+    <p>
+      <strong>
+        Whatever was in that wreck wasn’t staying there.
+      </strong>
+    </p>
 
   </div>
+
 </section>
 
-<!-- ABOUT AND CONTACT -->
+<!-- ==========================================
+     ABOUT AND CONTACT
+========================================== -->
 
 <section id="about" class="two" style="margin-top:26px">
 
   <div class="panel" style="padding:22px">
+
     <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">
       What is Midnight Abyss?
     </h2>
 
     <p>
-      <em>Midnight Abyss</em> is a survival roleplaying game set in the crushing
-      dark of the deep ocean.
+      <em>Midnight Abyss</em> is a survival roleplaying
+      game set in the crushing dark of the deep ocean.
     </p>
 
     <p>
-      Crews dive for freedom, answers, and the promise of more than just another
-      breath. Down here, O₂ isn’t only what keeps you alive — it’s what buys
-      you time, choices, and debts. Pressure grinds, hulls groan, and every dive
-      is a wager against the deep and those who claim to own it.
+      Crews dive for freedom, answers, and the promise of
+      more than just another breath. Down here, O₂ isn’t
+      only what keeps you alive — it’s what buys you time,
+      choices, and debts. Pressure grinds, hulls groan,
+      and every dive is a wager against the deep and
+      those who claim to own it.
     </p>
+
   </div>
 
   <div class="panel" id="contact" style="padding:22px">
+
     <h2 style="margin-top:0;color:var(--muted);font-family:Gloock,serif;font-weight:400">
       Contact
     </h2>
 
     <p>
       Questions or press enquiries? Email
-      <a href="mailto:midnightabyssttrpg@gmail.com"
-         style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+      <a href="mailto:midnightabyssttrpg@gmail.com">
         midnightabyssttrpg@gmail.com
       </a>.
     </p>
+
   </div>
 
 </section>
 
-<!-- FOOTER -->
+<!-- ==========================================
+     FOOTER
+========================================== -->
 
 <footer>
+
   <div class="divider" role="separator" aria-hidden="true"></div>
 
   <div class="two">
+
     <p>
-      © <span id="year"></span> Midnight Abyss. All rights reserved.
+      © <span id="year"></span> Midnight Abyss.
+      All rights reserved.
     </p>
 
     <p style="text-align:right">
       Theme: mid-tone accessibility ·
       <a href="https://discord.gg/5WUCjAn2zg"
          target="_blank"
-         rel="noopener"
-         style="color:var(--accent);text-decoration:none;border-bottom:1px dashed var(--accent)">
+         rel="noopener">
         Join Discord
       </a>
     </p>
+
   </div>
+
 </footer>
 
 </main>
 
-<!-- JAVASCRIPT -->
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
 
 <script>
+
+/* COPYRIGHT YEAR */
+
 document.getElementById('year').textContent =
   new Date().getFullYear();
-
-/*
-  IMAGE FALLBACK HANDLING
-
-  Every image has a real src attribute, so it can
-  load immediately without waiting for JavaScript.
-
-  If the first source fails, this checks the
-  alternative existing filename/path variations.
-*/
-
-document.querySelectorAll('img[data-fallbacks]').forEach(function(img) {
-
-  const alternatives = img.dataset.fallbacks
-    .split('|')
-    .map(function(path) {
-      return path.trim();
-    })
-    .filter(Boolean);
-
-  let index = 0;
-
-  img.addEventListener('error', function() {
-
-    if (index < alternatives.length) {
-      img.src = alternatives[index++];
-    } else {
-      console.error(
-        'Midnight Abyss image could not be loaded:',
-        img.alt,
-        img.src
-      );
-    }
-
-  });
-
-  /*
-    Handle images that failed before the
-    error listener was attached.
-  */
-
-  if (img.complete && img.naturalWidth === 0) {
-    img.dispatchEvent(new Event('error'));
-  }
-
-});
 
 /* HEADER HEIGHT */
 
@@ -1176,8 +1287,8 @@ function updateHeaderHeight() {
 
 updateHeaderHeight();
 
-window.addEventListener('load', updateHeaderHeight);
-window.addEventListener('resize', updateHeaderHeight);
+window.addEventListener('load',updateHeaderHeight);
+window.addEventListener('resize',updateHeaderHeight);
 
 /* HEADER SHOW/HIDE */
 
@@ -1188,22 +1299,22 @@ function showHeader() {
 
   clearTimeout(headerTimeout);
 
-  if (window.scrollY > 80) {
+  if(window.scrollY > 80) {
     headerTimeout = setTimeout(function() {
       header.classList.add('header-hidden');
-    }, 1800);
+    },1800);
   }
 }
 
 function hideHeader() {
-  if (window.scrollY > 80) {
+  if(window.scrollY > 80) {
     header.classList.add('header-hidden');
   }
 }
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll',function() {
 
-  if (window.scrollY <= 80) {
+  if(window.scrollY <= 80) {
     clearTimeout(headerTimeout);
     header.classList.remove('header-hidden');
   } else {
@@ -1212,11 +1323,14 @@ window.addEventListener('scroll', function() {
 
 });
 
-document.addEventListener('mousemove', function(event) {
-  if (event.clientY <= 14) {
+document.addEventListener('mousemove',function(event) {
+
+  if(event.clientY <= 14) {
     showHeader();
   }
+
 });
+
 </script>
 
 </body>
